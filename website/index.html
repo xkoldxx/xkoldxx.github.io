@@ -6,24 +6,28 @@
     <title>Northern Edge IT Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#0078d4',
-                        'primary-dark': '#005fa7',
-                        'primary-light': '#3a9eeb',
+                        primary: '#c0c0c0',
+                        'primary-dark': '#a0a0a0',
+                        'primary-light': '#e0e0e0',
                         secondary: '#f5f5f5',
                         'secondary-dark': '#d4d4d4',
                         dark: '#000000',
                         darkgray: '#151515',
                         'darkgray-light': '#1e1e1e',
-                        lightgray: '#9e9e9e'
+                        lightgray: '#9e9e9e',
+                        silver: '#c0c0c0',
+                        'silver-dark': '#a0a0a0',
+                        'silver-light': '#e0e0e0'
                     },
                     fontFamily: {
-                        sans: ['Roboto', 'sans-serif']
+                        sans: ['Montserrat', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
                     },
                     boxShadow: {
                         'inner-light': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.05)',
@@ -47,9 +51,41 @@
         .animate-fadeIn {
             animation: fadeIn 0.5s ease-in-out;
         }
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .animate-slideIn {
+            animation: slideInFromBottom 0.5s ease-out forwards;
+        }
+        .animate-delay-100 {
+            animation-delay: 100ms;
+        }
+        .animate-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animate-delay-300 {
+            animation-delay: 300ms;
+        }
         .bg-mesh {
             background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 20px 20px;
+        }
+        .bg-grid {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(192, 192, 192, 0.1);
         }
         .text-shadow {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -64,73 +100,104 @@
     </style>
 </head>
 <body class="bg-dark text-white font-sans bg-mesh">
-    <header class="bg-dark bg-opacity-95 backdrop-blur-sm sticky top-0 z-50 shadow-md border-b border-gray-800">
+    <header class="bg-dark bg-opacity-80 backdrop-blur-md sticky top-0 z-50 shadow-lg border-b border-silver border-opacity-20">
         <div class="container mx-auto px-4 py-3 flex items-center justify-between">
             <div class="logo">
-                <h1 class="text-secondary text-2xl font-bold tracking-wide text-shadow">NEIT</h1>
+                <a href="#home" class="text-white hover:text-silver transition-colors">
+                    <h1 class="text-white text-xl font-bold tracking-wider font-heading text-shadow">NEIT</h1>
+                </a>
             </div>
             <nav class="hidden md:block">
                 <ul class="flex space-x-8">
-                    <li><a href="#home" class="uppercase text-sm tracking-wider hover:text-primary transition-colors">Home</a></li>
-                    <li><a href="#services" class="uppercase text-sm tracking-wider hover:text-primary transition-colors">Services</a></li>
-                    <li><a href="#about" class="uppercase text-sm tracking-wider hover:text-primary transition-colors">About</a></li>
-                    <li><a href="#testimonials" class="uppercase text-sm tracking-wider hover:text-primary transition-colors">Testimonials</a></li>
+                    <li><a href="#home" class="uppercase text-sm tracking-wider hover:text-silver transition-colors">Home</a></li>
+                    <li><a href="#services" class="uppercase text-sm tracking-wider hover:text-silver transition-colors">Services</a></li>
+                    <li><a href="#about" class="uppercase text-sm tracking-wider hover:text-silver transition-colors">About</a></li>
+                    <li><a href="#testimonials" class="uppercase text-sm tracking-wider hover:text-silver transition-colors">Testimonials</a></li>
                 </ul>
             </nav>
             <div class="contact-button">
-                <a href="#contact" class="bg-primary text-white px-4 py-2 rounded text-sm uppercase tracking-wider hover:bg-primary-dark transition-all shadow-md hover:shadow-lg">Contact Us</a>
+                <a href="#contact" class="bg-darkgray border border-silver text-silver px-4 py-2 rounded-md text-sm uppercase tracking-wider hover:bg-dark hover:text-silver-light transition-all shadow-md hover:shadow-lg relative overflow-hidden group">
+                    <span class="relative z-10">Contact Us</span>
+                    <span class="absolute inset-0 bg-silver bg-opacity-10 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></span>
+                </a>
             </div>
-            <div class="menu-toggle md:hidden">
+            <div class="menu-toggle md:hidden cursor-pointer hover:text-silver transition-colors">
                 <i class="fas fa-bars text-white text-xl"></i>
             </div>
         </div>
     </header>
 
-    <section id="home" class="bg-gradient-to-b from-dark to-darkgray py-24 md:py-32">
+    <section id="home" class="bg-gradient-to-b from-dark to-darkgray py-24 md:py-32 bg-grid relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,30,30,0.8),rgba(0,0,0,1))]" aria-hidden="true"></div>
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <div class="mb-8 flex justify-center">
-                    <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting Logo" class="max-h-48">
+                <div class="mb-24 flex justify-center mt-[-40px]">
+                    <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting Logo" class="max-h-64 brightness-200 contrast-100">
                 </div>
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 uppercase tracking-wider text-shadow animate-fadeIn">IT Solutions for Your Business</h1>
-                <p class="text-lightgray text-lg mb-10 max-w-3xl mx-auto">Professional IT consulting services from Northern Edge to optimize your technology infrastructure</p>
-                <a href="#contact" class="bg-primary text-white px-6 py-3 rounded text-sm uppercase tracking-wider hover:bg-primary-dark transition-all shadow-md hover:shadow-lg inline-block">Get Started</a>
+                <h1 class="text-2xl md:text-4xl font-bold mb-6 uppercase tracking-wider font-heading text-shadow animate-fadeIn relative">Strategic Technology <span class="block md:inline">Solutions</span></h1>
+                <p class="text-lightgray text-lg mb-10 max-w-3xl mx-auto animate-slideIn animate-delay-100 opacity-0">Empowering your business with tailored technology solutions that drive growth and innovation</p>
+                <a href="#contact" class="bg-darkgray border border-silver text-silver px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-dark hover:text-silver-light transition-all shadow-md hover:shadow-lg inline-block animate-slideIn animate-delay-200 opacity-0 relative overflow-hidden group">
+                    <span class="relative z-10">Get Started</span>
+                    <span class="absolute inset-0 bg-silver bg-opacity-10 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></span>
+                </a>
             </div>
         </div>
     </section>
 
-    <section id="services" class="bg-darkgray py-20 bg-mesh">
+    <section id="services" class="bg-darkgray py-20 bg-mesh relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
         <div class="container mx-auto px-4">
-            <h2 class="text-center text-3xl font-bold uppercase tracking-wider text-secondary mb-16 relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">Our Services</h2>
+            <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
+                <span class="relative z-10">Our Services</span>
+                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded p-8 text-center shadow-card hover:shadow-card-hover transition-all hover:scale-105 border-b-4 border-primary hover-lift">
-                    <i class="fas fa-network-wired text-primary text-4xl mb-6"></i>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider mb-4">Network Infrastructure</h3>
-                    <p class="text-lightgray">Design, implementation, and maintenance of secure and efficient network systems.</p>
+                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
+                        <i class="fas fa-network-wired text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Network Infrastructure</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Design, implementation, and maintenance of secure and efficient network systems.</p>
                 </div>
-                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded p-8 text-center shadow-card hover:shadow-card-hover transition-all hover:scale-105 border-b-4 border-primary hover-lift">
-                    <i class="fas fa-cloud text-primary text-4xl mb-6"></i>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider mb-4">Cloud Solutions</h3>
-                    <p class="text-lightgray">Migrate your business to the cloud for improved scalability and accessibility.</p>
+                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
+                        <i class="fas fa-cloud text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Cloud Solutions</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Migrate your business to the cloud for improved scalability and accessibility.</p>
                 </div>
-                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded p-8 text-center shadow-card hover:shadow-card-hover transition-all hover:scale-105 border-b-4 border-primary hover-lift">
-                    <i class="fas fa-shield-alt text-primary text-4xl mb-6"></i>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider mb-4">Cybersecurity</h3>
+                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
+                        <i class="fas fa-shield-alt text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">Cybersecurity</h3>
                     <p class="text-lightgray">Protect your business from threats with comprehensive security solutions.</p>
                 </div>
-                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded p-8 text-center shadow-card hover:shadow-card-hover transition-all hover:scale-105 border-b-4 border-primary hover-lift">
-                    <i class="fas fa-cogs text-primary text-4xl mb-6"></i>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider mb-4">IT Management</h3>
+                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
+                        <i class="fas fa-cogs text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">IT Management</h3>
                     <p class="text-lightgray">Ongoing support and management of your IT infrastructure.</p>
                 </div>
-                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded p-8 text-center shadow-card hover:shadow-card-hover transition-all hover:scale-105 border-b-4 border-primary hover-lift">
-                    <i class="fas fa-ethernet text-primary text-4xl mb-6"></i>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider mb-4">Structured Cabling</h3>
+                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
+                        <i class="fas fa-ethernet text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">Structured Cabling</h3>
                     <p class="text-lightgray">Professional installation of high-performance network cabling for reliable connectivity.</p>
                 </div>
-                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded p-8 text-center shadow-card hover:shadow-card-hover transition-all hover:scale-105 border-b-4 border-primary hover-lift">
-                    <i class="fas fa-video text-primary text-4xl mb-6"></i>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider mb-4">Security Camera Systems</h3>
+                <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
+                        <i class="fas fa-video text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">Security Camera Systems</h3>
                     <p class="text-lightgray">Advanced surveillance solutions to protect your business assets and premises.</p>
                 </div>
             </div>
@@ -140,20 +207,23 @@
     <section id="about" class="bg-gradient-to-b from-darkgray to-dark py-20">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-center text-3xl font-bold uppercase tracking-wider text-secondary mb-16 relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">About Us</h2>
+                <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
+                <span class="relative z-10">About Us</span>
+                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+            </h2>
                 <p class="text-lightgray text-lg mb-6">Northern Edge IT Consulting is a leading IT consulting firm with over 10 years of experience in delivering innovative technology solutions to businesses of all sizes.</p>
                 <p class="text-lightgray text-lg mb-10">Our team of certified professionals is dedicated to helping your business leverage technology to achieve its goals and stay ahead of the competition.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-                    <div class="text-center p-6 bg-darkgray rounded shadow-inner-light border border-gray-800">
-                        <h3 class="text-primary text-4xl font-bold mb-2">10+</h3>
+                    <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
+                        <h3 class="text-silver text-4xl font-bold font-heading mb-2">10+</h3>
                         <p class="text-secondary uppercase tracking-wider">Years Experience</p>
                     </div>
-                    <div class="text-center p-6 bg-darkgray rounded shadow-inner-light border border-gray-800">
-                        <h3 class="text-primary text-4xl font-bold mb-2">200+</h3>
+                    <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
+                        <h3 class="text-silver text-4xl font-bold font-heading mb-2">200+</h3>
                         <p class="text-secondary uppercase tracking-wider">Clients Served</p>
                     </div>
-                    <div class="text-center p-6 bg-darkgray rounded shadow-inner-light border border-gray-800">
-                        <h3 class="text-primary text-4xl font-bold mb-2">500+</h3>
+                    <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
+                        <h3 class="text-silver text-4xl font-bold font-heading mb-2">500+</h3>
                         <p class="text-secondary uppercase tracking-wider">Projects Completed</p>
                     </div>
                 </div>
@@ -161,35 +231,40 @@
         </div>
     </section>
 
-    <section id="testimonials" class="bg-darkgray py-20 bg-mesh">
+    <section id="testimonials" class="bg-darkgray py-20 bg-grid relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
         <div class="container mx-auto px-4">
-            <h2 class="text-center text-3xl font-bold uppercase tracking-wider text-secondary mb-16 relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">What Our Clients Say</h2>
+            <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
+                <span class="relative z-10">What Our Clients Say</span>
+                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+            </h2>
             <div class="max-w-4xl mx-auto relative">
                 <div class="testimonial-slider">
                     <div class="testimonial">
-                        <div class="bg-gradient-to-b from-dark to-darkgray-light p-8 rounded shadow-card mb-8 border border-gray-800">
+                        <div class="glass-effect p-8 rounded-lg shadow-card mb-8 border border-gray-800 hover:border-silver transition-colors duration-300 transform hover:-translate-y-1">
                             <p class="text-lightgray text-lg italic mb-6">"Northern Edge IT Consulting transformed our outdated IT infrastructure into a modern, efficient system that has significantly improved our productivity."</p>
                             <div class="border-t border-gray-800 pt-4">
-                                <h4 class="text-secondary font-bold">John Smith</h4>
-                                <p class="text-primary text-sm">CEO, Smith Enterprises</p>
+                                <h4 class="text-secondary font-bold font-heading">John Smith</h4>
+                                <p class="text-silver text-sm">CEO, Smith Enterprises</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial hidden">
-                        <div class="bg-gradient-to-b from-dark to-darkgray-light p-8 rounded shadow-card mb-8 border border-gray-800">
+                        <div class="glass-effect p-8 rounded-lg shadow-card mb-8 border border-gray-800 hover:border-silver transition-colors duration-300 transform hover:-translate-y-1">
                             <p class="text-lightgray text-lg italic mb-6">"Northern Edge's cybersecurity solutions have given us peace of mind knowing our sensitive data is protected against modern threats."</p>
                             <div class="border-t border-gray-800 pt-4">
-                                <h4 class="text-secondary font-bold">Sarah Johnson</h4>
-                                <p class="text-primary text-sm">CTO, Johnson Industries</p>
+                                <h4 class="text-secondary font-bold font-heading">Sarah Johnson</h4>
+                                <p class="text-silver text-sm">CTO, Johnson Industries</p>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial hidden">
-                        <div class="bg-gradient-to-b from-dark to-darkgray-light p-8 rounded shadow-card mb-8 border border-gray-800">
+                        <div class="glass-effect p-8 rounded-lg shadow-card mb-8 border border-gray-800 hover:border-silver transition-colors duration-300 transform hover:-translate-y-1">
                             <p class="text-lightgray text-lg italic mb-6">"The cloud migration handled by Northern Edge IT Consulting was seamless and has allowed our team to work efficiently from anywhere."</p>
                             <div class="border-t border-gray-800 pt-4">
-                                <h4 class="text-secondary font-bold">Michael Brown</h4>
-                                <p class="text-primary text-sm">Director, Brown & Associates</p>
+                                <h4 class="text-secondary font-bold font-heading">Michael Brown</h4>
+                                <p class="text-silver text-sm">Director, Brown & Associates</p>
                             </div>
                         </div>
                     </div>
@@ -204,7 +279,10 @@
 
     <section id="contact" class="bg-gradient-to-b from-dark to-darkgray py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-center text-3xl font-bold uppercase tracking-wider text-secondary mb-16 relative after:content-[''] after:absolute after:w-16 after:h-1 after:bg-primary after:bottom-[-15px] after:left-1/2 after:transform after:-translate-x-1/2">Contact Us</h2>
+            <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
+                <span class="relative z-10">Contact Us</span>
+                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+            </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <div class="space-y-8">
                     <div class="flex items-center space-x-4">
@@ -215,9 +293,9 @@
                     </div>
                     <div class="flex items-center space-x-4">
                         <div class="bg-darkgray p-3 rounded-full shadow-md border border-gray-800">
-                            <i class="fas fa-phone text-primary"></i>
+                            <i class="fas fa-phone text-silver"></i>
                         </div>
-                        <p class="text-lightgray">(555) 123-4567</p>
+                        <p class="text-lightgray">+1 (909) 529-6128</p>
                     </div>
                     <div class="flex items-center space-x-4">
                         <div class="bg-darkgray p-3 rounded-full shadow-md border border-gray-800">
@@ -225,42 +303,36 @@
                         </div>
                         <p class="text-lightgray">info@northernedgeit.com</p>
                     </div>
-                    <div class="flex space-x-4 mt-8">
-                        <a href="#" class="bg-darkgray p-3 rounded-full hover:bg-primary transition-colors">
-                            <i class="fab fa-linkedin text-white"></i>
-                        </a>
-                        <a href="#" class="bg-darkgray p-3 rounded-full hover:bg-primary transition-colors">
-                            <i class="fab fa-twitter text-white"></i>
-                        </a>
-                        <a href="#" class="bg-darkgray p-3 rounded-full hover:bg-primary transition-colors">
-                            <i class="fab fa-facebook text-white"></i>
-                        </a>
-                    </div>
+
                 </div>
                 <div class="bg-darkgray p-8 rounded shadow-card border border-gray-800">
                     <form id="contactForm" class="space-y-6">
                         <div>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-dark border border-gray-800 rounded p-3 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:border-silver focus:ring-1 focus:ring-silver transition-colors">
                         </div>
                         <div>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full bg-black border border-gray-800 rounded p-3 text-white focus:outline-none focus:border-primary">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:border-silver transition-colors">
                         </div>
                         <div>
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required class="w-full bg-black border border-gray-800 rounded p-3 text-white focus:outline-none focus:border-primary">
+                            <input type="text" id="subject" name="subject" placeholder="Subject" required class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:border-silver transition-colors">
                         </div>
                         <div>
-                            <textarea id="message" name="message" placeholder="Your Message" required class="w-full bg-black border border-gray-800 rounded p-3 text-white h-32 focus:outline-none focus:border-primary"></textarea>
+                            <textarea id="message" name="message" placeholder="Your Message" required class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white h-32 focus:outline-none focus:border-silver transition-colors"></textarea>
                         </div>
-                        <button type="submit" class="bg-primary text-white px-6 py-3 rounded text-sm uppercase tracking-wider hover:bg-primary-dark transition-all shadow-md hover:shadow-lg w-full">Send Message</button>
+                        <button type="submit" class="bg-darkgray border border-silver text-silver px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-dark hover:text-silver-light transition-all shadow-md hover:shadow-lg w-full relative overflow-hidden group">
+                            <span class="relative z-10">Send Message</span>
+                            <span class="absolute inset-0 bg-silver bg-opacity-10 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></span>
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark py-6 border-t border-gray-900">
+    <footer class="bg-dark py-8 border-t border-gray-800 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
         <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-500">&copy; 2025 Northern Edge IT Consulting. All rights reserved.</p>
+            <p class="text-lightgray">&copy; 2025 Northern Edge IT Consulting. All rights reserved.</p>
         </div>
     </footer>
 
