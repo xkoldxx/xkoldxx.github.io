@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Northern Edge IT Consulting</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -44,6 +44,16 @@
     </script>
     <style>
         /* Custom animations and effects */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Improve touch targets for mobile */
+        @media (max-width: 768px) {
+            button, a, input, select, textarea {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -121,18 +131,35 @@
                     <span class="absolute inset-0 bg-silver bg-opacity-10 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></span>
                 </a>
             </div>
-            <div class="menu-toggle md:hidden cursor-pointer hover:text-silver transition-colors">
+            <div class="menu-toggle md:hidden cursor-pointer hover:text-silver transition-colors" id="mobile-menu-toggle">
                 <i class="fas fa-bars text-white text-xl"></i>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="fixed inset-0 bg-dark bg-opacity-95 z-50 hidden flex flex-col justify-center items-center">
+                <div class="absolute top-4 right-4">
+                    <button id="close-mobile-menu" class="text-white hover:text-silver transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                </div>
+                <nav class="py-8">
+                    <ul class="flex flex-col space-y-6 text-center">
+                        <li><a href="#home" class="uppercase text-lg tracking-wider hover:text-silver transition-colors mobile-link">Home</a></li>
+                        <li><a href="#services" class="uppercase text-lg tracking-wider hover:text-silver transition-colors mobile-link">Services</a></li>
+                        <li><a href="#about" class="uppercase text-lg tracking-wider hover:text-silver transition-colors mobile-link">About</a></li>
+                        <li><a href="#testimonials" class="uppercase text-lg tracking-wider hover:text-silver transition-colors mobile-link">Testimonials</a></li>
+                        <li><a href="#contact" class="uppercase text-lg tracking-wider hover:text-silver transition-colors mobile-link">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
-    <section id="home" class="bg-gradient-to-b from-dark to-darkgray py-24 md:py-32 bg-grid relative overflow-hidden">
+    <section id="home" class="bg-gradient-to-b from-dark to-darkgray py-16 md:py-32 bg-grid relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,30,30,0.8),rgba(0,0,0,1))]" aria-hidden="true"></div>
         <div class="container mx-auto px-4">
             <div class="text-center">
-                <div class="mb-24 flex justify-center mt-[-40px]">
-                    <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting Logo" class="max-h-64 brightness-200 contrast-100">
+                <div class="mb-12 md:mb-24 flex justify-center mt-[-20px] md:mt-[-40px]">
+                    <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting Logo" class="max-h-40 md:max-h-64 brightness-200 contrast-100">
                 </div>
                 <h1 class="text-2xl md:text-4xl font-bold mb-6 uppercase tracking-wider font-heading text-shadow animate-fadeIn relative">Strategic Technology <span class="block md:inline">Solutions</span></h1>
                 <p class="text-lightgray text-lg mb-10 max-w-3xl mx-auto animate-slideIn animate-delay-100 opacity-0">Empowering your business with tailored technology solutions that drive growth and innovation</p>
@@ -152,7 +179,7 @@
                 <span class="relative z-10">Our Services</span>
                 <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
@@ -206,14 +233,14 @@
 
     <section id="about" class="bg-gradient-to-b from-darkgray to-dark py-20">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
                 <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
                 <span class="relative z-10">About Us</span>
                 <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
             </h2>
                 <p class="text-lightgray text-lg mb-6">Northern Edge IT Consulting is a leading IT consulting firm with over 10 years of experience in delivering innovative technology solutions to businesses of all sizes.</p>
                 <p class="text-lightgray text-lg mb-10">Our team of certified professionals is dedicated to helping your business leverage technology to achieve its goals and stay ahead of the competition.</p>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mt-12">
                     <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
                         <h3 class="text-silver text-4xl font-bold font-heading mb-2">10+</h3>
                         <p class="text-secondary uppercase tracking-wider">Years Experience</p>
@@ -374,6 +401,49 @@
                     nav.classList.toggle('block');
                 });
             }
+        });
+    </script>
+    <!-- Add responsive script for mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMobileMenu = document.getElementById('close-mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            
+            // Toggle mobile menu
+            mobileMenuToggle.addEventListener('click', function() {
+                mobileMenu.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            });
+            
+            // Close mobile menu
+            closeMobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                document.body.style.overflow = ''; // Restore scrolling
+            });
+            
+            // Close menu when a link is clicked
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                });
+            });
+            
+            // Handle window resize - hide mobile menu on larger screens
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) { // md breakpoint
+                    mobileMenu.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Add lazy loading to images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.setAttribute('loading', 'lazy');
+            });
         });
     </script>
 </body>
