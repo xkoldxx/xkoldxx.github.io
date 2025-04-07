@@ -1,5 +1,7 @@
 # IT Consulting Business Website
 
+*Last updated: April 7, 2025*
+
 This is a simple, professional website template for your IT consulting business. It's designed to be easy to customize even if you have zero web development skills.
 
 ## Website Structure
