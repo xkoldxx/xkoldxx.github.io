@@ -525,64 +525,62 @@ function initContactForm() {
     return isValid;
   };
   
-  // Handle form submission with GetForm
+  // Handle form submission with client-side validation and feedback
   contactForm.addEventListener('submit', (e) => {
-    // Only prevent default if validation fails
+    // Always prevent default form submission
+    e.preventDefault();
     
     // Hide previous success/error messages
     if (formSuccess) formSuccess.classList.add('hidden');
     if (formError) formError.classList.add('hidden');
     
-    // Validate form before submission
+    // Validate form
     if (!validateForm()) {
-      e.preventDefault();
+      // Focus on the first invalid field
+      const firstInvalidField = Object.keys(formFields).find(
+        field => formFields[field] && formFields[field].getAttribute('aria-invalid') === 'true'
+      );
+      
+      if (firstInvalidField && formFields[firstInvalidField]) {
+        formFields[firstInvalidField].focus();
+        
+        // Scroll to error
+        formFields[firstInvalidField].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      
       return false;
     }
     
-    // Show loading spinner during form submission
+    // Show loading spinner
     if (spinner) spinner.classList.remove('hidden');
     if (submitButton) submitButton.disabled = true;
     
-    // Add honeypot field to prevent spam (GetForm supports this)
-    if (!document.getElementById('_gotcha')) {
-      const honeypot = document.createElement('input');
-      honeypot.type = 'hidden';
-      honeypot.name = '_gotcha';
-      honeypot.id = '_gotcha';
-      honeypot.style.display = 'none';
-      contactForm.appendChild(honeypot);
-    }
+    // Get form data
+    const formData = {
+      name: formFields.name.value.trim(),
+      email: formFields.email.value.trim(),
+      subject: document.getElementById('subject')?.value.trim() || 'New Contact Form Submission',
+      message: formFields.message.value.trim(),
+    };
     
-    // Add redirect back to the same page after submission
-    if (!document.getElementById('_next')) {
-      const redirect = document.createElement('input');
-      redirect.type = 'hidden';
-      redirect.name = '_next';
-      redirect.id = '_next';
-      redirect.value = window.location.href;
-      contactForm.appendChild(redirect);
-    }
+    // Simulate form submission (in a real scenario, you would integrate with an API here)
+    setTimeout(() => {
+      // Hide spinner
+      if (spinner) spinner.classList.add('hidden');
+      if (submitButton) submitButton.disabled = false;
+      
+      // Show success message
+      if (formSuccess) {
+        formSuccess.classList.remove('hidden');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        formSuccess.focus(); // For accessibility
+        
+        // Reset form
+        contactForm.reset();
+      }
+    }, 1000);
     
-    // Add email destination to ensure form goes to the right address
-    if (!document.getElementById('_email')) {
-      const emailField = document.createElement('input');
-      emailField.type = 'hidden';
-      emailField.name = '_email';
-      emailField.id = '_email';
-      emailField.value = 'info@neit.tech';
-      contactForm.appendChild(emailField);
-    }
-    
-    // The form will be submitted to GetForm
-    // We'll monitor the form submission to provide feedback
-    const formSubmitTime = Date.now();
-    
-    // Store submission time in session storage
-    sessionStorage.setItem('formSubmitTime', formSubmitTime);
-    sessionStorage.setItem('formSubmitted', 'true');
-    
-    // Let the form submit to GetForm
-    return true;
+    return false;
   });
   
   // Live validation on blur
