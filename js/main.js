@@ -555,6 +555,16 @@ function initContactForm() {
       contactForm.appendChild(redirect);
     }
     
+    // Add email destination to ensure form goes to the right address
+    if (!document.getElementById('_email')) {
+      const emailField = document.createElement('input');
+      emailField.type = 'hidden';
+      emailField.name = '_email';
+      emailField.id = '_email';
+      emailField.value = 'info@northernedgeit.com';
+      contactForm.appendChild(emailField);
+    }
+    
     // The form will be submitted to GetForm
     // We'll monitor the form submission to provide feedback
     const formSubmitTime = Date.now();
