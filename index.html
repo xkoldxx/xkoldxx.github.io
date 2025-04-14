@@ -149,10 +149,11 @@
         
         <!-- Mobile Menu -->
         <div id="mobile-menu" 
-             class="fixed inset-0 z-40 bg-dark transform translate-x-full transition-transform duration-300 ease-in-out md:hidden" 
-             aria-label="Mobile navigation" 
-             aria-hidden="true">
-            <div class="flex justify-end p-4">
+            class="fixed inset-0 z-40 bg-black bg-opacity-80 backdrop-blur-sm transform translate-x-full transition-transform duration-300 ease-in-out md:hidden" 
+            aria-label="Mobile navigation" 
+            aria-hidden="true">
+            <div class="flex items-center justify-between p-4 border-b border-gray-800">
+                <div class="text-silver text-2xl font-semibold">NEIT</div>
                 <button id="close-mobile-menu" class="text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" 
                         onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">
                     <i class="fas fa-times text-xl"></i>
@@ -160,14 +161,13 @@
             </div>
             <div class="container mx-auto px-4 py-8">
                 <ul class="space-y-6">
-                    <li><a href="#home" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" aria-current="page">Home</a></li>
-                    <li><a href="#services" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver">Services</a></li>
-                    <li><a href="#about" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver">About</a></li>
-                    <li><a href="#contact" class="block py-3 px-4 bg-silver text-dark rounded-lg font-medium hover:bg-silver-light transition-colors focus:outline-none focus:ring-2 focus:ring-silver mt-8">Contact Us</a></li>
+                    <li><a href="#home" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" aria-current="page" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">Home</a></li>
+                    <li><a href="#services" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">Services</a></li>
+                    <li><a href="#about" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">About</a></li>
+                    <li><a href="#contact" class="block py-3 px-4 bg-silver text-dark rounded-lg font-medium hover:bg-silver-light transition-colors focus:outline-none focus:ring-2 focus:ring-silver mt-8" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-    </header>
 
     <!-- Duplicate mobile menu removed -->
 
