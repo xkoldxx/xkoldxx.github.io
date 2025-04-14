@@ -21,29 +21,55 @@ document.addEventListener('DOMContentLoaded', () => {
  * Handles toggle, accessibility and animations
  */
 function initMobileMenu() {
+  console.log('Initializing mobile menu...');
   const menuToggle = document.getElementById('mobile-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeMenuBtn = document.getElementById('close-mobile-menu');
 
-  if (!menuToggle || !mobileMenu) {
-    console.error('Mobile menu elements not found');
+  if (!menuToggle) {
+    console.error('Mobile toggle button not found');
     return;
   }
+
+  if (!mobileMenu) {
+    console.error('Mobile menu not found');
+    return;
+  }
+  
+  console.log('Mobile menu elements found, setting up event listeners');
   
   // Setup initial state
   menuToggle.setAttribute('aria-expanded', 'false');
   mobileMenu.setAttribute('aria-hidden', 'true');
+  mobileMenu.classList.add('translate-x-full');
+  mobileMenu.classList.remove('translate-x-0');
   
   // Toggle menu visibility
-  const openMenu = () => {
-    menuToggle.setAttribute('aria-expanded', 'true');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    mobileMenu.classList.remove('translate-x-full');
-    mobileMenu.classList.add('translate-x-0');
-    document.body.style.overflow = 'hidden';
+  const toggleMenu = () => {
+    console.log('Toggle mobile menu');
+    const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+      // Close menu
+      console.log('Closing mobile menu');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      mobileMenu.classList.add('translate-x-full');
+      mobileMenu.classList.remove('translate-x-0');
+      document.body.style.overflow = '';
+    } else {
+      // Open menu
+      console.log('Opening mobile menu');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      mobileMenu.classList.remove('translate-x-full');
+      mobileMenu.classList.add('translate-x-0');
+      document.body.style.overflow = 'hidden';
+    }
   };
   
   const closeMenu = () => {
+    console.log('Closing mobile menu');
     menuToggle.setAttribute('aria-expanded', 'false');
     mobileMenu.setAttribute('aria-hidden', 'true');
     mobileMenu.classList.add('translate-x-full');
@@ -52,20 +78,30 @@ function initMobileMenu() {
   };
   
   // Event listeners
-  menuToggle.addEventListener('click', openMenu);
+  console.log('Adding click event listener to menu toggle button');
+  menuToggle.onclick = toggleMenu; // Direct assignment for simpler event handling
   
   if (closeMenuBtn) {
-    closeMenuBtn.addEventListener('click', closeMenu);
+    console.log('Adding click event listener to close button');
+    closeMenuBtn.onclick = closeMenu; // Direct assignment for simpler event handling
+  } else {
+    console.error('Close menu button not found');
   }
 
   // Close menu when clicking links
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
+  const menuLinks = mobileMenu.querySelectorAll('a');
+  console.log(`Found ${menuLinks.length} links in mobile menu`);
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      console.log('Menu link clicked');
+      closeMenu();
+    });
   });
   
   // Close menu with Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.getAttribute('aria-hidden') === 'false') {
+      console.log('Escape key pressed, closing menu');
       closeMenu();
     }
   });
@@ -75,9 +111,12 @@ function initMobileMenu() {
     if (mobileMenu.getAttribute('aria-hidden') === 'false' && 
         !mobileMenu.contains(e.target) && 
         e.target !== menuToggle) {
+      console.log('Clicked outside menu, closing');
       closeMenu();
     }
-  }, { capture: true });
+  });
+  
+  console.log('Mobile menu initialization complete');
 }
 
 /**
