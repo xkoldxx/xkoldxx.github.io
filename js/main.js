@@ -388,34 +388,12 @@ function initLazyLoading() {
           });
         }, 500);
         
-        // Update URL hash for bookmarking
-        history.pushState(null, null, targetId);
+        // Don't modify the URL to prevent potential redirect issues
       }
     });
   });
   
-  // Handle initial hash in URL
-  if (window.location.hash) {
-    const targetElement = document.querySelector(window.location.hash);
-    if (targetElement) {
-      // Wait for page to fully load before scrolling
-      setTimeout(() => {
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-        
-        if (!targetElement.hasAttribute('tabindex')) {
-          targetElement.setAttribute('tabindex', '-1');
-        }
-        targetElement.focus({
-          preventScroll: true
-        });
-      }, 500);
-      
-      // Update URL hash for bookmarking
-      history.pushState(null, null, targetId);
-    }
-  }
+  // Initial hash handling removed to prevent redirects
 }
 
 // Testimonial slider functionality
