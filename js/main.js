@@ -535,8 +535,8 @@ function initContactForm() {
     return isValid;
   };
   
-  // Handle form submission with strict client-side validation and feedback
-  contactForm.addEventListener('submit', (e) => {
+  // Handle form submission with jQuery AJAX and strict validation
+  $(contactForm).submit(function(e) {
     // Always prevent default form submission
     e.preventDefault();
     
@@ -574,16 +574,22 @@ function initContactForm() {
     if (spinner) spinner.classList.remove('hidden');
     if (submitButton) submitButton.disabled = true;
     
-    // Get form data
-    const formData = {
-      name: formFields.name.value.trim(),
-      email: formFields.email.value.trim(),
-      subject: document.getElementById('subject')?.value.trim() || 'New Contact Form Submission',
-      message: formFields.message.value.trim(),
-    };
+    // Get the form action URL
+    const action = $(this).attr('action');
     
-    // Simulate form submission (in a real scenario, you would integrate with an API here)
-    setTimeout(() => {
+    // Submit form with jQuery AJAX
+    $.ajax({
+      type: 'POST',
+      url: action,
+      crossDomain: true,
+      data: new FormData(this),
+      dataType: 'json',
+      processData: false,
+      contentType: false,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).done(function() {
       // Hide spinner
       if (spinner) spinner.classList.add('hidden');
       if (submitButton) submitButton.disabled = false;
@@ -597,7 +603,18 @@ function initContactForm() {
         // Reset form
         contactForm.reset();
       }
-    }, 1000);
+    }).fail(function() {
+      // Hide spinner
+      if (spinner) spinner.classList.add('hidden');
+      if (submitButton) submitButton.disabled = false;
+      
+      // Show error message
+      if (formError) {
+        formError.classList.remove('hidden');
+        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        formError.focus(); // For accessibility
+      }
+    });
     
     return false;
   });
