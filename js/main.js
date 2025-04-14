@@ -4,13 +4,27 @@
  */
 
 // Main initialization
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   console.log('Initializing site components...');
   // Initialize all components
   initMobileMenu();
   initContactForm();
   initLazyLoading();
   initSmoothScrolling();
+  
+  // Check if returning from a form submission
+  if (sessionStorage.getItem('formSubmitted') === 'true') {
+    // Clear the flag
+    sessionStorage.removeItem('formSubmitted');
+    
+    // Show success message
+    const formSuccess = document.getElementById('form-success');
+    if (formSuccess) {
+      formSuccess.classList.remove('hidden');
+      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      formSuccess.focus(); // For screen readers
+    }
+  }
   
   // Log for debugging
   console.log('Site initialization complete');
@@ -503,63 +517,54 @@ function initContactForm() {
     return isValid;
   };
   
-  // Handle form submission with mailto: (no external service needed)
+  // Handle form submission with GetForm
   contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    // Only prevent default if validation fails
     
     // Hide previous success/error messages
     if (formSuccess) formSuccess.classList.add('hidden');
     if (formError) formError.classList.add('hidden');
     
-    if (validateForm()) {
-      try {
-        // Show loading spinner
-        if (spinner) spinner.classList.remove('hidden');
-        if (submitButton) submitButton.disabled = true;
-        
-        // Get form data
-        const name = formFields.name.value.trim();
-        const email = formFields.email.value.trim();
-        const subject = document.getElementById('subject')?.value.trim() || 'Contact Form from Website';
-        const message = formFields.message.value.trim();
-        
-        // Create formatted email body
-        const body = `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`;
-        
-        // Create mailto link
-        const mailtoLink = `mailto:info@neit.tech?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        
-        // Open email client in a new window
-        window.open(mailtoLink, '_blank');
-        
-        // Hide spinner after a short delay
-        setTimeout(() => {
-          if (spinner) spinner.classList.add('hidden');
-          if (submitButton) submitButton.disabled = false;
-          
-          // Show success message
-          if (formSuccess) {
-            formSuccess.classList.remove('hidden');
-            formSuccess.focus();
-          }
-          
-          // Reset form
-          contactForm.reset();
-        }, 1000);
-      } catch (error) {
-        console.error('Form handling error:', error);
-        
-        // Hide spinner
-        if (spinner) spinner.classList.add('hidden');
-        if (submitButton) submitButton.disabled = false;
-        
-        // Show error message
-        if (formError) {
-          formError.classList.remove('hidden');
-          formError.focus();
-        }
-      }
+    // Validate form before submission
+    if (!validateForm()) {
+      e.preventDefault();
+      return false;
     }
+    
+    // Show loading spinner during form submission
+    if (spinner) spinner.classList.remove('hidden');
+    if (submitButton) submitButton.disabled = true;
+    
+    // Add honeypot field to prevent spam (GetForm supports this)
+    if (!document.getElementById('_gotcha')) {
+      const honeypot = document.createElement('input');
+      honeypot.type = 'hidden';
+      honeypot.name = '_gotcha';
+      honeypot.id = '_gotcha';
+      honeypot.style.display = 'none';
+      contactForm.appendChild(honeypot);
+    }
+    
+    // Add redirect back to the same page after submission
+    if (!document.getElementById('_next')) {
+      const redirect = document.createElement('input');
+      redirect.type = 'hidden';
+      redirect.name = '_next';
+      redirect.id = '_next';
+      redirect.value = window.location.href;
+      contactForm.appendChild(redirect);
+    }
+    
+    // The form will be submitted to GetForm
+    // We'll monitor the form submission to provide feedback
+    const formSubmitTime = Date.now();
+    
+    // Store submission time in session storage
+    sessionStorage.setItem('formSubmitTime', formSubmitTime);
+    sessionStorage.setItem('formSubmitted', 'true');
+    
+    // Let the form submit to GetForm
+    return true;
   });
   
   // Live validation on blur
