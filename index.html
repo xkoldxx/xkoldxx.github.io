@@ -130,13 +130,13 @@
             </nav>
             
             <!-- Mobile Toggle (visible on smaller screens) -->
-            <button class="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" 
+            <button class="md:hidden text-white bg-darkgray border border-gray-800 hover:border-silver focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" 
                     aria-label="Toggle menu" 
                     aria-expanded="false" 
                     aria-controls="mobile-menu"
                     id="mobile-toggle"
                     onclick="document.getElementById('mobile-menu').classList.toggle('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', document.getElementById('mobile-toggle').getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('mobile-menu').setAttribute('aria-hidden', document.getElementById('mobile-menu').getAttribute('aria-hidden') === 'true' ? 'false' : 'true'); document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';">
-                <i class="fas fa-bars text-xl"></i>
+                <i class="fas fa-bars text-silver text-xl"></i>
             </button>
             
             <!-- Contact Button -->
