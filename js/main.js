@@ -77,15 +77,28 @@ function initMobileMenu() {
     document.body.style.overflow = '';
   };
   
-  // Event listeners
+  // Event listeners - using addEventListener for better mobile support
   console.log('Adding click event listener to menu toggle button');
-  menuToggle.onclick = toggleMenu; // Direct assignment for simpler event handling
+  menuToggle.addEventListener('click', toggleMenu, false);
   
   if (closeMenuBtn) {
     console.log('Adding click event listener to close button');
-    closeMenuBtn.onclick = closeMenu; // Direct assignment for simpler event handling
+    closeMenuBtn.addEventListener('click', closeMenu, false);
   } else {
     console.error('Close menu button not found');
+  }
+  
+  // Add touchstart event for better mobile response
+  menuToggle.addEventListener('touchstart', function(e) {
+    e.preventDefault(); // Prevent default touch behavior
+    toggleMenu();
+  }, false);
+  
+  if (closeMenuBtn) {
+    closeMenuBtn.addEventListener('touchstart', function(e) {
+      e.preventDefault(); // Prevent default touch behavior
+      closeMenu();
+    }, false);
   }
 
   // Close menu when clicking links
