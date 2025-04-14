@@ -11,13 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
   initContactForm();
   initLazyLoading();
   initSmoothScrolling();
-  
+  initTestimonialSlider();
+
   // Check if returning from a form submission
   if (sessionStorage.getItem('formSubmitted') === 'true') {
-    // Clear the flag
     sessionStorage.removeItem('formSubmitted');
-    
-    // Show success message
     const formSuccess = document.getElementById('form-success');
     if (formSuccess) {
       formSuccess.classList.remove('hidden');
@@ -26,29 +24,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
   
-  // Log for debugging
   console.log('Site initialization complete');
 });
 
 /**
  * Mobile Menu Functionality
- * Handles toggle, accessibility and animations
+ * Handles toggle, accessibility, and animations
  */
 function initMobileMenu() {
-  console.log('Initializing mobile menu with simplified approach...');
-  
-  // Direct DOM element selection
+  console.log('Initializing mobile menu...');
   const menuToggle = document.getElementById('mobile-toggle');
   const mobileMenu = document.getElementById('mobile-menu');
   const closeMenuBtn = document.getElementById('close-mobile-menu');
-  
-  // Verify elements exist
+
   if (!menuToggle || !mobileMenu) {
     console.error('Mobile menu elements not found');
     return;
   }
-  
-  // Function to close menu (used in multiple places)
+
   function closeMenu() {
     mobileMenu.classList.add('translate-x-full');
     mobileMenu.classList.remove('translate-x-0');
@@ -57,37 +50,27 @@ function initMobileMenu() {
     document.body.style.overflow = '';
   }
   
-  // Simplified toggle function
   function toggleMenu() {
     console.log('Mobile menu toggle clicked');
     if (mobileMenu.classList.contains('translate-x-full')) {
-      // Open menu
       mobileMenu.classList.remove('translate-x-full');
       mobileMenu.classList.add('translate-x-0');
       menuToggle.setAttribute('aria-expanded', 'true');
       mobileMenu.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     } else {
-      // Close menu
       closeMenu();
     }
   }
-  
-  // Direct onclick handler for maximum mobile compatibility
+
   menuToggle.onclick = toggleMenu;
-  
-  // Close button handler
   if (closeMenuBtn) {
     closeMenuBtn.onclick = closeMenu;
   }
-  
-  // Handle mobile links
   const menuLinks = mobileMenu.querySelectorAll('a');
   for (let i = 0; i < menuLinks.length; i++) {
     menuLinks[i].onclick = closeMenu;
   }
-  
-  // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (mobileMenu.getAttribute('aria-hidden') === 'false' && 
         !mobileMenu.contains(e.target) && 
@@ -96,12 +79,9 @@ function initMobileMenu() {
       closeMenu();
     }
   });
-  
-  // Set initial state
   mobileMenu.classList.add('translate-x-full'); 
   menuToggle.setAttribute('aria-expanded', 'false');
   mobileMenu.setAttribute('aria-hidden', 'true');
-  
   console.log('Mobile menu initialization complete');
 }
 
@@ -110,7 +90,7 @@ function initMobileMenu() {
  * Accessible, touch-enabled slider with keyboard support
  */
 function initTestimonialSlider() {
-  const slider = document.querySelector('.testimonial-slider');
+  const slider = document.getElementById('testimonial-slider');
   if (!slider) return;
   
   const track = slider.querySelector('.testimonial-track');
@@ -123,40 +103,33 @@ function initTestimonialSlider() {
   let currentIndex = 0;
   const slideCount = slides.length;
   
-  // Update slider position and ARIA attributes
   const updateSlider = () => {
     const offset = -currentIndex * 100;
     track.style.transform = `translateX(${offset}%)`;
-    
     slides.forEach((slide, index) => {
       const isActive = index === currentIndex;
       slide.setAttribute('aria-hidden', !isActive);
       slide.setAttribute('tabindex', isActive ? '0' : '-1');
     });
-    
-    // Update button ARIA labels
     if (prevBtn && nextBtn) {
       prevBtn.setAttribute('aria-label', `Previous testimonial (${currentIndex + 1} of ${slideCount})`);
       nextBtn.setAttribute('aria-label', `Next testimonial (${currentIndex + 1} of ${slideCount})`);
     }
   };
-  
-  // Navigation controls
+
   if (prevBtn) {
     prevBtn.addEventListener('click', () => {
       currentIndex = (currentIndex - 1 + slideCount) % slideCount;
       updateSlider();
     });
   }
-  
   if (nextBtn) {
     nextBtn.addEventListener('click', () => {
       currentIndex = (currentIndex + 1) % slideCount;
       updateSlider();
     });
   }
-  
-  // Touch support
+
   let touchStartX = 0;
   let touchEndX = 0;
   
@@ -166,22 +139,15 @@ function initTestimonialSlider() {
   
   track.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, {passive: true});
-  
-  const handleSwipe = () => {
     const threshold = 50;
     if (touchStartX - touchEndX > threshold) {
-      // Swipe left
       currentIndex = (currentIndex + 1) % slideCount;
     } else if (touchEndX - touchStartX > threshold) {
-      // Swipe right
       currentIndex = (currentIndex - 1 + slideCount) % slideCount;
     }
     updateSlider();
-  };
+  }, {passive: true});
   
-  // Keyboard navigation
   slider.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') {
       currentIndex = (currentIndex - 1 + slideCount) % slideCount;
@@ -192,13 +158,12 @@ function initTestimonialSlider() {
     }
   });
   
-  // Initialize
   updateSlider();
 }
 
 /**
- * Contact Form Validation
- * Client-side validation with accessibility features
+ * Contact Form Validation & Submission
+ * Client-side validation with enhanced email validation and submission via jQuery AJAX.
  */
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
@@ -220,19 +185,18 @@ function initContactForm() {
   const formError = document.getElementById('form-error');
   const submitButton = contactForm.querySelector('button[type="submit"]');
   const spinner = submitButton?.querySelector('.spinner');
-  
-  // Validation functions
+
+  // Validation functions using stricter email validation
   const validators = {
     name: (value) => value.trim().length > 0,
     email: (value) => {
-      // Enhanced email validation with stronger requirements
+      // Enhanced email regex - only valid emails pass
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return emailRegex.test(value);
     },
     message: (value) => value.trim().length > 10
   };
-  
-  // Show error message
+
   const showError = (field, show) => {
     if (errorMessages[field]) {
       errorMessages[field].classList.toggle('hidden', !show);
@@ -245,103 +209,98 @@ function initContactForm() {
       }
     }
   };
-  
-  // Validate single field
+
   const validateField = (field) => {
     const isValid = validators[field](formFields[field].value);
     showError(field, !isValid);
     return isValid;
   };
-  
-  // Validate all fields
+
   const validateForm = () => {
     let isValid = true;
-    
     Object.keys(formFields).forEach(field => {
       if (formFields[field] && validators[field]) {
-        const fieldValid = validateField(field);
-        isValid = isValid && fieldValid;
+        isValid = isValid && validateField(field);
       }
     });
-    
     return isValid;
   };
-  
-  // Handle form submission
-  contactForm.addEventListener('submit', (e) => {
+
+  // Handle form submission using jQuery AJAX
+  $(contactForm).submit(function(e) {
     e.preventDefault();
     
-    // Hide previous success/error messages
+    // Hide previous messages
     if (formSuccess) formSuccess.classList.add('hidden');
     if (formError) formError.classList.add('hidden');
     
-    if (validateForm()) {
-      try {
-        // Show loading spinner
-        if (spinner) spinner.classList.remove('hidden');
-        if (submitButton) submitButton.disabled = true;
-        
-        // Get form data
-        const name = formFields.name.value.trim();
-        const email = formFields.email.value.trim();
-        const subject = document.getElementById('subject')?.value.trim() || 'Contact Form Submission';
-        const message = formFields.message.value.trim();
-        
-        // Create formatted email body
-        const body = `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`;
-        
-        // Create mailto link
-        const mailtoLink = `mailto:info@neit.tech?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        
-        // Open the email client
-        window.location.href = mailtoLink;
-        
-        // Hide spinner after a short delay to show the user something happened
-        setTimeout(() => {
-          if (spinner) spinner.classList.add('hidden');
-          if (submitButton) submitButton.disabled = false;
-          
-          // Show success message
-          if (formSuccess) {
-            formSuccess.classList.remove('hidden');
-            formSuccess.focus(); // Focus for screen readers
-          }
-          
-          // Reset form
-          contactForm.reset();
-        }, 1000);
-      } catch (error) {
-        console.error('Form submission error:', error);
-        
-        // Hide spinner
-        if (spinner) spinner.classList.add('hidden');
-        if (submitButton) submitButton.disabled = false;
-        
-        // Show error message
-        if (formError) {
-          formError.classList.remove('hidden');
-          formError.focus();
-        }
-      }
+    // First, ensure the email is valid
+    if (!validators.email(formFields.email.value)) {
+      showError('email', true);
+      formFields.email.focus();
+      formFields.email.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return false;
     }
+    
+    // Validate all fields
+    if (!validateForm()) {
+      const firstInvalidField = Object.keys(formFields).find(
+        field => formFields[field] && formFields[field].getAttribute('aria-invalid') === 'true'
+      );
+      if (firstInvalidField && formFields[firstInvalidField]) {
+        formFields[firstInvalidField].focus();
+        formFields[firstInvalidField].scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return false;
+    }
+    
+    // Show loading spinner
+    if (spinner) spinner.classList.remove('hidden');
+    if (submitButton) submitButton.disabled = true;
+    
+    const action = $(this).attr('action');
+    
+    $.ajax({
+      type: 'POST',
+      url: action,
+      crossDomain: true,
+      data: new FormData(this),
+      dataType: 'json',
+      processData: false,
+      contentType: false,
+      headers: { 'Accept': 'application/json' }
+    }).done(function() {
+      if (spinner) spinner.classList.add('hidden');
+      if (submitButton) submitButton.disabled = false;
+      
+      if (formSuccess) {
+        formSuccess.classList.remove('hidden');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        formSuccess.focus();
+        contactForm.reset();
+      }
+    }).fail(function() {
+      if (spinner) spinner.classList.add('hidden');
+      if (submitButton) submitButton.disabled = false;
+      
+      if (formError) {
+        formError.classList.remove('hidden');
+        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        formError.focus();
+      }
+    });
+    
+    return false;
   });
   
   // Live validation on blur and input
   Object.keys(formFields).forEach(field => {
     if (formFields[field] && validators[field]) {
-      // Check all fields on blur
-      formFields[field].addEventListener('blur', () => {
-        validateField(field);
-      });
+      formFields[field].addEventListener('blur', () => validateField(field));
       
-      // For email field, validate on every keystroke
       if (field === 'email') {
-        formFields[field].addEventListener('input', () => {
-          // Always validate email field as user types
-          validateField(field);
-        });
+        formFields[field].addEventListener('input', () => validateField(field));
       } else {
-        // For other fields, only validate on input if already marked as invalid
         formFields[field].addEventListener('input', () => {
           if (formFields[field].getAttribute('aria-invalid') === 'true') {
             validateField(field);
@@ -351,22 +310,17 @@ function initContactForm() {
     }
   });
 }
-  
-  // Initialize contact form
-  initContactForm();
-  
+
 /**
  * Image Lazy Loading
  * Performance optimization for images
  */
 function initLazyLoading() {
-  // Native lazy loading for modern browsers
   const images = document.querySelectorAll('img:not([loading])');
   images.forEach(img => {
     img.setAttribute('loading', 'lazy');
   });
   
-  // Intersection Observer for older browsers
   if ('IntersectionObserver' in window) {
     const imageObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -382,298 +336,27 @@ function initLazyLoading() {
       });
     });
     
-    // Apply to images with data-src attribute
-    document.querySelectorAll('img[data-src]').forEach(img => {
-      imageObserver.observe(img);
-    });
+    document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
   }
 }
-  
-  // Smooth scrolling for anchor links
-  const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
-  
-  anchorLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        // Scroll to element
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-        
-        // Set focus to the target element for accessibility
-        // Add tabindex if the element is not focusable
-        if (!targetElement.hasAttribute('tabindex')) {
-          targetElement.setAttribute('tabindex', '-1');
-        }
-        
-        // Wait for scroll to complete before focusing
-        setTimeout(() => {
-          targetElement.focus({
-            preventScroll: true // Prevent additional scrolling
-          });
-        }, 500);
-        
-        // Don't modify the URL to prevent potential redirect issues
-      }
-    });
-  });
-  
-  // Initial hash handling removed to prevent redirects
-}
 
-// Testimonial slider functionality
-function initTestimonialSlider() {
-  const slider = document.getElementById('testimonial-slider');
-  if (!slider) return;
-  
-  const slides = slider.querySelectorAll('.testimonial-slide');
-  const slideCount = slides.length;
-  let currentIndex = 0;
-  
-  // Touch event handling
-  slider.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  }, {passive: true});
-  
-  slider.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  }, {passive: true});
-  
-  const handleSwipe = () => {
-    const threshold = 50;
-    if (touchStartX - touchEndX > threshold) {
-      // Swipe left
-      currentIndex = Math.min(currentIndex + 1, slideCount - 1);
-    } else if (touchEndX - touchStartX > threshold) {
-      // Swipe right
-      currentIndex = Math.max(currentIndex - 1, 0);
-    }
-    updateSlider();
-  };
-  
-  // Update slider
-  const updateSlider = () => {
-    slides.forEach((slide, index) => {
-      slide.classList.toggle('active', index === currentIndex);
-    });
-  };
-  
-  // Initialize
-  updateSlider();
-}
-
-// Form validation functionality
-function initContactForm() {
-  const contactForm = document.getElementById('contactForm');
-  if (!contactForm) return;
-  const formFields = {
-    name: document.getElementById('name'),
-    email: document.getElementById('email'),
-    message: document.getElementById('message')
-  };
-  
-  const errorMessages = {
-    name: document.getElementById('name-error'),
-    email: document.getElementById('email-error'),
-    message: document.getElementById('message-error')
-  };
-  
-  const formSuccess = document.getElementById('form-success');
-  const formError = document.getElementById('form-error');
-  const submitButton = contactForm.querySelector('button[type="submit"]');
-  const spinner = submitButton?.querySelector('.spinner');
-  
-  // Validation functions
-  const validators = {
-    name: (value) => value.trim().length > 0,
-    email: (value) => {
-      // Enhanced email validation with stronger requirements
-      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-      return emailRegex.test(value);
-    },
-    message: (value) => value.trim().length > 10
-  };
-  
-  // Show error message
-  const showError = (field, show) => {
-    if (errorMessages[field]) {
-      errorMessages[field].classList.toggle('hidden', !show);
-      if (show) {
-        formFields[field].setAttribute('aria-invalid', 'true');
-        formFields[field].classList.add('border-red-500');
-      } else {
-        formFields[field].removeAttribute('aria-invalid');
-        formFields[field].classList.remove('border-red-500');
-      }
-    }
-  };
-  
-  // Validate single field
-  const validateField = (field) => {
-    const isValid = validators[field](formFields[field].value);
-    showError(field, !isValid);
-    return isValid;
-  };
-  
-  // Validate all fields
-  const validateForm = () => {
-    let isValid = true;
-    
-    Object.keys(formFields).forEach(field => {
-      if (formFields[field] && validators[field]) {
-        const fieldValid = validateField(field);
-        isValid = isValid && fieldValid;
-      }
-    });
-    
-    return isValid;
-  };
-  
-  // Handle form submission with jQuery AJAX and strict validation
-  $(contactForm).submit(function(e) {
-    // Always prevent default form submission
-    e.preventDefault();
-    
-    // Hide previous success/error messages
-    if (formSuccess) formSuccess.classList.add('hidden');
-    if (formError) formError.classList.add('hidden');
-    
-    // Double-check email validity separately to ensure it can't be bypassed
-    const isEmailValid = validators.email(formFields.email.value);
-    if (!isEmailValid) {
-      showError('email', true);
-      formFields.email.focus();
-      formFields.email.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false;
-    }
-    
-    // Validate all form fields
-    if (!validateForm()) {
-      // Focus on the first invalid field
-      const firstInvalidField = Object.keys(formFields).find(
-        field => formFields[field] && formFields[field].getAttribute('aria-invalid') === 'true'
-      );
-      
-      if (firstInvalidField && formFields[firstInvalidField]) {
-        formFields[firstInvalidField].focus();
-        
-        // Scroll to error
-        formFields[firstInvalidField].scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-      
-      return false;
-    }
-    
-    // Show loading spinner
-    if (spinner) spinner.classList.remove('hidden');
-    if (submitButton) submitButton.disabled = true;
-    
-    // Get the form action URL
-    const action = $(this).attr('action');
-    
-    // Submit form with jQuery AJAX
-    $.ajax({
-      type: 'POST',
-      url: action,
-      crossDomain: true,
-      data: new FormData(this),
-      dataType: 'json',
-      processData: false,
-      contentType: false,
-      headers: {
-        'Accept': 'application/json'
-      }
-    }).done(function() {
-      // Hide spinner
-      if (spinner) spinner.classList.add('hidden');
-      if (submitButton) submitButton.disabled = false;
-      
-      // Show success message
-      if (formSuccess) {
-        formSuccess.classList.remove('hidden');
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        formSuccess.focus(); // For accessibility
-        
-        // Reset form
-        contactForm.reset();
-      }
-    }).fail(function() {
-      // Hide spinner
-      if (spinner) spinner.classList.add('hidden');
-      if (submitButton) submitButton.disabled = false;
-      
-      // Show error message
-      if (formError) {
-        formError.classList.remove('hidden');
-        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        formError.focus(); // For accessibility
-      }
-    });
-    
-    return false;
-  });
-  
-  // Live validation on blur and input
-  Object.keys(formFields).forEach(field => {
-    if (formFields[field] && validators[field]) {
-      // Check all fields on blur
-      formFields[field].addEventListener('blur', () => {
-        validateField(field);
-      });
-      
-      // For email field, validate on every keystroke
-      if (field === 'email') {
-        formFields[field].addEventListener('input', () => {
-          // Always validate email field as user types
-          validateField(field);
-        });
-      } else {
-        // For other fields, only validate on input if already marked as invalid
-        formFields[field].addEventListener('input', () => {
-          if (formFields[field].getAttribute('aria-invalid') === 'true') {
-            validateField(field);
-          }
-        });
-      }
-    }
-  });
-}
 /**
  * Smooth Scrolling
  * Enhances navigation experience
  */
 function initSmoothScrolling() {
-  // Handle anchor links
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
-      
       if (targetElement) {
         e.preventDefault();
-        
-        // Scroll smoothly
-        targetElement.scrollIntoView({
-          behavior: 'smooth'
-        });
-        
-        // Set focus for accessibility
+        targetElement.scrollIntoView({ behavior: 'smooth' });
         setTimeout(() => {
-          // Set focus to the target element
           if (!targetElement.hasAttribute('tabindex')) {
             targetElement.setAttribute('tabindex', '-1');
           }
-          targetElement.focus({
-            preventScroll: true
-          });
-          
-          // Update URL hash without scrolling
+          targetElement.focus({ preventScroll: true });
           history.pushState(null, null, targetId);
         }, 500);
       }
