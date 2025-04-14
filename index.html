@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Northern Edge IT Consulting</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Northern Edge IT Consulting provides professional technology solutions including network infrastructure, cloud services, cybersecurity, and IT management for businesses of all sizes.">
+    <meta name="keywords" content="IT consulting, network infrastructure, cloud solutions, cybersecurity, IT management, structured cabling, security systems">
+    <meta name="author" content="Northern Edge IT Consulting">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Northern Edge IT Consulting - Technology Excellence">
+    <meta property="og:description" content="Professional IT consulting services designed to elevate your business through technology excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://neit.tech">
+    
+    <title>Northern Edge IT Consulting | Strategic Technology Solutions</title>
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS - For production sites, consider using a specific version -->
+    <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -40,8 +51,56 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- Favicon -->
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+    
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/main.css">
+    <style>
+        /* Critical above-the-fold styles */
+        .bg-mesh {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .bg-grid {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(192, 192, 192, 0.1);
+        }
+        
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideInFromBottom {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        .animate-fadeIn {
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        .animate-slideIn {
+            animation: slideInFromBottom 0.8s ease-out forwards;
+        }
+        
+        .animate-delay-100 {
+            animation-delay: 0.1s;
+        }
+        
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+    </style>
 
     <!-- Inline Critical CSS -->
     <style>
