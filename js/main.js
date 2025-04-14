@@ -224,7 +224,11 @@ function initContactForm() {
   // Validation functions
   const validators = {
     name: (value) => value.trim().length > 0,
-    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    email: (value) => {
+      // Enhanced email validation with stronger requirements
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return emailRegex.test(value);
+    },
     message: (value) => value.trim().length > 10
   };
   
@@ -478,7 +482,11 @@ function initContactForm() {
   // Validation functions
   const validators = {
     name: (value) => value.trim().length > 0,
-    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
+    email: (value) => {
+      // Enhanced email validation with stronger requirements
+      const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      return emailRegex.test(value);
+    },
     message: (value) => value.trim().length > 10
   };
   
@@ -561,7 +569,7 @@ function initContactForm() {
       emailField.type = 'hidden';
       emailField.name = '_email';
       emailField.id = '_email';
-      emailField.value = 'info@northernedgeit.com';
+      emailField.value = 'info@neit.tech';
       contactForm.appendChild(emailField);
     }
     
