@@ -535,7 +535,7 @@ function initContactForm() {
     return isValid;
   };
   
-  // Handle form submission with client-side validation and feedback
+  // Handle form submission with strict client-side validation and feedback
   contactForm.addEventListener('submit', (e) => {
     // Always prevent default form submission
     e.preventDefault();
@@ -544,7 +544,16 @@ function initContactForm() {
     if (formSuccess) formSuccess.classList.add('hidden');
     if (formError) formError.classList.add('hidden');
     
-    // Validate form
+    // Double-check email validity separately to ensure it can't be bypassed
+    const isEmailValid = validators.email(formFields.email.value);
+    if (!isEmailValid) {
+      showError('email', true);
+      formFields.email.focus();
+      formFields.email.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return false;
+    }
+    
+    // Validate all form fields
     if (!validateForm()) {
       // Focus on the first invalid field
       const firstInvalidField = Object.keys(formFields).find(
