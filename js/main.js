@@ -326,18 +326,28 @@ function initContactForm() {
     }
   });
   
-  // Live validation on blur
+  // Live validation on blur and input
   Object.keys(formFields).forEach(field => {
     if (formFields[field] && validators[field]) {
+      // Check all fields on blur
       formFields[field].addEventListener('blur', () => {
         validateField(field);
       });
       
-      formFields[field].addEventListener('input', () => {
-        if (formFields[field].getAttribute('aria-invalid') === 'true') {
+      // For email field, validate on every keystroke
+      if (field === 'email') {
+        formFields[field].addEventListener('input', () => {
+          // Always validate email field as user types
           validateField(field);
-        }
-      });
+        });
+      } else {
+        // For other fields, only validate on input if already marked as invalid
+        formFields[field].addEventListener('input', () => {
+          if (formFields[field].getAttribute('aria-invalid') === 'true') {
+            validateField(field);
+          }
+        });
+      }
     }
   });
 }
@@ -583,18 +593,28 @@ function initContactForm() {
     return false;
   });
   
-  // Live validation on blur
+  // Live validation on blur and input
   Object.keys(formFields).forEach(field => {
     if (formFields[field] && validators[field]) {
+      // Check all fields on blur
       formFields[field].addEventListener('blur', () => {
         validateField(field);
       });
       
-      formFields[field].addEventListener('input', () => {
-        if (formFields[field].getAttribute('aria-invalid') === 'true') {
+      // For email field, validate on every keystroke
+      if (field === 'email') {
+        formFields[field].addEventListener('input', () => {
+          // Always validate email field as user types
           validateField(field);
-        }
-      });
+        });
+      } else {
+        // For other fields, only validate on input if already marked as invalid
+        formFields[field].addEventListener('input', () => {
+          if (formFields[field].getAttribute('aria-invalid') === 'true') {
+            validateField(field);
+          }
+        });
+      }
     }
   });
 }
