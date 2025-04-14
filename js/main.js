@@ -342,9 +342,10 @@ function initLazyLoading() {
 
 /**
  * Smooth Scrolling
- * Enhances navigation experience
+ * Enhances navigation experience with URL hash updates
  */
 function initSmoothScrolling() {
+  // Handle anchor link clicks
   document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       const targetId = this.getAttribute('href');
@@ -362,4 +363,38 @@ function initSmoothScrolling() {
       }
     });
   });
+  
+  // Update URL hash when scrolling to different sections
+  if ('IntersectionObserver' in window) {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+    
+    const observerOptions = {
+      root: null, // viewport is the root
+      rootMargin: '0px',
+      threshold: 0.3 // trigger when 30% of the section is visible
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const currentId = `#${entry.target.id}`;
+          // Only update if we'd be changing the hash
+          if (window.location.hash !== currentId) {
+            history.replaceState(null, null, currentId);
+            
+            // Update active state in navigation
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === currentId);
+            });
+          }
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all sections
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  }
 }
