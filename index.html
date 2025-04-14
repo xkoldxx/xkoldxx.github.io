@@ -283,7 +283,11 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <div class="space-y-8">
-                    <!-- Location information removed -->
+                    <!-- Company Logo -->
+                    <div class="flex justify-center mb-6">
+                        <img src="./images/logo.png" alt="Northern Edge IT Consulting Logo" class="h-16">
+                    </div>
+                    <!-- Contact Information -->
                     <div class="flex items-center space-x-4">
                         <div class="bg-darkgray p-3 rounded-full shadow-md border border-gray-800" aria-hidden="true">
                             <i class="fas fa-phone text-silver"></i>
@@ -295,14 +299,6 @@
                             <i class="fas fa-envelope text-primary"></i>
                         </div>
                         <a href="mailto:info@northernedgeit.com" class="text-lightgray hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded">info@northernedgeit.com</a>
-                    </div>
-                    <div class="mt-12 pt-8 border-t border-gray-800">
-                        <h3 class="text-xl font-heading text-silver mb-4">Business Hours</h3>
-                        <ul class="space-y-2">
-                            <li class="text-lightgray">Monday - Friday: 9:00 AM - 6:00 PM</li>
-                            <li class="text-lightgray">Saturday: 10:00 AM - 2:00 PM</li>
-                            <li class="text-lightgray">Sunday: Closed</li>
-                        </ul>
                     </div>
                 </div>
                 <div class="bg-darkgray p-8 rounded-lg shadow-card border border-gray-800 hover:border-gray-700 transition-colors">
@@ -351,7 +347,20 @@
                                     </svg>
                                 </div>
                                 <div class="ml-3">
-                                    <p class="text-sm font-medium">Thank you for your message! We'll be in touch soon.</p>
+                                    <h4 class="text-green-300 font-medium mb-1">Message Sent Successfully!</h4>
+                                    <p class="text-sm">Thank you for contacting Northern Edge IT. Your message has been received and we'll respond to you at the email address you provided within 24-48 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="form-error" class="bg-red-900 bg-opacity-20 border border-red-500 text-red-300 p-4 rounded-md hidden" role="alert">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium">There was a problem sending your message. Please try again.</p>
                                 </div>
                             </div>
                         </div>

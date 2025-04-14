@@ -254,27 +254,57 @@ function initContactForm() {
     e.preventDefault();
     
     // Hide previous success/error messages
-    formSuccess?.classList.add('hidden');
-    formError?.classList.add('hidden');
+    if (formSuccess) formSuccess.classList.add('hidden');
+    if (formError) formError.classList.add('hidden');
     
     if (validateForm()) {
-      // Show loading spinner
-      if (spinner) spinner.classList.remove('hidden');
-      if (submitButton) submitButton.disabled = true;
-      
-      // Simulate form submission (replace with actual API call)
-      setTimeout(() => {
+      try {
+        // Show loading spinner
+        if (spinner) spinner.classList.remove('hidden');
+        if (submitButton) submitButton.disabled = true;
+        
+        // Get form data
+        const name = formFields.name.value.trim();
+        const email = formFields.email.value.trim();
+        const subject = document.getElementById('subject')?.value.trim() || 'Contact Form Submission';
+        const message = formFields.message.value.trim();
+        
+        // Create formatted email body
+        const body = `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:info@neit.tech?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open the email client
+        window.location.href = mailtoLink;
+        
+        // Hide spinner after a short delay to show the user something happened
+        setTimeout(() => {
+          if (spinner) spinner.classList.add('hidden');
+          if (submitButton) submitButton.disabled = false;
+          
+          // Show success message
+          if (formSuccess) {
+            formSuccess.classList.remove('hidden');
+            formSuccess.focus(); // Focus for screen readers
+          }
+          
+          // Reset form
+          contactForm.reset();
+        }, 1000);
+      } catch (error) {
+        console.error('Form submission error:', error);
+        
         // Hide spinner
         if (spinner) spinner.classList.add('hidden');
         if (submitButton) submitButton.disabled = false;
         
-        // Show success message
-        formSuccess?.classList.remove('hidden');
-        formSuccess?.focus(); // Focus for screen readers
-        
-        // Reset form
-        contactForm.reset();
-      }, 1500);
+        // Show error message
+        if (formError) {
+          formError.classList.remove('hidden');
+          formError.focus();
+        }
+      }
     }
   });
   
@@ -473,31 +503,62 @@ function initContactForm() {
     return isValid;
   };
   
-  // Handle form submission
+  // Handle form submission with mailto: (no external service needed)
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // Hide previous success/error messages
-    formSuccess?.classList.add('hidden');
-    formError?.classList.add('hidden');
+    if (formSuccess) formSuccess.classList.add('hidden');
+    if (formError) formError.classList.add('hidden');
     
     if (validateForm()) {
-      // Show loading spinner
-      if (spinner) spinner.classList.remove('hidden');
-      if (submitButton) submitButton.disabled = true;
-      
-      // Simulate form submission (replace with actual API call)
-      setTimeout(() => {
+      try {
+        // Show loading spinner
+        if (spinner) spinner.classList.remove('hidden');
+        if (submitButton) submitButton.disabled = true;
+        
+        // Get form data
+        const name = formFields.name.value.trim();
+        const email = formFields.email.value.trim();
+        const subject = document.getElementById('subject')?.value.trim() || 'Contact Form from Website';
+        const message = formFields.message.value.trim();
+        
+        // Create formatted email body
+        const body = `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:info@neit.tech?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client in a new window
+        window.open(mailtoLink, '_blank');
+        
+        // Hide spinner after a short delay
+        setTimeout(() => {
+          if (spinner) spinner.classList.add('hidden');
+          if (submitButton) submitButton.disabled = false;
+          
+          // Show success message
+          if (formSuccess) {
+            formSuccess.classList.remove('hidden');
+            formSuccess.focus();
+          }
+          
+          // Reset form
+          contactForm.reset();
+        }, 1000);
+      } catch (error) {
+        console.error('Form handling error:', error);
+        
         // Hide spinner
         if (spinner) spinner.classList.add('hidden');
         if (submitButton) submitButton.disabled = false;
         
-        // Show success message
-        formSuccess?.classList.remove('hidden');
-        
-        // Reset form
-        contactForm.reset();
-      }, 1500);
+        // Show error message
+        if (formError) {
+          formError.classList.remove('hidden');
+          formError.focus();
+        }
+      }
     }
   });
   
