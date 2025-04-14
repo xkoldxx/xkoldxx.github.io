@@ -1,0 +1,94 @@
+/* Custom animations and base styles */
+@layer utilities {
+    .bg-mesh {
+        background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    .bg-grid {
+        background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        background-size: 50px 50px;
+    }
+
+    .glass-effect {
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(192, 192, 192, 0.1);
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* Accessibility focus states */
+button:focus,
+a:focus,
+input:focus {
+    outline: 2px solid theme('colors.silver');
+    outline-offset: 2px;
+}
+
+/* Mobile menu transitions */
+.mobile-menu {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+}
+
+.mobile-menu[aria-hidden="true"] {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.mobile-menu[aria-hidden="false"] {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus States */
+[class*="focus:ring-"] {
+    transition: box-shadow 0.2s ease;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+    overflow: hidden;
+}
+
+.testimonial-track {
+    display: flex;
+    will-change: transform;
+}
+
+.testimonial-slide {
+    flex: 0 0 100%;
+    transition: opacity 0.3s ease;
+}
+
+.testimonial-slide[aria-hidden="true"] {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+}
+
+.testimonial-slide[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+}
