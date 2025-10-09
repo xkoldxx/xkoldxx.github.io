@@ -163,7 +163,7 @@ function initTestimonialSlider() {
 
 /**
  * Contact Form Validation & Submission
- * Client-side validation with enhanced email validation and submission via jQuery AJAX.
+ * Client-side validation with enhanced email validation and submission via Fetch API.
  */
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
@@ -226,22 +226,22 @@ function initContactForm() {
     return isValid;
   };
 
-  // Handle form submission using jQuery AJAX
-  $(contactForm).submit(function(e) {
+  // Handle form submission using Fetch API
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
-    
+
     // Hide previous messages
     if (formSuccess) formSuccess.classList.add('hidden');
     if (formError) formError.classList.add('hidden');
-    
+
     // First, ensure the email is valid
     if (!validators.email(formFields.email.value)) {
       showError('email', true);
       formFields.email.focus();
       formFields.email.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return false;
+      return;
     }
-    
+
     // Validate all fields
     if (!validateForm()) {
       const firstInvalidField = Object.keys(formFields).find(
@@ -251,46 +251,49 @@ function initContactForm() {
         formFields[firstInvalidField].focus();
         formFields[firstInvalidField].scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-      return false;
+      return;
     }
-    
+
     // Show loading spinner
     if (spinner) spinner.classList.remove('hidden');
     if (submitButton) submitButton.disabled = true;
-    
-    const action = $(this).attr('action');
-    
-    $.ajax({
-      type: 'POST',
-      url: action,
-      crossDomain: true,
-      data: new FormData(this),
-      dataType: 'json',
-      processData: false,
-      contentType: false,
-      headers: { 'Accept': 'application/json' }
-    }).done(function() {
+
+    try {
+      const response = await fetch(this.action, {
+        method: 'POST',
+        body: new FormData(this),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
       if (spinner) spinner.classList.add('hidden');
       if (submitButton) submitButton.disabled = false;
-      
-      if (formSuccess) {
-        formSuccess.classList.remove('hidden');
-        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        formSuccess.focus();
-        contactForm.reset();
+
+      if (response.ok) {
+        if (formSuccess) {
+          formSuccess.classList.remove('hidden');
+          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          formSuccess.focus();
+          contactForm.reset();
+        }
+      } else {
+        if (formError) {
+          formError.classList.remove('hidden');
+          formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          formError.focus();
+        }
       }
-    }).fail(function() {
+    } catch (error) {
       if (spinner) spinner.classList.add('hidden');
       if (submitButton) submitButton.disabled = false;
-      
+
       if (formError) {
         formError.classList.remove('hidden');
         formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
         formError.focus();
       }
-    });
-    
-    return false;
+    }
   });
   
   // Live validation on blur and input
