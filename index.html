@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+
     <meta name="description" content="Northern Edge IT Consulting provides professional technology solutions including network infrastructure, cloud services, cybersecurity, and IT management for businesses of all sizes.">
     <meta name="keywords" content="IT consulting, network infrastructure, cloud solutions, cybersecurity, IT management, structured cabling, security systems">
     <meta name="author" content="Northern Edge IT Consulting">
@@ -13,11 +20,19 @@
     <meta property="og:description" content="Professional IT consulting services designed to elevate your business through technology excellence.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://neit.tech">
-    
+    <meta property="og:image" content="https://neit.tech/images/NEIT-inverse.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://neit.tech">
+
     <title>Northern Edge IT Consulting | Strategic Technology Solutions</title>
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
     
     <!-- Tailwind CSS - For production sites, consider using a specific version -->
     <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
@@ -49,15 +64,19 @@
     </script>
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
     <!-- Favicon -->
     <link rel="icon" href="./images/inverse-notext.png" type="image/png">
 
-    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#c0c0c0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="NEIT">
+    <link rel="apple-touch-icon" href="/images/inverse-notext.png">
+
     <!-- Custom CSS -->
     <style>
         /* Critical above-the-fold styles */
@@ -113,13 +132,48 @@
         [data-aos] { visibility: hidden; }
         [data-aos].animated { visibility: visible; }
     </style>
+
+    <!-- Structured Data (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Northern Edge IT Consulting",
+      "url": "https://neit.tech",
+      "logo": "https://neit.tech/images/NEIT-inverse.png",
+      "image": "https://neit.tech/images/NEIT-inverse.png",
+      "description": "Professional IT consulting services including network infrastructure, cloud solutions, cybersecurity, and IT management for businesses of all sizes.",
+      "telephone": "+1-909-529-6128",
+      "email": "info@neit.tech",
+      "founder": {
+        "@type": "Person",
+        "name": "James Kirkpatrick",
+        "jobTitle": "Founder & Principal Consultant"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "serviceType": [
+        "Network Infrastructure",
+        "Cloud Solutions",
+        "Cybersecurity",
+        "IT Management",
+        "Structured Cabling",
+        "Security Camera Systems"
+      ]
+    }
+    </script>
 </head>
 <body class="bg-dark text-white font-sans bg-mesh">
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-silver focus:text-dark focus:px-4 focus:py-2 focus:rounded">Skip to main content</a>
+
     <header class="bg-dark bg-opacity-80 backdrop-blur-md sticky top-0 z-50 shadow-lg border-b border-silver border-opacity-20">
         <div class="container mx-auto px-4 py-2 flex items-center justify-between">
             <div class="logo">
                 <a href="#home" class="text-white hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded flex items-center">
-                    <h1 class="text-white text-xl font-bold tracking-wider font-heading text-shadow">NEIT</h1>
+                    <div class="text-white text-xl font-bold tracking-wider font-heading text-shadow">NEIT</div>
                     <span class="ml-2 text-silver text-sm italic hidden md:inline-block">Securing Your Digital Future</span>
                 </a>
             </div>
@@ -134,12 +188,11 @@
             </nav>
             
             <!-- Mobile Toggle (visible on smaller screens) -->
-            <button class="md:hidden text-white bg-darkgray border border-gray-800 hover:border-silver focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" 
-                    aria-label="Toggle menu" 
-                    aria-expanded="false" 
+            <button class="md:hidden text-white bg-darkgray border border-gray-800 hover:border-silver focus:outline-none focus:ring-2 focus:ring-silver rounded p-2"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
                     aria-controls="mobile-menu"
-                    id="mobile-toggle"
-                    onclick="document.getElementById('mobile-menu').classList.toggle('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', document.getElementById('mobile-toggle').getAttribute('aria-expanded') === 'true' ? 'false' : 'true'); document.getElementById('mobile-menu').setAttribute('aria-hidden', document.getElementById('mobile-menu').getAttribute('aria-hidden') === 'true' ? 'false' : 'true'); document.body.style.overflow = document.body.style.overflow === 'hidden' ? '' : 'hidden';">
+                    id="mobile-toggle">
                 <i class="fas fa-bars text-silver text-xl"></i>
             </button>
             
@@ -158,23 +211,23 @@
             aria-hidden="true">
             <div class="flex items-center justify-between p-4 border-b border-gray-800">
                 <div class="text-silver text-2xl font-semibold">NEIT</div>
-                <button id="close-mobile-menu" class="text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" 
-                        onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">
+                <button id="close-mobile-menu" class="text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
             <div class="container mx-auto px-4 py-8">
                 <ul class="space-y-6">
-                    <li><a href="#home" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" aria-current="page" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">Home</a></li>
-                    <li><a href="#services" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">Services</a></li>
-                    <li><a href="#about" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">About</a></li>
-                    <li><a href="#contact" class="block py-3 px-4 bg-silver text-dark rounded-lg font-medium hover:bg-silver-light transition-colors focus:outline-none focus:ring-2 focus:ring-silver mt-8" onclick="document.getElementById('mobile-menu').classList.add('translate-x-full'); document.getElementById('mobile-toggle').setAttribute('aria-expanded', 'false'); document.getElementById('mobile-menu').setAttribute('aria-hidden', 'true'); document.body.style.overflow = '';">Contact Us</a></li>
+                    <li><a href="#home" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" aria-current="page">Home</a></li>
+                    <li><a href="#services" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver">Services</a></li>
+                    <li><a href="#about" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver">About</a></li>
+                    <li><a href="#contact" class="block py-3 px-4 bg-silver text-dark rounded-lg font-medium hover:bg-silver-light transition-colors focus:outline-none focus:ring-2 focus:ring-silver mt-8">Contact Us</a></li>
                 </ul>
             </div>
         </div>
 
     <!-- Duplicate mobile menu removed -->
 
+    <main id="main-content">
     <section id="home" class="bg-gradient-to-b from-dark to-darkgray py-24 md:py-32 bg-grid relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,30,30,0.8),rgba(0,0,0,1))]" aria-hidden="true"></div>
         <div class="container mx-auto px-4">
@@ -390,6 +443,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="bg-dark py-8 border-t border-gray-800 relative">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>

@@ -1,0 +1,20 @@
+{
+  "name": "Northern Edge IT Consulting",
+  "short_name": "NEIT",
+  "description": "Professional IT consulting services including network infrastructure, cloud solutions, cybersecurity, and IT management.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#c0c0c0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/inverse-notext.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en-US"
+}
