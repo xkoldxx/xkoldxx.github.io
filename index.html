@@ -11,26 +11,34 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 
-    <meta name="description" content="Northern Edge IT Consulting provides professional technology solutions including network infrastructure, cloud services, cybersecurity, and IT management for businesses of all sizes.">
+    <meta name="description" content="Northern Edge IT Consulting — CCNP Enterprise-certified network engineering, cybersecurity, and IT automation for Southern California businesses. Based in Diamond Bar, CA.">
     <meta name="keywords" content="IT consulting, network infrastructure, cloud solutions, cybersecurity, IT management, structured cabling, security systems">
     <meta name="author" content="Northern Edge IT Consulting">
     
     <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Northern Edge IT Consulting - Technology Excellence">
-    <meta property="og:description" content="Professional IT consulting services designed to elevate your business through technology excellence.">
+    <meta property="og:title" content="Northern Edge IT Consulting — Enterprise IT Consulting in Diamond Bar, CA">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Northern Edge IT Consulting — Enterprise IT Consulting in Diamond Bar, CA">
+    <meta name="twitter:description" content="CCNP Enterprise-certified network engineering, cybersecurity, and IT automation. Based in Diamond Bar, CA.">
+    <meta name="twitter:image" content="https://www.neit.tech/images/NEIT-inverse.png">
+    <meta property="og:description" content="CCNP Enterprise-certified network engineering, cybersecurity, and IT automation for Southern California businesses. Based in Diamond Bar, CA.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://neit.tech">
-    <meta property="og:image" content="https://neit.tech/images/NEIT-inverse.png">
+    <meta property="og:url" content="https://www.neit.tech">
+    <meta property="og:image" content="https://www.neit.tech/images/NEIT-inverse.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Northern Edge IT Consulting">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://neit.tech">
+    <link rel="canonical" href="https://www.neit.tech">
 
-    <title>Northern Edge IT Consulting | Strategic Technology Solutions</title>
+    <title>Northern Edge IT Consulting | Enterprise IT Consulting — Diamond Bar, CA</title>
     
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
     
@@ -129,8 +137,6 @@
     <style>
         /* Critical above-the-fold styles */
         .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
-        [data-aos] { visibility: hidden; }
-        [data-aos].animated { visibility: visible; }
     </style>
 
     <!-- Structured Data (Schema.org) -->
@@ -139,21 +145,48 @@
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "name": "Northern Edge IT Consulting",
-      "url": "https://neit.tech",
-      "logo": "https://neit.tech/images/NEIT-inverse.png",
-      "image": "https://neit.tech/images/NEIT-inverse.png",
-      "description": "Professional IT consulting services including network infrastructure, cloud solutions, cybersecurity, and IT management for businesses of all sizes.",
+      "url": "https://www.neit.tech",
+      "logo": "https://www.neit.tech/images/NEIT-inverse.png",
+      "image": "https://www.neit.tech/images/NEIT-inverse.png",
+      "description": "CCNP Enterprise-certified network engineering, cybersecurity, and IT automation for Southern California businesses. Based in Diamond Bar, CA.",
       "telephone": "+1-909-529-6128",
       "email": "info@neit.tech",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Diamond Bar",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.9977,
+        "longitude": -117.8103
+      },
+      "openingHours": "Mo-Fr 09:00-18:00",
       "founder": {
         "@type": "Person",
         "name": "James Kirkpatrick",
         "jobTitle": "Founder & Principal Consultant"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "United States"
-      },
+      "areaServed": [
+        {"@type": "City", "name": "Diamond Bar"},
+        {"@type": "City", "name": "Pomona"},
+        {"@type": "City", "name": "Walnut"},
+        {"@type": "City", "name": "Rowland Heights"},
+        {"@type": "City", "name": "La Verne"},
+        {"@type": "City", "name": "San Dimas"},
+        {"@type": "City", "name": "Glendora"},
+        {"@type": "City", "name": "Covina"},
+        {"@type": "City", "name": "West Covina"},
+        {"@type": "AdministrativeArea", "name": "Inland Empire"},
+        {"@type": "AdministrativeArea", "name": "Greater Los Angeles"}
+      ],
+      "knowsAbout": [
+        "Cisco ACI", "Cisco ISE", "Palo Alto Networks", "UniFi",
+        "Ansible", "Network Automation", "Zero Trust Architecture",
+        "SD-WAN", "VLAN Design", "Home Assistant", "Self-Hosted Infrastructure"
+      ],
       "serviceType": [
         "Network Infrastructure",
         "Cloud Solutions",
@@ -161,7 +194,29 @@
         "IT Management",
         "Structured Cabling",
         "Security Camera Systems"
-      ]
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Consulting Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Network Assessment",
+              "description": "Comprehensive evaluation of your network infrastructure, security posture, and performance."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Cybersecurity Consulting",
+              "description": "Palo Alto firewalls, Cisco ISE, endpoint protection, and compliance-ready security assessments."
+            }
+          }
+        ]
+      }
     }
     </script>
 </head>
@@ -174,7 +229,7 @@
             <div class="logo">
                 <a href="#home" class="text-white hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded flex items-center">
                     <div class="text-white text-xl font-bold tracking-wider font-heading text-shadow">NEIT</div>
-                    <span class="ml-2 text-silver text-sm italic hidden md:inline-block">Securing Your Digital Future</span>
+                    <span class="ml-2 text-silver text-sm italic hidden md:inline-block">Enterprise IT, Consultant Pricing</span>
                 </a>
             </div>
             
@@ -211,7 +266,7 @@
             aria-hidden="true">
             <div class="flex items-center justify-between p-4 border-b border-gray-800">
                 <div class="text-silver text-2xl font-semibold">NEIT</div>
-                <button id="close-mobile-menu" class="text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2">
+                <button id="close-mobile-menu" class="text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" aria-label="Close menu">
                     <i class="fas fa-times text-xl"></i>
                 </button>
             </div>
@@ -226,6 +281,7 @@
         </div>
 
     <!-- Duplicate mobile menu removed -->
+    </header>
 
     <main id="main-content">
     <section id="home" class="bg-gradient-to-b from-dark to-darkgray py-24 md:py-32 bg-grid relative overflow-hidden">
@@ -235,12 +291,17 @@
                 <div class="mb-24 flex justify-center mt-[-40px]">
                     <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting Logo" class="max-h-64 brightness-200 contrast-100">
                 </div>
-                <h1 class="text-2xl md:text-4xl font-medium mb-6 uppercase tracking-wider font-heading text-shadow animate-fadeIn relative">Elevating Business Through <span class="block md:inline">Technology Excellence</span></h1>
-                <p class="text-lightgray text-lg mb-10 max-w-3xl mx-auto animate-slideIn animate-delay-100 opacity-0">Empowering your business with tailored technology solutions that drive growth and innovation</p>
-                <a href="#contact" class="bg-darkgray border border-silver text-silver px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-dark hover:text-silver-light transition-all shadow-md hover:shadow-lg inline-block animate-slideIn animate-delay-200 opacity-0 relative overflow-hidden group">
-                    <span class="relative z-10">Get Started</span>
-                    <span class="absolute inset-0 bg-silver bg-opacity-10 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></span>
-                </a>
+                <h1 class="text-2xl md:text-4xl font-medium mb-6 uppercase tracking-wider font-heading text-shadow animate-fadeIn relative">Cisco. Palo Alto. Ansible. <span class="block md:inline">Without the Enterprise Contract.</span></h1>
+                <p class="text-lightgray text-lg mb-10 max-w-3xl mx-auto animate-slideIn animate-delay-100 opacity-0">I design the same Cisco and Palo Alto architectures that protect Fortune 500 networks. Based in Diamond Bar, serving SMBs across Southern California who need more than a help desk.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center animate-slideIn animate-delay-200 opacity-0">
+                    <a href="#contact" class="bg-darkgray border border-silver text-silver px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-dark hover:text-silver-light transition-all shadow-md hover:shadow-lg inline-block relative overflow-hidden group">
+                        <span class="relative z-10">Book a Free Network Assessment</span>
+                        <span class="absolute inset-0 bg-silver bg-opacity-10 transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></span>
+                    </a>
+                    <a href="#services" class="bg-transparent border border-silver text-silver px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-silver hover:bg-opacity-10 hover:text-silver-light transition-all shadow-md hover:shadow-lg inline-block relative overflow-hidden group">
+                        <span class="relative z-10">Explore Services</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -250,7 +311,7 @@
         <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
         <div class="container mx-auto px-4">
             <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
-                <span class="relative z-10">Our Services</span>
+                <span class="relative z-10">What I Do</span>
                 <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -259,47 +320,47 @@
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-network-wired text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Network Infrastructure</h3>
-                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Design, implementation, and maintenance of secure and efficient network systems.</p>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Enterprise network design and deployment using Cisco, Palo Alto, and UniFi. VLAN segmentation, zero-trust architecture, and SD-WAN — built by an engineer who designs these at enterprise scale daily.</p>
                 </div>
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-cloud text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Cloud Solutions</h3>
-                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Migrate your business to the cloud for improved scalability and accessibility.</p>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Cloud & Hybrid Infrastructure</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Azure and GCP migrations that don't break what already works. Hybrid cloud architecture, Microsoft 365 integration, and self-hosted alternatives that can dramatically reduce your SaaS spend.</p>
                 </div>
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-shield-alt text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">Cybersecurity</h3>
-                    <p class="text-lightgray">Protect your business from threats with comprehensive security solutions.</p>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Cybersecurity</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Palo Alto next-gen firewalls, Cisco ISE network access control, endpoint protection, and compliance-ready security assessments. Not a checklist audit — a real security posture from someone who configures these in production.</p>
                 </div>
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-cogs text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">IT Management</h3>
-                    <p class="text-lightgray">Ongoing support and management of your IT infrastructure.</p>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Managed IT</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Proactive monitoring, automated patching via Ansible, and real support when something breaks. A full IT department — monitoring, updates, troubleshooting, planning — minus the six-figure salary.</p>
                 </div>
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-ethernet text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">Structured Cabling</h3>
-                    <p class="text-lightgray">Professional installation of high-performance network cabling for reliable connectivity.</p>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Structured Cabling</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Clean Cat6/Cat6A runs, properly terminated patch panels, and network closets you won't be embarrassed to open. Professional installation that meets TIA standards and is built to last.</p>
                 </div>
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-video text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4">Security Camera Systems</h3>
-                    <p class="text-lightgray">Advanced surveillance solutions to protect your business assets and premises.</p>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Security Camera Systems</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">UniFi Protect and enterprise IP surveillance — site survey, camera placement, installation, and remote access. Your footage stored on-site on hardware you own, not on someone else's cloud with a monthly fee.</p>
                 </div>
             </div>
         </div>
@@ -309,23 +370,23 @@
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
-                <span class="relative z-10">About Us</span>
+                <span class="relative z-10">Who I Am</span>
                 <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
             </h2>
-                <p class="text-lightgray text-lg mb-6">Northern Edge IT Consulting is a leading IT consulting firm with over 15+ years of experience in delivering innovative technology solutions to businesses of all sizes.</p>
-                <p class="text-lightgray text-lg mb-10">Our team of certified professionals is dedicated to helping your business leverage technology to achieve its goals and stay ahead of the competition.</p>
+                <p class="text-lightgray text-lg mb-6">I'm James Kirkpatrick — CCNP Enterprise certified, Palo Alto PCCSA certified, and a Senior Network Engineer with 12+ years in enterprise infrastructure. During the day, I design and maintain networks at HireRight. Nights and weekends, I bring that same expertise to small and mid-size businesses across Southern California who need enterprise-grade IT but can't justify a full-time hire.</p>
+                <p class="text-lightgray text-lg mb-10">Most local IT firms are generalists — they reset passwords and call Cisco TAC when something breaks. I'm the person Cisco TAC talks to. Northern Edge exists because SMBs deserve the same caliber of network engineering that large enterprises get. I also do something no other local MSP does: self-hosted infrastructure, automation with Ansible, and smart office systems with Home Assistant.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                     <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
-                        <h3 class="text-silver text-4xl font-bold font-heading mb-2">15+</h3>
-                        <p class="text-secondary uppercase tracking-wider">Years Experience</p>
+                        <h3 class="text-silver text-2xl font-bold font-heading mb-2">CCNP</h3>
+                        <p class="text-secondary uppercase tracking-wider">Enterprise Certified</p>
                     </div>
                     <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
-                        <h3 class="text-silver text-4xl font-bold font-heading mb-2">200+</h3>
-                        <p class="text-secondary uppercase tracking-wider">Clients Served</p>
+                        <h3 class="text-silver text-2xl font-bold font-heading mb-2">12+</h3>
+                        <p class="text-secondary uppercase tracking-wider">Years in Enterprise Networking</p>
                     </div>
                     <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
-                        <h3 class="text-silver text-4xl font-bold font-heading mb-2">500+</h3>
-                        <p class="text-secondary uppercase tracking-wider">Projects Completed</p>
+                        <h3 class="text-silver text-2xl font-bold font-heading mb-2">100%</h3>
+                        <p class="text-secondary uppercase tracking-wider">Self-Hosted Infrastructure</p>
                     </div>
                 </div>
             </div>
@@ -334,10 +395,11 @@
 
     <section id="contact" class="bg-gradient-to-b from-dark to-darkgray py-20" aria-labelledby="contact-heading">
         <div class="container mx-auto px-4">
-            <h2 id="contact-heading" class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
-                <span class="relative z-10">Contact Us</span>
+            <h2 id="contact-heading" class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-4 relative inline-block mx-auto w-full">
+                <span class="relative z-10">Get In Touch</span>
                 <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
             </h2>
+            <p class="text-center text-lightgray mb-16 max-w-2xl mx-auto">Tell me what's broken, what's slow, or what keeps you up at night — I'll tell you exactly how to fix it. Straight answers, no sales pitch.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 <div class="space-y-8">
                     <!-- Company Logo (Inverse No Text) - Clickable -->
@@ -371,7 +433,7 @@
                     </div>
                 </div>
                 <div class="bg-darkgray p-8 rounded-lg shadow-card border border-gray-800 hover:border-gray-700 transition-colors">
-                    <form id="contactForm" class="space-y-6" action="https://getform.io/f/bqokloob" method="POST" novalidate>
+                    <form id="contactForm" class="space-y-6" action="https://getform.io/f/bqokloob" method="POST">
                         <div class="form-group">
                             <label for="name" class="block text-silver mb-2 text-sm">Name <span class="text-red-500">*</span></label>
                             <input type="text" id="name" name="name" required 
@@ -420,7 +482,7 @@
                                     <p class="text-sm">Thank you for contacting Northern Edge IT. Your message has been sent to <strong>info@neit.tech</strong>.</p>
                                     <ul class="text-sm mt-2 list-disc list-inside">
                                         <li>A copy of your message has been sent to your email</li>
-                                        <li>We'll respond within 24-48 business hours</li>
+                                        <li>We'll respond within 1–2 business days</li>
                                         <li>For urgent matters, please call us at +1 (909) 529-6128</li>
                                     </ul>
                                 </div>
@@ -448,7 +510,7 @@
     <footer class="bg-dark py-8 border-t border-gray-800 relative">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
         <div class="container mx-auto px-4 text-center">
-            <p class="text-lightgray">&copy; 2025 Northern Edge IT Consulting. All rights reserved.</p>
+            <p class="text-lightgray">&copy; 2026 Northern Edge IT Consulting. Enterprise-grade IT for Southern California businesses.</p>
         </div>
     </footer>
 
