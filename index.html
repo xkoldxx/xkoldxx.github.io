@@ -1,901 +1,854 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 
-    <!-- Security Headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <title>Northern Edge IT Consulting | Enterprise IT &amp; Smart Home — Diamond Bar, CA</title>
+  <meta name="description" content="Enterprise IT consulting and smart home automation without the enterprise price tag. CCNP-certified network engineering for Southern California businesses and homeowners. Diamond Bar, CA.">
+  <meta name="keywords" content="IT consulting Diamond Bar, network infrastructure, cybersecurity, managed IT, smart home installer, home automation Diamond Bar, Southern California IT">
+  <meta name="author" content="Northern Edge IT Consulting">
+  <link rel="canonical" href="https://www.neit.tech">
 
-    <meta name="description" content="Enterprise IT consulting without the enterprise contract. CCNP-certified network engineering, cybersecurity, and automation for Southern California SMBs. Diamond Bar, CA.">
-    <meta name="keywords" content="IT consulting, network infrastructure, cloud solutions, cybersecurity, IT management, structured cabling, security systems">
-    <meta name="author" content="Northern Edge IT Consulting">
-    
-    <!-- Open Graph / Social Media Meta Tags -->
-    <meta property="og:title" content="Northern Edge IT Consulting — Enterprise IT Consulting in Diamond Bar, CA">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Northern Edge IT Consulting — Enterprise IT Consulting in Diamond Bar, CA">
-    <meta name="twitter:description" content="CCNP Enterprise-certified network engineering, cybersecurity, and IT automation. Based in Diamond Bar, CA.">
-    <meta name="twitter:image" content="https://www.neit.tech/images/NEIT-inverse.png">
-    <meta property="og:description" content="CCNP Enterprise-certified network engineering, cybersecurity, and IT automation for Southern California businesses. Based in Diamond Bar, CA.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.neit.tech">
-    <meta property="og:image" content="https://www.neit.tech/images/NEIT-inverse.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Northern Edge IT Consulting">
+  <meta property="og:title" content="Northern Edge IT Consulting | Enterprise IT &amp; Smart Home — Diamond Bar, CA">
+  <meta property="og:description" content="Enterprise IT consulting and smart home automation without the enterprise price tag. CCNP-certified network engineering for Southern California businesses and homeowners.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.neit.tech">
+  <meta property="og:image" content="https://www.neit.tech/images/NEIT-inverse.png">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Northern Edge IT Consulting">
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.neit.tech">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Northern Edge IT Consulting | Enterprise IT &amp; Smart Home">
+  <meta name="twitter:description" content="CCNP-certified network engineering and smart home automation for Southern California. Diamond Bar, CA.">
+  <meta name="twitter:image" content="https://www.neit.tech/images/NEIT-inverse.png">
 
-    <title>Northern Edge IT Consulting | Enterprise IT Consulting — Diamond Bar, CA</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
-    
-    <!-- Tailwind CSS - For production sites, consider using a specific version -->
-    <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#c0c0c0',
-                        'primary-dark': '#a0a0a0',
-                        'primary-light': '#e0e0e0',
-                        secondary: '#f5f5f5',
-                        'secondary-dark': '#d4d4d4',
-                        dark: '#000000',
-                        darkgray: '#151515',
-                        'darkgray-light': '#1e1e1e',
-                        lightgray: '#9e9e9e',
-                        silver: '#c0c0c0',
-                        'silver-dark': '#a0a0a0',
-                        'silver-light': '#e0e0e0',
-                        navy: '#080e1c',
-                        'navy-light': '#0f1829',
-                    },
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        heading: ['Poppins', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
 
-    <!-- Favicon -->
-    <link rel="icon" href="./images/inverse-notext.png" type="image/png">
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <meta name="theme-color" content="#c0c0c0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="NEIT">
-    <link rel="apple-touch-icon" href="/images/inverse-notext.png">
-
-    <!-- Custom CSS -->
-    <style>
-        /* Critical above-the-fold styles */
-        .bg-mesh {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        
-        .bg-grid {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 50px 50px;
-        }
-        
-        .glass-effect {
-            backdrop-filter: blur(10px);
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(192, 192, 192, 0.1);
-        }
-        
-        /* Animation keyframes */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes slideInFromBottom {
-            0% { transform: translateY(20px); opacity: 0; }
-            100% { transform: translateY(0); opacity: 1; }
-        }
-        
-        .animate-fadeIn {
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-        
-        .animate-slideIn {
-            animation: slideInFromBottom 0.8s ease-out forwards;
-        }
-        
-        .animate-delay-100 {
-            animation-delay: 0.1s;
-        }
-        
-        .animate-delay-200 {
-            animation-delay: 0.2s;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #c0c0c0, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .card-border-glow {
-            position: relative;
-        }
-        .card-border-glow::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(192,192,192,0.3), transparent);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-        }
-
-        details summary::-webkit-details-marker { display: none; }
-        details[open] .fa-chevron-down { transform: rotate(180deg); }
-    </style>
-
-    <!-- Inline Critical CSS -->
-    <style>
-        /* Critical above-the-fold styles */
-        .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0; }
-    </style>
-
-    <!-- Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Northern Edge IT Consulting",
-      "url": "https://www.neit.tech",
-      "logo": "https://www.neit.tech/images/NEIT-inverse.png",
-      "image": "https://www.neit.tech/images/NEIT-inverse.png",
-      "description": "CCNP Enterprise-certified network engineering, cybersecurity, and IT automation for Southern California businesses. Based in Diamond Bar, CA.",
-      "telephone": "+1-909-529-6128",
-      "email": "info@neit.tech",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Diamond Bar",
-        "addressRegion": "CA",
-        "addressCountry": "US"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 33.9977,
-        "longitude": -117.8103
-      },
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "founder": {
-        "@type": "Person",
-        "name": "James Kirkpatrick",
-        "jobTitle": "Founder & Principal Consultant"
-      },
-      "areaServed": [
-        {"@type": "City", "name": "Diamond Bar"},
-        {"@type": "City", "name": "Pomona"},
-        {"@type": "City", "name": "Walnut"},
-        {"@type": "City", "name": "Rowland Heights"},
-        {"@type": "City", "name": "La Verne"},
-        {"@type": "City", "name": "San Dimas"},
-        {"@type": "City", "name": "Glendora"},
-        {"@type": "City", "name": "Covina"},
-        {"@type": "City", "name": "West Covina"},
-        {"@type": "AdministrativeArea", "name": "Inland Empire"},
-        {"@type": "AdministrativeArea", "name": "Greater Los Angeles"}
-      ],
-      "knowsAbout": [
-        "Cisco ACI", "Cisco ISE", "Palo Alto Networks", "UniFi",
-        "Ansible", "Network Automation", "Zero Trust Architecture",
-        "SD-WAN", "VLAN Design", "Home Assistant", "Self-Hosted Infrastructure"
-      ],
-      "serviceType": [
-        "Network Infrastructure",
-        "Cloud Solutions",
-        "Cybersecurity",
-        "IT Management",
-        "Structured Cabling",
-        "Security Camera Systems"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "IT Consulting Services",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Network Assessment",
-              "description": "Comprehensive evaluation of your network infrastructure, security posture, and performance."
-            }
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base:     '#080808',
+            surface:  '#111111',
+            elevated: '#1a1a1a',
+            border:   '#2a2a2a',
+            muted:    '#555555',
+            dim:      '#888888',
+            silver:   '#c0c0c0',
+            bright:   '#e8e8e8',
+            white:    '#ffffff',
           },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Cybersecurity Consulting",
-              "description": "Palo Alto firewalls, Cisco ISE, endpoint protection, and compliance-ready security assessments."
-            }
-          }
-        ]
+          fontFamily: {
+            sans:    ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+        }
       }
     }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does the free network assessment include?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A full audit of your network topology, firewall config, endpoint security posture, cloud spend, and backup coverage. You get a written findings report with prioritized recommendations and honest cost estimates."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How is this different from a typical managed service provider?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You work directly with a CCNP-certified engineer who has designed these systems at enterprise scale. No ticket queue, no account manager buffer. The person you talk to is the person who fixes it."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What size businesses do you work with?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Primarily small to mid-size businesses across Southern California — typically 5 to 250 employees — who need enterprise-grade infrastructure but can't justify a full-time IT hire."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can you work with our existing equipment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. The assessment starts with what you have. We recommend replacements only when existing gear is end-of-life, unsupported, or genuinely creating risk."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you offer ongoing support or just project work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Both. Project-based engagements (network redesign, cloud migration, security hardening) and ongoing managed IT with proactive monitoring and automated remediation."
-          }
-        }
-      ]
+  </script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/inverse-notext.png" type="image/png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#c0c0c0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="NEIT">
+  <link rel="apple-touch-icon" href="/images/inverse-notext.png">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    .dot-grid {
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 24px 24px;
     }
-    </script>
+
+    .gradient-text {
+      background: linear-gradient(90deg, #c0c0c0 0%, #ffffff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: #c0c0c0;
+      color: #080808;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.375rem;
+      border: 1px solid #c0c0c0;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-primary:hover { background: #e8e8e8; border-color: #e8e8e8; }
+
+    .btn-ghost {
+      display: inline-block;
+      background: transparent;
+      color: #c0c0c0;
+      font-weight: 500;
+      font-size: 0.8125rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.75rem;
+      border-radius: 0.375rem;
+      border: 1px solid rgba(192,192,192,0.35);
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+    .btn-ghost:hover { border-color: #c0c0c0; background: rgba(192,192,192,0.06); }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888888;
+      border-bottom: 1px solid #2a2a2a;
+      padding-bottom: 0.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .card {
+      background: #111111;
+      border: 1px solid #2a2a2a;
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .card:hover { border-color: #555555; transform: translateY(-2px); }
+    .card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: #c0c0c0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.25s;
+    }
+    .card:hover::before { transform: scaleY(1); }
+
+    .icon-wrap {
+      width: 2.25rem; height: 2.25rem;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 0.5rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+    .card:hover .icon-wrap { border-color: #555555; }
+
+    details summary::-webkit-details-marker { display: none; }
+    details > summary { cursor: pointer; }
+    details[open] .chevron { transform: rotate(180deg); }
+    .chevron { transition: transform 0.2s; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); border: 0;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.7s ease forwards; }
+    .delay-1 { animation-delay: 0.1s; opacity: 0; }
+    .delay-2 { animation-delay: 0.22s; opacity: 0; }
+    .delay-3 { animation-delay: 0.34s; opacity: 0; }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Northern Edge IT Consulting",
+    "url": "https://www.neit.tech",
+    "logo": "https://www.neit.tech/images/NEIT-inverse.png",
+    "description": "CCNP Enterprise-certified network engineering, cybersecurity, IT automation, and smart home installation for Southern California businesses and homeowners.",
+    "telephone": "+1-909-529-6128",
+    "email": "info@neit.tech",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Diamond Bar",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 33.9977, "longitude": -117.8103 },
+    "openingHours": "Mo-Fr 09:00-18:00",
+    "areaServed": [
+      {"@type": "City", "name": "Diamond Bar"},
+      {"@type": "City", "name": "Walnut"},
+      {"@type": "City", "name": "Pomona"},
+      {"@type": "City", "name": "Rowland Heights"},
+      {"@type": "City", "name": "La Verne"},
+      {"@type": "City", "name": "San Dimas"},
+      {"@type": "City", "name": "West Covina"},
+      {"@type": "AdministrativeArea", "name": "Inland Empire"},
+      {"@type": "AdministrativeArea", "name": "Greater Los Angeles"}
+    ],
+    "serviceType": ["Network Infrastructure","Cybersecurity","Managed IT","IT Automation","Smart Home Installation","Smart Office Automation","Cloud Migration","Structured Cabling"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What does the free assessment include?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A full audit of your network topology, firewall config, endpoint security posture, cloud spend, and backup coverage. You get a written findings report with prioritized recommendations — no obligation." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is this different from a typical MSP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "You work directly with a CCNP-certified engineer who has designed these systems at enterprise scale. No ticket queue, no account manager buffer. The person who takes the call fixes the problem." }
+      },
+      {
+        "@type": "Question",
+        "name": "What size businesses do you work with?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Primarily small to mid-size businesses across Southern California — typically 5 to 250 employees — who need enterprise-grade infrastructure but can't justify a full-time IT hire." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you also do residential smart home installation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. We design and install smart home systems for homeowners — lighting, locks, security cameras, climate, and AV integration. Free home consultation available." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer ongoing support or just project work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Both. Project engagements (network redesign, cloud migration, security hardening, smart home install) and ongoing managed IT with proactive monitoring and automated remediation." }
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="bg-dark text-white font-sans bg-mesh">
-    <!-- Skip to main content link for accessibility -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-silver focus:text-dark focus:px-4 focus:py-2 focus:rounded">Skip to main content</a>
 
-    <header class="bg-dark bg-opacity-80 backdrop-blur-md sticky top-0 z-50 shadow-lg border-b border-silver border-opacity-20">
-        <div class="container mx-auto px-4 py-2 flex items-center justify-between">
-            <div class="logo">
-                <a href="#home" class="text-white hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded flex items-center">
-                    <div class="text-white text-xl font-bold tracking-wider font-heading text-shadow">NEIT</div>
-                    <span class="ml-2 text-silver text-sm italic hidden md:inline-block">Enterprise IT, Consultant Pricing</span>
-                </a>
-            </div>
-            
-            <!-- Desktop Nav (visible on larger screens) -->
-            <nav class="hidden md:block" aria-label="Main navigation">
-                <ul class="flex space-x-4 md:space-x-8">
-                    <li><a href="#home" class="uppercase text-sm tracking-wider hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded px-2 py-1">Home</a></li>
-                    <li><a href="#services" class="uppercase text-sm tracking-wider hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded px-2 py-1">Services</a></li>
-                    <li><a href="#about" class="uppercase text-sm tracking-wider hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded px-2 py-1">About</a></li>
-                </ul>
-            </nav>
-            
-            <!-- Mobile Toggle (visible on smaller screens) -->
-            <button class="md:hidden text-white bg-darkgray border border-gray-800 hover:border-silver focus:outline-none focus:ring-2 focus:ring-silver rounded p-2"
-                    aria-label="Toggle menu"
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                    id="mobile-toggle">
-                <i class="fas fa-bars text-silver text-xl"></i>
-            </button>
-            
-            <!-- Contact Button -->
-            <div class="contact-button hidden md:block">
-                <a href="#contact" class="bg-silver text-dark px-4 py-2 rounded-md text-sm uppercase tracking-wider hover:bg-silver-light transition-all shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-silver font-semibold">
-                    Free Assessment
-                </a>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" 
-            class="fixed inset-0 z-40 bg-black bg-opacity-80 backdrop-blur-sm transform translate-x-full transition-transform duration-300 ease-in-out md:hidden" 
-            aria-label="Mobile navigation" 
-            aria-hidden="true">
-            <div class="flex items-center justify-between p-4 border-b border-gray-800">
-                <div class="text-silver text-2xl font-semibold">NEIT</div>
-                <button id="close-mobile-menu" class="text-white focus:outline-none focus:ring-2 focus:ring-silver rounded p-2" aria-label="Close menu">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div class="container mx-auto px-4 py-8">
-                <ul class="space-y-6">
-                    <li><a href="#home" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver" aria-current="page">Home</a></li>
-                    <li><a href="#services" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver">Services</a></li>
-                    <li><a href="#about" class="block py-3 px-4 text-white hover:bg-dark rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-silver">About</a></li>
-                    <li><a href="#contact" class="block py-3 px-4 bg-silver text-dark rounded-lg font-medium hover:bg-silver-light transition-colors focus:outline-none focus:ring-2 focus:ring-silver mt-8">Free Assessment</a></li>
-                </ul>
-            </div>
+<body class="bg-base text-bright font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 btn-primary">Skip to content</a>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="sticky top-0 z-50 bg-base bg-opacity-90 backdrop-blur border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14">
+
+        <a href="#home" class="text-silver font-heading font-bold text-lg tracking-widest hover:text-white transition-colors">
+          NEIT
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <a href="#services" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors">Services</a>
+          <a href="#smarthome" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors">Smart Home</a>
+          <a href="#about" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors">About</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="btn-primary text-xs py-2 px-4">Free Assessment</a>
+          <button id="nav-toggle" class="md:hidden text-silver p-2" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
 
-    <!-- Duplicate mobile menu removed -->
-    </header>
+      </div>
+    </div>
 
-    <main id="main-content">
-    <section id="home" class="min-h-screen flex items-center bg-dark bg-grid relative overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(20,20,20,0.8),rgba(0,0,0,1))]" aria-hidden="true"></div>
-        <div class="container mx-auto px-4 py-28 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-surface" aria-hidden="true">
+      <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-4">
+        <a href="#services" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors py-2">Services</a>
+        <a href="#smarthome" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors py-2">Smart Home</a>
+        <a href="#about" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors py-2">About</a>
+        <a href="#contact" class="btn-primary mt-2">Free Assessment</a>
+      </nav>
+    </div>
+  </header>
 
-                <!-- Left: Copy -->
-                <div class="animate-fadeIn">
-                    <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting" class="h-14 brightness-200 mb-8">
-                    <div class="inline-flex items-center bg-silver bg-opacity-10 border border-silver border-opacity-20 text-silver text-xs uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
-                        <span class="w-2 h-2 rounded-full bg-green-400 mr-2" style="box-shadow:0 0 6px #4ade80"></span>
-                        IT Consulting &amp; Smart Home &middot; Diamond Bar, CA
-                    </div>
-                    <h1 class="text-3xl md:text-5xl font-bold font-heading mb-6 leading-tight">
-                        Enterprise IT &amp; Smart Home.<br>
-                        <span class="gradient-text">Without the Enterprise Price Tag.</span>
-                    </h1>
-                    <p class="text-lightgray text-lg mb-8 max-w-xl leading-relaxed">Network security, cloud infrastructure, and smart home automation for Southern California businesses and homeowners. Enterprise-grade technology, consultant pricing, real engineer on call.</p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" class="bg-silver border border-silver text-dark px-7 py-3.5 rounded-md text-sm uppercase tracking-wider hover:bg-silver-light transition-all shadow-lg font-semibold text-center">
-                            Book a Free Assessment
-                        </a>
-                        <a href="#services" class="border border-silver border-opacity-40 text-silver px-7 py-3.5 rounded-md text-sm uppercase tracking-wider hover:border-opacity-100 hover:bg-silver hover:bg-opacity-10 transition-all text-center">
-                            Explore Services
-                        </a>
-                    </div>
+  <main id="main">
+
+    <!-- ═══ HERO ═══ -->
+    <section id="home" class="min-h-screen flex items-center dot-grid relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-base via-base to-surface pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          <!-- Left: Copy -->
+          <div class="fade-up">
+            <img src="images/NEIT-inverse.png" alt="Northern Edge IT Consulting" class="h-12 mb-10 brightness-200">
+
+            <div class="section-label">IT Consulting &amp; Smart Home · Diamond Bar, CA</div>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">
+              Enterprise IT &amp; Smart Home.<br>
+              <span class="gradient-text">Without the Enterprise Price Tag.</span>
+            </h1>
+
+            <p class="text-dim text-lg mb-10 max-w-xl leading-relaxed">
+              Network security, cloud infrastructure, and smart home automation for Southern California businesses and homeowners — delivered by a CCNP-certified engineer with 13+ years of enterprise experience.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" class="btn-primary">Book a Free Assessment</a>
+              <a href="#services" class="btn-ghost">Explore Services</a>
+            </div>
+          </div>
+
+          <!-- Right: Assessment panel -->
+          <div class="hidden lg:block fade-up delay-2">
+            <div class="bg-surface border border-border rounded-xl overflow-hidden">
+              <div class="flex items-center gap-2 px-4 py-3 bg-elevated border-b border-border">
+                <div class="w-3 h-3 rounded-full bg-muted opacity-60"></div>
+                <div class="w-3 h-3 rounded-full bg-muted opacity-60"></div>
+                <div class="w-3 h-3 rounded-full bg-muted opacity-60"></div>
+                <span class="ml-3 text-muted text-xs font-mono">free-assessment — what you get</span>
+              </div>
+              <div class="p-6 font-mono text-sm space-y-3">
+                <div class="text-muted text-xs mb-4">// What we cover in your free assessment</div>
+                <div class="flex items-start gap-3">
+                  <span class="text-silver mt-0.5">✓</span>
+                  <span class="text-bright">Network topology &amp; segmentation review</span>
                 </div>
-
-                <!-- Right: Terminal Panel -->
-                <div class="hidden lg:block animate-slideIn animate-delay-200 opacity-0">
-                    <div class="bg-darkgray border border-gray-700 rounded-xl overflow-hidden shadow-2xl">
-                        <div class="flex items-center gap-2 px-4 py-3 bg-black border-b border-gray-800">
-                            <div class="w-3 h-3 rounded-full bg-red-500 opacity-70"></div>
-                            <div class="w-3 h-3 rounded-full bg-yellow-500 opacity-70"></div>
-                            <div class="w-3 h-3 rounded-full bg-green-500 opacity-70"></div>
-                            <span class="ml-3 text-lightgray text-xs font-mono">free-assessment — what you get</span>
-                        </div>
-                        <div class="p-6 font-mono text-sm space-y-2">
-                            <div class="text-lightgray text-xs mb-3 not-italic">// What we cover in your free assessment</div>
-                            <div class="pl-2"><span class="text-green-400">✓</span> <span class="text-secondary">Network topology &amp; segmentation review</span></div>
-                            <div class="pl-2"><span class="text-green-400">✓</span> <span class="text-secondary">Firewall ruleset &amp; policy audit</span></div>
-                            <div class="pl-2"><span class="text-green-400">✓</span> <span class="text-secondary">Security posture &amp; exposure check</span></div>
-                            <div class="pl-2"><span class="text-green-400">✓</span> <span class="text-secondary">Cloud spend &amp; license review</span></div>
-                            <div class="pl-2"><span class="text-green-400">✓</span> <span class="text-secondary">Backup &amp; recovery gap analysis</span></div>
-                            <div class="pl-2"><span class="text-green-400">✓</span> <span class="text-secondary">Written findings report, no obligation</span></div>
-                            <div class="mt-3 pt-3 border-t border-gray-800">
-                                <div><span class="text-silver">→</span> <span class="text-silver">Cost: $0. Time: ~1 hour on-site.</span></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-3 mt-4">
-                        <div class="bg-darkgray border border-gray-800 rounded-lg p-4 text-center hover:border-silver transition-colors">
-                            <div class="text-silver font-bold font-heading">Cisco</div>
-                            <div class="text-lightgray text-xs mt-0.5">ACI · ISE · Catalyst</div>
-                        </div>
-                        <div class="bg-darkgray border border-gray-800 rounded-lg p-4 text-center hover:border-silver transition-colors">
-                            <div class="text-silver font-bold font-heading">Palo Alto</div>
-                            <div class="text-lightgray text-xs mt-0.5">NGFW · Prisma</div>
-                        </div>
-                        <div class="bg-darkgray border border-gray-800 rounded-lg p-4 text-center hover:border-silver transition-colors">
-                            <div class="text-silver font-bold font-heading">Ansible</div>
-                            <div class="text-lightgray text-xs mt-0.5">Automation · IaC</div>
-                        </div>
-                    </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-silver mt-0.5">✓</span>
+                  <span class="text-bright">Firewall ruleset &amp; security policy audit</span>
                 </div>
-
+                <div class="flex items-start gap-3">
+                  <span class="text-silver mt-0.5">✓</span>
+                  <span class="text-bright">Security posture &amp; exposure check</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-silver mt-0.5">✓</span>
+                  <span class="text-bright">Cloud spend &amp; license review</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-silver mt-0.5">✓</span>
+                  <span class="text-bright">Backup &amp; recovery gap analysis</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span class="text-silver mt-0.5">✓</span>
+                  <span class="text-bright">Written findings report, no obligation</span>
+                </div>
+                <div class="mt-4 pt-4 border-t border-border text-silver">
+                  Cost: $0 &nbsp;·&nbsp; Time: ~1 hour on-site
+                </div>
+              </div>
             </div>
+
+            <div class="grid grid-cols-3 gap-3 mt-4">
+              <div class="bg-surface border border-border rounded-lg p-3 text-center hover:border-muted transition-colors">
+                <div class="text-silver font-heading font-semibold text-sm">Cisco</div>
+                <div class="text-muted text-xs mt-0.5">ACI · ISE · Catalyst</div>
+              </div>
+              <div class="bg-surface border border-border rounded-lg p-3 text-center hover:border-muted transition-colors">
+                <div class="text-silver font-heading font-semibold text-sm">Palo Alto</div>
+                <div class="text-muted text-xs mt-0.5">NGFW · Prisma</div>
+              </div>
+              <div class="bg-surface border border-border rounded-lg p-3 text-center hover:border-muted transition-colors">
+                <div class="text-silver font-heading font-semibold text-sm">Ansible</div>
+                <div class="text-muted text-xs mt-0.5">Automation · IaC</div>
+              </div>
+            </div>
+          </div>
+
         </div>
+      </div>
     </section>
 
-    <!-- Trust Strip -->
-    <section class="bg-darkgray border-y border-gray-800 py-6" aria-label="Credentials">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-gray-800">
-                <div class="px-4">
-                    <div class="text-silver text-xl font-bold font-heading">CCNP</div>
-                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">Enterprise Certified</div>
-                </div>
-                <div class="px-4">
-                    <div class="text-silver text-xl font-bold font-heading">13+</div>
-                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">Years Enterprise Networking</div>
-                </div>
-                <div class="px-4">
-                    <div class="text-silver text-xl font-bold font-heading">SoCal</div>
-                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">On-Site Available</div>
-                </div>
-                <div class="px-4">
-                    <div class="text-silver text-xl font-bold font-heading">Direct</div>
-                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">No Ticket Queues</div>
-                </div>
-            </div>
+    <!-- ═══ TRUST STRIP ═══ -->
+    <div class="border-y border-border bg-surface">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div>
+            <div class="text-silver font-heading font-bold text-xl">CCNP</div>
+            <div class="text-muted text-xs uppercase tracking-wider mt-1">Enterprise Certified</div>
+          </div>
+          <div>
+            <div class="text-silver font-heading font-bold text-xl">13+</div>
+            <div class="text-muted text-xs uppercase tracking-wider mt-1">Years Enterprise Experience</div>
+          </div>
+          <div>
+            <div class="text-silver font-heading font-bold text-xl">SoCal</div>
+            <div class="text-muted text-xs uppercase tracking-wider mt-1">On-Site Available</div>
+          </div>
+          <div>
+            <div class="text-silver font-heading font-bold text-xl">Direct</div>
+            <div class="text-muted text-xs uppercase tracking-wider mt-1">No Ticket Queues</div>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- ═══ IT SERVICES ═══ -->
+    <section id="services" class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <div class="section-label">IT Consulting Services</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold">Enterprise Infrastructure.<br>Built for Your Business.</h2>
+          <p class="text-dim mt-4 max-w-2xl">Network design, cybersecurity, cloud migration, and managed IT — the same technology Fortune 500s rely on, deployed for Southern California SMBs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-wrap"><i class="fas fa-network-wired text-silver text-sm"></i></div>
+              <h3 class="text-bright font-semibold font-heading">Network Infrastructure</h3>
+            </div>
+            <p class="text-dim text-sm leading-relaxed">Cisco, Palo Alto, and UniFi design. VLAN segmentation, zero-trust architecture, and SD-WAN built by an engineer who designs these at enterprise scale daily.</p>
+          </div>
+
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-wrap"><i class="fas fa-shield-alt text-silver text-sm"></i></div>
+              <h3 class="text-bright font-semibold font-heading">Cybersecurity</h3>
+            </div>
+            <p class="text-dim text-sm leading-relaxed">Palo Alto NGFWs, Cisco ISE network access control, endpoint protection, and compliance assessments. Not a checklist — a real security posture from someone who configures these in production.</p>
+          </div>
+
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-wrap"><i class="fas fa-cloud text-silver text-sm"></i></div>
+              <h3 class="text-bright font-semibold font-heading">Cloud &amp; Hybrid Infrastructure</h3>
+            </div>
+            <p class="text-dim text-sm leading-relaxed">Azure and GCP migrations that don't break what works. Hybrid cloud architecture, Microsoft 365 integration, and self-hosted alternatives that cut SaaS spend.</p>
+          </div>
+
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-wrap"><i class="fas fa-cogs text-silver text-sm"></i></div>
+              <h3 class="text-bright font-semibold font-heading">Managed IT &amp; AI Monitoring</h3>
+            </div>
+            <p class="text-dim text-sm leading-relaxed">AI-assisted alerting, automated remediation via Ansible, and real support when something breaks. Intelligent monitoring that predicts issues before they cause downtime.</p>
+          </div>
+
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-wrap"><i class="fas fa-robot text-silver text-sm"></i></div>
+              <h3 class="text-bright font-semibold font-heading">IT Automation &amp; AI</h3>
+            </div>
+            <p class="text-dim text-sm leading-relaxed">Ansible playbooks for zero-touch configuration, AI-assisted log analysis, and automated workflows. Your infrastructure shouldn't need a human to patch, rotate credentials, or respond to known alerts.</p>
+          </div>
+
+          <div class="card">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="icon-wrap"><i class="fas fa-ethernet text-silver text-sm"></i></div>
+              <h3 class="text-bright font-semibold font-heading">Structured Cabling</h3>
+            </div>
+            <p class="text-dim text-sm leading-relaxed">Clean Cat6/Cat6A runs, properly terminated patch panels, and network closets you won't be embarrassed to open. TIA-standard installation built to last.</p>
+          </div>
+
+        </div>
+
+        <div class="mt-10 text-center">
+          <a href="#contact" class="btn-primary">Get a Free Network Assessment</a>
+        </div>
+      </div>
     </section>
 
-    <section id="services" class="bg-darkgray py-20 bg-mesh relative">
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <div class="inline-block text-silver text-xs uppercase tracking-widest border-b border-silver border-opacity-40 pb-1 mb-4">Services</div>
-                <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary relative inline-block w-full">
-                    <span class="relative z-10">What I Do</span>
-                    <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
-                </h2>
-                <p class="text-lightgray mt-8 max-w-2xl mx-auto">Network infrastructure, cybersecurity, and IT automation for businesses — plus smart home design and installation for homeowners.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Network Infrastructure -->
-                <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-silver transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-darkgray rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-silver transition-colors shrink-0">
-                            <i class="fas fa-network-wired text-silver text-lg"></i>
-                        </div>
-                        <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">Network Infrastructure</h3>
-                    </div>
-                    <p class="text-lightgray text-sm leading-relaxed">Cisco, Palo Alto, and UniFi design. VLAN segmentation, zero-trust architecture, and SD-WAN — built by an engineer who designs these at enterprise scale daily.</p>
-                </div>
-                <!-- Cloud & Hybrid -->
-                <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-silver transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-darkgray rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-silver transition-colors shrink-0">
-                            <i class="fas fa-cloud text-silver text-lg"></i>
-                        </div>
-                        <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">Cloud & Hybrid Infrastructure</h3>
-                    </div>
-                    <p class="text-lightgray text-sm leading-relaxed">Azure and GCP migrations that don't break what works. Hybrid cloud architecture, Microsoft 365 integration, and self-hosted alternatives that slash SaaS spend.</p>
-                </div>
-                <!-- Cybersecurity -->
-                <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-silver transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-darkgray rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-silver transition-colors shrink-0">
-                            <i class="fas fa-shield-alt text-silver text-lg"></i>
-                        </div>
-                        <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">Cybersecurity</h3>
-                    </div>
-                    <p class="text-lightgray text-sm leading-relaxed">Palo Alto NGFWs, Cisco ISE access control, endpoint protection, and compliance assessments. Not a checklist — a real security posture from someone who configures these in production.</p>
-                </div>
-                <!-- Managed IT & AI -->
-                <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-silver transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-darkgray rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-silver transition-colors shrink-0">
-                            <i class="fas fa-cogs text-silver text-lg"></i>
-                        </div>
-                        <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">Managed IT & AI Monitoring</h3>
-                    </div>
-                    <p class="text-lightgray text-sm leading-relaxed">AI-assisted alerting, automated remediation via Ansible, and real support when something breaks. Intelligent monitoring that catches issues before they cause downtime.</p>
-                </div>
-                <!-- Structured Cabling -->
-                <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-silver transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-darkgray rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-silver transition-colors shrink-0">
-                            <i class="fas fa-ethernet text-silver text-lg"></i>
-                        </div>
-                        <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">Structured Cabling</h3>
-                    </div>
-                    <p class="text-lightgray text-sm leading-relaxed">Clean Cat6/Cat6A runs, properly terminated patch panels, and network closets you won't be embarrassed to open. TIA-standard installation built to last.</p>
-                </div>
-                <!-- Security Cameras -->
-                <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-silver transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top"></div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 bg-darkgray rounded-lg flex items-center justify-center border border-gray-700 group-hover:border-silver transition-colors shrink-0">
-                            <i class="fas fa-video text-silver text-lg"></i>
-                        </div>
-                        <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">Security Camera Systems</h3>
-                    </div>
-                    <p class="text-lightgray text-sm leading-relaxed">UniFi Protect and enterprise IP surveillance — site survey, placement, installation, and remote access. Your footage on hardware you own, not a cloud subscription.</p>
-                </div>
-                <!-- IT Automation & AI — featured, full width on last row -->
-                <div class="md:col-span-2 lg:col-span-3 bg-gradient-to-r from-darkgray to-dark border border-silver border-opacity-25 hover:border-opacity-60 rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
-                    <div class="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-silver to-transparent scale-y-100 transition-transform duration-300"></div>
-                    <div class="flex flex-col md:flex-row md:items-center gap-6">
-                        <div class="flex items-center gap-3 shrink-0">
-                            <div class="w-12 h-12 bg-darkgray rounded-lg flex items-center justify-center border border-silver border-opacity-30 group-hover:border-silver transition-colors">
-                                <i class="fas fa-robot text-silver text-xl"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-secondary font-semibold font-heading group-hover:text-silver transition-colors">IT Automation & AI</h3>
-                                <div class="text-silver text-xs uppercase tracking-wider opacity-60">Featured Service</div>
-                            </div>
-                        </div>
-                        <p class="text-lightgray text-sm leading-relaxed flex-1">Ansible playbooks for zero-touch configuration, AI-assisted log analysis, and automated workflows that eliminate manual IT tasks. Your infrastructure shouldn't need a human to patch, rotate credentials, or respond to known alerts — it should handle it automatically.</p>
-                        <a href="#contact" class="shrink-0 bg-silver text-dark px-5 py-2.5 rounded-md text-xs uppercase tracking-wider font-semibold hover:bg-silver-light transition-colors whitespace-nowrap">Get Started</a>
-                    </div>
-                </div>
-            </div>
+    <!-- ═══ SMART HOME ═══ -->
+    <section id="smarthome" class="py-20 bg-surface border-t border-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <div class="section-label">Smart Home &amp; Office</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold">Your Space, Effortlessly in Control.</h2>
+          <p class="text-dim mt-4 max-w-2xl">Smart home design and installation for homeowners. Smart office automation for small businesses. Technology that works quietly in the background — no subscription fees, no cloud lock-in.</p>
         </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <!-- Homeowners -->
+          <div class="bg-elevated border border-border rounded-xl p-8">
+            <div class="section-label">For Homeowners</div>
+            <h3 class="text-2xl font-heading font-bold text-bright mb-3">Your Home, On Your Terms</h3>
+            <p class="text-dim mb-6 leading-relaxed">Lights that adjust when you walk in. Locks you control from anywhere. Security cameras you own — not a cloud subscription. A home that works the way you want.</p>
+            <ul class="space-y-3 mb-8 text-sm text-dim">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-lightbulb text-silver text-xs"></i>
+                </span>
+                Smart lighting &amp; automated scenes
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-lock text-silver text-xs"></i>
+                </span>
+                Smart locks &amp; remote access control
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-video text-silver text-xs"></i>
+                </span>
+                On-premise security cameras (you own the footage)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-thermometer-half text-silver text-xs"></i>
+                </span>
+                Climate &amp; energy automation
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-tv text-silver text-xs"></i>
+                </span>
+                AV &amp; entertainment integration
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary">Book a Free Home Consultation</a>
+          </div>
+
+          <!-- Businesses -->
+          <div class="bg-elevated border border-border rounded-xl p-8">
+            <div class="section-label">For Small Businesses</div>
+            <h3 class="text-2xl font-heading font-bold text-bright mb-3">Smart Office, Simpler Operations</h3>
+            <p class="text-dim mb-6 leading-relaxed">Meeting rooms that just work. Access control that doesn't depend on keycards getting lost. Building systems that adjust automatically and report to you when something needs attention.</p>
+            <ul class="space-y-3 mb-8 text-sm text-dim">
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-door-open text-silver text-xs"></i>
+                </span>
+                Smart access control &amp; visitor management
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-video text-silver text-xs"></i>
+                </span>
+                Office security cameras (on-site storage)
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-lightbulb text-silver text-xs"></i>
+                </span>
+                Automated lighting &amp; climate control
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-wifi text-silver text-xs"></i>
+                </span>
+                Network-integrated device control
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="w-5 h-5 rounded bg-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-robot text-silver text-xs"></i>
+                </span>
+                Automated routines &amp; scheduling
+              </li>
+            </ul>
+            <a href="#contact" class="btn-primary">Book a Free Office Consultation</a>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Smart Home & Office Automation -->
-    <section class="bg-darkgray py-24 relative overflow-hidden" aria-labelledby="smarthome-heading">
-        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(20,184,166,0.08),transparent)]" aria-hidden="true"></div>
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-30 to-transparent"></div>
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <div class="inline-block text-silver text-xs uppercase tracking-widest border-b border-teal-500 border-opacity-40 pb-1 mb-4">Smart Home & Office</div>
-                <h2 id="smarthome-heading" class="text-3xl md:text-4xl font-bold font-heading text-secondary">
-                    Your Space, Effortlessly in Control
-                </h2>
-                <p class="text-lightgray mt-4 max-w-2xl mx-auto">Smart home design and installation for homeowners. Smart office automation for small businesses. Technology that works quietly in the background so you don't have to think about it.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-gray-800 rounded-2xl overflow-hidden max-w-5xl mx-auto">
-
-                <!-- For Your Home -->
-                <div class="bg-darkgray-light p-10">
-                    <div class="inline-flex items-center gap-2 text-silver text-xs uppercase tracking-widest mb-6">
-                        <i class="fas fa-home"></i> For Homeowners
-                    </div>
-                    <h3 class="text-2xl font-bold font-heading text-secondary mb-4">Your Home, On Your Terms</h3>
-                    <p class="text-lightgray mb-6 leading-relaxed">Lights that adjust when you walk in. Locks you control from anywhere. Security cameras you own — no subscription fees. A home that responds to you, not a monthly bill.</p>
-                    <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-lightbulb text-silver text-xs"></i></span>Smart lighting &amp; automated scenes</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-lock text-silver text-xs"></i></span>Smart locks &amp; remote access control</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-video text-silver text-xs"></i></span>On-premise security cameras (you own the footage)</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-thermometer-half text-silver text-xs"></i></span>Climate &amp; energy automation</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-tv text-silver text-xs"></i></span>AV &amp; entertainment integration</li>
-                    </ul>
-                    <a href="#contact" class="inline-block bg-silver text-dark px-6 py-3 rounded-md text-sm font-semibold uppercase tracking-wider hover:bg-silver-light transition-colors">Book a Free Home Consultation</a>
-                </div>
-
-                <!-- For Your Office -->
-                <div class="bg-darkgray-light p-10">
-                    <div class="inline-flex items-center gap-2 text-silver text-xs uppercase tracking-widest mb-6">
-                        <i class="fas fa-building"></i> For Small Businesses
-                    </div>
-                    <h3 class="text-2xl font-bold font-heading text-secondary mb-4">Smart Office, Simpler Operations</h3>
-                    <p class="text-lightgray mb-6 leading-relaxed">Meeting rooms that just work. Access control that doesn't depend on keycards getting lost. Building systems that adjust automatically — and report to you when something needs attention.</p>
-                    <ul class="space-y-3 mb-8 text-sm">
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-door-open text-silver text-xs"></i></span>Smart access control &amp; visitor management</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-video text-silver text-xs"></i></span>Office security cameras (on-site storage)</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-lightbulb text-silver text-xs"></i></span>Automated lighting &amp; climate control</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-wifi text-silver text-xs"></i></span>Network-integrated device control</li>
-                        <li class="flex items-center gap-3 text-lightgray"><span class="w-5 h-5 rounded-full bg-silver bg-opacity-10 border border-silver border-opacity-30 flex items-center justify-center shrink-0"><i class="fas fa-robot text-silver text-xs"></i></span>Automated routines &amp; scheduling</li>
-                    </ul>
-                    <a href="#contact" class="inline-block bg-silver text-dark px-6 py-3 rounded-md text-sm font-semibold uppercase tracking-wider hover:bg-silver-light transition-colors">Book a Free Office Consultation</a>
-                </div>
-
-            </div>
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+          <div class="section-label">Process</div>
+          <h2 class="text-3xl md:text-4xl font-heading font-bold">How It Works</h2>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-silver text-base flex items-center justify-center mx-auto mb-5 font-heading font-bold text-lg">1</div>
+            <h3 class="text-bright font-heading font-semibold mb-2">Free Assessment</h3>
+            <p class="text-dim text-sm leading-relaxed">We audit your current setup — network, security, cloud, backups. Find the gaps. No obligation, no sales pitch, straight findings.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-silver text-base flex items-center justify-center mx-auto mb-5 font-heading font-bold text-lg">2</div>
+            <h3 class="text-bright font-heading font-semibold mb-2">Engineering Plan</h3>
+            <p class="text-dim text-sm leading-relaxed">Specific recommendations with real costs. You know exactly what we're building, why, and what it costs before we touch anything.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-12 h-12 rounded-full bg-silver text-base flex items-center justify-center mx-auto mb-5 font-heading font-bold text-lg">3</div>
+            <h3 class="text-bright font-heading font-semibold mb-2">Deploy &amp; Monitor</h3>
+            <p class="text-dim text-sm leading-relaxed">We implement it, automate it, and keep it running. AI-assisted monitoring catches issues before you notice them.</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="#contact" class="btn-primary">Start with a Free Assessment</a>
+        </div>
+      </div>
     </section>
 
-    <!-- How It Works -->
-    <section class="bg-dark py-20 bg-grid relative">
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
-        <div class="container mx-auto px-4">
-            <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
-                <span class="relative z-10">How It Works</span>
-                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="py-20 bg-surface border-t border-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+          <div>
+            <div class="section-label">About Northern Edge</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
+              <span class="gradient-text">Why This Works</span>
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                <div class="text-center relative">
-                    <div class="w-16 h-16 mx-auto bg-silver text-dark rounded-full flex items-center justify-center mb-6 text-2xl font-bold font-heading">1</div>
-                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-silver to-transparent opacity-30"></div>
-                    <h3 class="text-secondary text-lg uppercase tracking-wider font-heading mb-3">Free Assessment</h3>
-                    <p class="text-lightgray text-sm">We audit your current setup — network, security, cloud, backups. Find the gaps. No obligation, no sales pitch, straight findings.</p>
-                </div>
-                <div class="text-center relative">
-                    <div class="w-16 h-16 mx-auto bg-silver text-dark rounded-full flex items-center justify-center mb-6 text-2xl font-bold font-heading">2</div>
-                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-silver to-transparent opacity-30"></div>
-                    <h3 class="text-secondary text-lg uppercase tracking-wider font-heading mb-3">Engineering Plan</h3>
-                    <p class="text-lightgray text-sm">Specific recommendations with real costs — not mystery pricing. You know exactly what we're building, why, and what it'll cost before we touch anything.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-16 h-16 mx-auto bg-silver text-dark rounded-full flex items-center justify-center mb-6 text-2xl font-bold font-heading">3</div>
-                    <h3 class="text-secondary text-lg uppercase tracking-wider font-heading mb-3">Deploy & Monitor</h3>
-                    <p class="text-lightgray text-sm">We implement it, automate it, and keep it running. AI-assisted monitoring catches issues before you notice them. You focus on your business.</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <a href="#contact" class="bg-silver text-dark px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-silver-light transition-all shadow-md inline-block font-semibold">Start with a Free Assessment</a>
-            </div>
-        </div>
-    </section>
+            <p class="text-dim text-lg mb-5 leading-relaxed">I'm James Kirkpatrick — a CCNP Enterprise certified Network Architect with 13+ years in enterprise infrastructure, specializing in Palo Alto and Cisco security platforms. I've designed segmentation strategies across global data centers, migrated thousands of users between security platforms, and automated network operations at scale.</p>
+            <p class="text-dim text-lg mb-8 leading-relaxed">Most local IT firms are generalists — they reset passwords and call Cisco TAC when something breaks. I'm the person Cisco TAC talks to. Northern Edge exists because businesses and homeowners deserve enterprise-grade technology — built by someone who actually knows how it works.</p>
+            <a href="#contact" class="btn-primary">Book Your Free Assessment</a>
+          </div>
 
-    <section id="about" class="bg-gradient-to-b from-darkgray to-dark py-24">
-        <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
-                    <!-- Left: Bio -->
-                    <div>
-                        <div class="inline-block text-silver text-xs uppercase tracking-widest border-b border-silver border-opacity-40 pb-1 mb-6">About Northern Edge</div>
-                        <h2 class="text-3xl md:text-4xl font-bold font-heading mb-8 leading-tight">
-                            <span class="gradient-text">Why This Works</span>
-                        </h2>
-                        <p class="text-lightgray text-lg mb-6 leading-relaxed">I'm James Kirkpatrick — a CCNP Enterprise certified Network Architect with 13+ years in enterprise infrastructure, specializing in Palo Alto and Cisco security platforms. I've designed segmentation strategies across global data centers, migrated thousands of users between security platforms, and automated network operations at scale.</p>
-                        <p class="text-lightgray text-lg mb-8 leading-relaxed">Most local IT firms are generalists — they reset passwords and call Cisco TAC when something breaks. I'm the person Cisco TAC talks to. Northern Edge exists because SMBs deserve the same caliber of network engineering that large enterprises get — with Ansible automation eliminating the manual overhead that keeps typical MSPs expensive and slow.</p>
-                        <a href="#contact" class="bg-silver text-dark px-7 py-3.5 rounded-md text-sm uppercase tracking-wider font-semibold hover:bg-silver-light transition-colors inline-block">Book Your Free Assessment</a>
-                    </div>
-
-                    <!-- Right: Expanded Stat Blocks -->
-                    <div class="space-y-4">
-                        <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-7 transition-all duration-300 hover:-translate-y-0.5 group">
-                            <div class="flex items-start gap-5">
-                                <div class="text-silver text-4xl font-bold font-heading w-20 shrink-0 gradient-text">CCNP</div>
-                                <div>
-                                    <div class="text-secondary font-medium mb-1">Enterprise Certified</div>
-                                    <div class="text-lightgray text-sm leading-relaxed">Cisco's expert-level certification for enterprise network design. The same credential required to architect Fortune 500 infrastructure.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-7 transition-all duration-300 hover:-translate-y-0.5 group">
-                            <div class="flex items-start gap-5">
-                                <div class="text-silver text-4xl font-bold font-heading w-20 shrink-0 gradient-text">13+</div>
-                                <div>
-                                    <div class="text-secondary font-medium mb-1">Years in Enterprise Networking</div>
-                                    <div class="text-lightgray text-sm leading-relaxed">Global data center design, Palo Alto and Cisco security deployments, SD-WAN rollouts, and large-scale network automation — all before working with your SMB.</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bg-dark border border-gray-800 hover:border-silver rounded-xl p-7 transition-all duration-300 hover:-translate-y-0.5 group">
-                            <div class="flex items-start gap-5">
-                                <div class="text-silver text-4xl font-bold font-heading w-20 shrink-0 gradient-text leading-none pt-1">→</div>
-                                <div>
-                                    <div class="text-secondary font-medium mb-1">Direct Engineer Access</div>
-                                    <div class="text-lightgray text-sm leading-relaxed">No account managers, no tier-1 handoffs, no ticket queues. The person who takes your call is the person who fixes the problem.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="bg-gradient-to-b from-dark to-darkgray py-20" aria-labelledby="contact-heading">
-        <div class="container mx-auto px-4">
-            <h2 id="contact-heading" class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-4 relative inline-block mx-auto w-full">
-                <span class="relative z-10">Book Your Free Assessment</span>
-                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
-            </h2>
-            <p class="text-center text-lightgray mb-16 max-w-2xl mx-auto">Tell me what's broken, what's slow, or what keeps you up at night — I'll tell you exactly how to fix it. Straight answers, no sales pitch.</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-                <div class="space-y-8">
-                    <!-- Company Logo (Inverse No Text) - Clickable -->
-                    <div class="flex justify-center mb-6">
-                        <a href="#home" class="transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-silver rounded-full">
-                            <img src="./images/inverse-notext.png" alt="Northern Edge IT Consulting Logo" class="h-24">
-                        </a>
-                    </div>
-                    <!-- Contact Information -->
-                    <!-- Founder Information -->
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-darkgray w-12 h-12 flex items-center justify-center rounded-full shadow-md border border-gray-800" aria-hidden="true">
-                            <i class="fas fa-user text-silver text-lg"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-silver font-medium">James Kirkpatrick</h3>
-                            <p class="text-lightgray text-sm">Founder & Principal Consultant</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-darkgray w-12 h-12 flex items-center justify-center rounded-full shadow-md border border-gray-800" aria-hidden="true">
-                            <i class="fas fa-phone text-silver text-lg"></i>
-                        </div>
-                        <a href="tel:+19095296128" class="text-lightgray hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded">+1 (909) 529-6128</a>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <div class="bg-darkgray w-12 h-12 flex items-center justify-center rounded-full shadow-md border border-gray-800" aria-hidden="true">
-                            <i class="fas fa-envelope text-primary text-lg"></i>
-                        </div>
-                        <a href="mailto:info@neit.tech" class="text-lightgray hover:text-silver transition-colors focus:outline-none focus:ring-2 focus:ring-silver rounded">info@neit.tech</a>
-                    </div>
-                </div>
-                <div class="bg-darkgray p-8 rounded-lg shadow-card border border-gray-800 hover:border-gray-700 transition-colors">
-                    <form id="contactForm" class="space-y-6" action="https://getform.io/f/bqokloob" method="POST">
-                        <div class="form-group">
-                            <label for="name" class="block text-silver mb-2 text-sm">Name <span class="text-red-500">*</span></label>
-                            <input type="text" id="name" name="name" required 
-                                   class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:border-silver focus:ring-2 focus:ring-silver transition-colors"
-                                   aria-describedby="name-error">
-                            <div id="name-error" class="error-message text-red-500 text-sm mt-1 hidden">Please enter your name</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="block text-silver mb-2 text-sm">Email <span class="text-red-500">*</span></label>
-                            <input type="email" id="email" name="email" required 
-                                   class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:border-silver focus:ring-2 focus:ring-silver transition-colors"
-                                   aria-describedby="email-error">
-                            <div id="email-error" class="error-message text-red-500 text-sm mt-1 hidden">Please enter a valid email address (e.g., name@example.com)</div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="block text-silver mb-2 text-sm">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="What's your biggest IT headache?"
-                                   class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white focus:outline-none focus:border-silver focus:ring-2 focus:ring-silver transition-colors placeholder-gray-600">
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="block text-silver mb-2 text-sm">Message <span class="text-red-500">*</span></label>
-                            <textarea id="message" name="message" rows="5" required
-                                      class="w-full bg-black bg-opacity-50 border border-gray-800 rounded-md p-3 text-white h-32 focus:outline-none focus:border-silver focus:ring-2 focus:ring-silver transition-colors"
-                                      aria-describedby="message-error"></textarea>
-                            <div id="message-error" class="error-message text-red-500 text-sm mt-1 hidden">Please enter your message</div>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit"
-                                    class="bg-silver text-dark font-medium px-6 py-3 rounded-md hover:bg-silver-light transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-silver w-full flex items-center justify-center">
-                                <span>Send Message</span>
-                                <svg class="w-5 h-5 ml-2 spinner hidden animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div id="form-success" class="bg-green-900 bg-opacity-20 border border-green-500 text-green-300 p-4 rounded-md hidden" role="alert">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <h4 class="text-green-300 font-medium mb-1">Message Sent Successfully!</h4>
-                                    <p class="text-sm">Thank you for contacting Northern Edge IT. Your message has been sent to <strong>info@neit.tech</strong>.</p>
-                                    <ul class="text-sm mt-2 list-disc list-inside">
-                                        <li>A copy of your message has been sent to your email</li>
-                                        <li>We'll respond within 1–2 business days</li>
-                                        <li>For urgent matters, please call us at +1 (909) 529-6128</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="form-error" class="bg-red-900 bg-opacity-20 border border-red-500 text-red-300 p-4 rounded-md hidden" role="alert">
-                            <div class="flex">
-                                <div class="flex-shrink-0">
-                                    <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
-                                    </svg>
-                                </div>
-                                <div class="ml-3">
-                                    <p class="text-sm font-medium">There was a problem sending your message. Please try again.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
-
-    <!-- FAQ Section -->
-    <section class="bg-darkgray py-20 bg-mesh relative" aria-labelledby="faq-heading">
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
-        <div class="container mx-auto px-4 max-w-3xl">
-            <h2 id="faq-heading" class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
-                <span class="relative z-10">Common Questions</span>
-                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
-            </h2>
-            <div class="space-y-6">
-                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
-                        What does the free network assessment include?
-                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">A full audit of your network topology, firewall config, endpoint security posture, cloud spend, and backup coverage. You get a written findings report with prioritized recommendations and honest cost estimates — no upsell pressure, no sales pitch.</p>
-                    </div>
-                </details>
-                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
-                        How is this different from a typical managed service provider?
-                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Most MSPs assign a ticket to a tier-1 tech who escalates to tier-2 who escalates to a vendor. You work directly with a CCNP-certified engineer who has designed these systems at enterprise scale. No ticket queue. No account manager buffer. The person you talk to is the person who fixes it.</p>
-                    </div>
-                </details>
-                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
-                        What size businesses do you work with?
-                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Primarily small to mid-size businesses across Southern California — typically 5 to 250 employees — who need enterprise-grade infrastructure but can't justify a full-time IT hire. If you're outgrowing your current setup or just tired of things breaking, we're the right fit.</p>
-                    </div>
-                </details>
-                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
-                        Can you work with our existing equipment?
-                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Yes. The assessment starts with what you have. We recommend replacements only when existing gear is end-of-life, unsupported, or genuinely creating risk. If your Cisco switch is fine, we configure it — we don't sell you a new one.</p>
-                    </div>
-                </details>
-                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
-                        Do you offer ongoing support or just project work?
-                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
-                    </summary>
-                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-                        <p itemprop="text">Both. Project-based engagements (network redesign, cloud migration, security hardening) and ongoing managed IT with proactive monitoring and automated remediation. Most clients start with a project and move to managed once they see how the infrastructure runs.</p>
-                    </div>
-                </details>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-dark py-12 border-t border-gray-800 relative">
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div class="space-y-4">
+            <div class="bg-elevated border border-border rounded-xl p-6 hover:border-muted transition-colors">
+              <div class="flex items-start gap-5">
+                <div class="gradient-text font-heading font-bold text-4xl w-20 shrink-0">CCNP</div>
                 <div>
-                    <div class="text-silver font-bold text-lg font-heading mb-3">NEIT</div>
-                    <p class="text-lightgray text-sm">Enterprise IT consulting without the enterprise contract. Diamond Bar, CA.</p>
+                  <div class="text-bright font-medium mb-1">Enterprise Certified</div>
+                  <div class="text-dim text-sm leading-relaxed">Cisco's expert-level certification for enterprise network design — the same credential required to architect Fortune 500 infrastructure.</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-elevated border border-border rounded-xl p-6 hover:border-muted transition-colors">
+              <div class="flex items-start gap-5">
+                <div class="gradient-text font-heading font-bold text-4xl w-20 shrink-0">13+</div>
+                <div>
+                  <div class="text-bright font-medium mb-1">Years in Enterprise Networking</div>
+                  <div class="text-dim text-sm leading-relaxed">Global data center design, Palo Alto and Cisco security deployments, SD-WAN rollouts, and large-scale network automation — before working with your business.</div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-elevated border border-border rounded-xl p-6 hover:border-muted transition-colors">
+              <div class="flex items-start gap-5">
+                <div class="gradient-text font-heading font-bold text-4xl w-20 shrink-0 leading-none pt-2">→</div>
+                <div>
+                  <div class="text-bright font-medium mb-1">Direct Engineer Access</div>
+                  <div class="text-dim text-sm leading-relaxed">No account managers, no tier-1 handoffs, no ticket queues. The person who takes your call is the person who fixes the problem.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="py-20 border-t border-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+
+          <div>
+            <div class="section-label">Contact</div>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Book Your Free Assessment</h2>
+            <p class="text-dim mb-8 leading-relaxed">Tell me what's broken, what's slow, or what keeps you up at night — I'll tell you exactly how to fix it. Straight answers, no sales pitch.</p>
+
+            <div class="space-y-5">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-user text-silver text-sm"></i>
                 </div>
                 <div>
-                    <div class="text-silver text-sm uppercase tracking-wider font-semibold mb-3">Services</div>
-                    <ul class="space-y-1 text-sm text-lightgray">
-                        <li><a href="#services" class="hover:text-silver transition-colors">Network Infrastructure</a></li>
-                        <li><a href="#services" class="hover:text-silver transition-colors">Cybersecurity</a></li>
-                        <li><a href="#services" class="hover:text-silver transition-colors">Managed IT & AI Monitoring</a></li>
-                        <li><a href="#services" class="hover:text-silver transition-colors">IT Automation & AI</a></li>
-                        <li><a href="#services" class="hover:text-silver transition-colors">Cloud & Hybrid Infrastructure</a></li>
-                    </ul>
+                  <div class="text-silver text-sm font-medium">James Kirkpatrick</div>
+                  <div class="text-muted text-xs">Founder &amp; Principal Consultant</div>
                 </div>
-                <div>
-                    <div class="text-silver text-sm uppercase tracking-wider font-semibold mb-3">Contact</div>
-                    <ul class="space-y-1 text-sm text-lightgray">
-                        <li><a href="tel:+19095296128" class="hover:text-silver transition-colors">+1 (909) 529-6128</a></li>
-                        <li><a href="mailto:info@neit.tech" class="hover:text-silver transition-colors">info@neit.tech</a></li>
-                        <li>Diamond Bar, CA</li>
-                    </ul>
-                    <a href="#contact" class="mt-4 inline-block bg-silver text-dark text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded hover:bg-silver-light transition-colors">Free Assessment</a>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-phone text-silver text-sm"></i>
                 </div>
+                <a href="tel:+19095296128" class="text-dim hover:text-silver transition-colors text-sm">+1 (909) 529-6128</a>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-envelope text-silver text-sm"></i>
+                </div>
+                <a href="mailto:info@neit.tech" class="text-dim hover:text-silver transition-colors text-sm">info@neit.tech</a>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
+                  <i class="fas fa-map-marker-alt text-silver text-sm"></i>
+                </div>
+                <span class="text-dim text-sm">Diamond Bar, CA — serving the greater LA &amp; IE area</span>
+              </div>
             </div>
-            <div class="border-t border-gray-800 pt-6 text-center">
-                <p class="text-lightgray text-sm">&copy; 2026 Northern Edge IT Consulting. Enterprise IT for Southern California businesses.</p>
-            </div>
-        </div>
-    </footer>
+          </div>
 
-    <script src="./js/main.js" defer></script>
+          <div class="bg-surface border border-border rounded-xl p-8">
+            <form id="contactForm" action="https://getform.io/f/bqokloob" method="POST" class="space-y-5">
+              <div>
+                <label for="name" class="block text-silver text-xs uppercase tracking-wider mb-2">Name <span class="text-muted">*</span></label>
+                <input type="text" id="name" name="name" required
+                  class="w-full bg-elevated border border-border rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted"
+                  placeholder="Your name">
+              </div>
+              <div>
+                <label for="email" class="block text-silver text-xs uppercase tracking-wider mb-2">Email <span class="text-muted">*</span></label>
+                <input type="email" id="email" name="email" required
+                  class="w-full bg-elevated border border-border rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted"
+                  placeholder="you@company.com">
+              </div>
+              <div>
+                <label for="subject" class="block text-silver text-xs uppercase tracking-wider mb-2">Subject</label>
+                <input type="text" id="subject" name="subject"
+                  class="w-full bg-elevated border border-border rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted"
+                  placeholder="What's your biggest IT headache?">
+              </div>
+              <div>
+                <label for="message" class="block text-silver text-xs uppercase tracking-wider mb-2">Message <span class="text-muted">*</span></label>
+                <textarea id="message" name="message" rows="4" required
+                  class="w-full bg-elevated border border-border rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted resize-none"
+                  placeholder="Tell me what you're dealing with..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary w-full justify-center">
+                Send Message
+              </button>
+              <div id="form-success" class="hidden bg-elevated border border-border text-silver p-4 rounded-md text-sm" role="alert">
+                Message sent — I'll get back to you within 1–2 business days.
+              </div>
+              <div id="form-error" class="hidden bg-elevated border border-border text-dim p-4 rounded-md text-sm" role="alert">
+                Something went wrong. Please try again or email info@neit.tech directly.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="py-20 bg-surface border-t border-border" aria-labelledby="faq-heading">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center">
+          <div class="section-label">FAQ</div>
+          <h2 id="faq-heading" class="text-3xl md:text-4xl font-heading font-bold">Common Questions</h2>
+        </div>
+
+        <div class="space-y-3">
+          <details class="bg-elevated border border-border rounded-xl group">
+            <summary class="flex items-center justify-between p-5 text-bright font-medium text-sm">
+              What does the free assessment include?
+              <i class="fas fa-chevron-down text-muted text-xs chevron"></i>
+            </summary>
+            <div class="px-5 pb-5 text-dim text-sm leading-relaxed">
+              A full audit of your network topology, firewall config, endpoint security posture, cloud spend, and backup coverage. You get a written findings report with prioritized recommendations and honest cost estimates — no obligation, no sales pitch.
+            </div>
+          </details>
+
+          <details class="bg-elevated border border-border rounded-xl group">
+            <summary class="flex items-center justify-between p-5 text-bright font-medium text-sm">
+              How is this different from a typical managed service provider?
+              <i class="fas fa-chevron-down text-muted text-xs chevron"></i>
+            </summary>
+            <div class="px-5 pb-5 text-dim text-sm leading-relaxed">
+              Most MSPs assign tickets to tier-1 techs who escalate to tier-2 who call the vendor. You work directly with a CCNP-certified engineer who has designed these systems at enterprise scale. No ticket queue. No account manager buffer. The person you talk to fixes the problem.
+            </div>
+          </details>
+
+          <details class="bg-elevated border border-border rounded-xl group">
+            <summary class="flex items-center justify-between p-5 text-bright font-medium text-sm">
+              What size businesses do you work with?
+              <i class="fas fa-chevron-down text-muted text-xs chevron"></i>
+            </summary>
+            <div class="px-5 pb-5 text-dim text-sm leading-relaxed">
+              Primarily small to mid-size businesses across Southern California — typically 5 to 250 employees — who need enterprise-grade infrastructure but can't justify a full-time IT hire.
+            </div>
+          </details>
+
+          <details class="bg-elevated border border-border rounded-xl group">
+            <summary class="flex items-center justify-between p-5 text-bright font-medium text-sm">
+              Do you also do residential smart home installation?
+              <i class="fas fa-chevron-down text-muted text-xs chevron"></i>
+            </summary>
+            <div class="px-5 pb-5 text-dim text-sm leading-relaxed">
+              Yes. We design and install smart home systems for homeowners — lighting, locks, security cameras, climate, and AV integration. Book a free home consultation to get started.
+            </div>
+          </details>
+
+          <details class="bg-elevated border border-border rounded-xl group">
+            <summary class="flex items-center justify-between p-5 text-bright font-medium text-sm">
+              Do you offer ongoing support or just project work?
+              <i class="fas fa-chevron-down text-muted text-xs chevron"></i>
+            </summary>
+            <div class="px-5 pb-5 text-dim text-sm leading-relaxed">
+              Both. Project-based engagements (network redesign, cloud migration, security hardening, smart home install) and ongoing managed IT with proactive monitoring and automated remediation.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="border-t border-border py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="text-silver font-heading font-bold text-lg mb-3">NEIT</div>
+          <p class="text-muted text-sm leading-relaxed">Enterprise IT consulting and smart home automation for Southern California. Diamond Bar, CA.</p>
+        </div>
+        <div>
+          <div class="text-dim text-xs uppercase tracking-wider font-semibold mb-4">Services</div>
+          <ul class="space-y-2 text-sm text-muted">
+            <li><a href="#services" class="hover:text-silver transition-colors">Network Infrastructure</a></li>
+            <li><a href="#services" class="hover:text-silver transition-colors">Cybersecurity</a></li>
+            <li><a href="#services" class="hover:text-silver transition-colors">Managed IT &amp; AI Monitoring</a></li>
+            <li><a href="#services" class="hover:text-silver transition-colors">IT Automation &amp; AI</a></li>
+            <li><a href="#smarthome" class="hover:text-silver transition-colors">Smart Home &amp; Office</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-dim text-xs uppercase tracking-wider font-semibold mb-4">Contact</div>
+          <ul class="space-y-2 text-sm text-muted">
+            <li><a href="tel:+19095296128" class="hover:text-silver transition-colors">+1 (909) 529-6128</a></li>
+            <li><a href="mailto:info@neit.tech" class="hover:text-silver transition-colors">info@neit.tech</a></li>
+            <li>Diamond Bar, CA</li>
+          </ul>
+          <a href="#contact" class="btn-primary mt-5 text-xs py-2 px-4 inline-block">Free Assessment</a>
+        </div>
+      </div>
+      <div class="border-t border-border pt-6 text-center text-muted text-sm">
+        &copy; 2026 Northern Edge IT Consulting. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js" defer></script>
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('hidden');
+        toggle.setAttribute('aria-expanded', !open);
+        menu.setAttribute('aria-hidden', open);
+      });
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          menu.classList.add('hidden');
+          toggle.setAttribute('aria-expanded', 'false');
+          menu.setAttribute('aria-hidden', 'true');
+        });
+      });
+    }
+  </script>
 </body>
 </html>
