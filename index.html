@@ -219,6 +219,54 @@
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does the free network assessment include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A full audit of your network topology, firewall config, endpoint security posture, cloud spend, and backup coverage. You get a written findings report with prioritized recommendations and honest cost estimates."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is this different from a typical managed service provider?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You work directly with a CCNP-certified engineer who has designed these systems at enterprise scale. No ticket queue, no account manager buffer. The person you talk to is the person who fixes it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What size businesses do you work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Primarily small to mid-size businesses across Southern California — typically 5 to 250 employees — who need enterprise-grade infrastructure but can't justify a full-time IT hire."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you work with our existing equipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The assessment starts with what you have. We recommend replacements only when existing gear is end-of-life, unsupported, or genuinely creating risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer ongoing support or just project work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both. Project-based engagements (network redesign, cloud migration, security hardening) and ongoing managed IT with proactive monitoring and automated remediation."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-dark text-white font-sans bg-mesh">
     <!-- Skip to main content link for accessibility -->
@@ -306,6 +354,30 @@
         </div>
     </section>
 
+    <!-- Trust Strip -->
+    <section class="bg-darkgray border-y border-gray-800 py-6" aria-label="Credentials">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-x divide-gray-800">
+                <div class="px-4">
+                    <div class="text-silver text-xl font-bold font-heading">CCNP</div>
+                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">Enterprise Certified</div>
+                </div>
+                <div class="px-4">
+                    <div class="text-silver text-xl font-bold font-heading">13+</div>
+                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">Years Enterprise Networking</div>
+                </div>
+                <div class="px-4">
+                    <div class="text-silver text-xl font-bold font-heading">SoCal</div>
+                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">On-Site Available</div>
+                </div>
+                <div class="px-4">
+                    <div class="text-silver text-xl font-bold font-heading">Direct</div>
+                    <div class="text-lightgray text-xs uppercase tracking-wider mt-1">No Ticket Queues</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="services" class="bg-darkgray py-20 bg-mesh relative">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
         <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
@@ -343,8 +415,8 @@
                     <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-gray-800 group-hover:border-silver transition-colors">
                         <i class="fas fa-cogs text-silver text-2xl group-hover:scale-110 transition-transform"></i>
                     </div>
-                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Managed IT</h3>
-                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Proactive monitoring, automated patching via Ansible, and real support when something breaks. A full IT department — monitoring, updates, troubleshooting, planning — minus the six-figure salary.</p>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Managed IT & AI Monitoring</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">AI-assisted alerting, automated remediation via Ansible, and real support when something breaks. Intelligent monitoring that predicts issues before they cause downtime — a full IT operation, minus the headcount.</p>
                 </div>
                 <div class="bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-gray-800 hover:border-silver group relative overflow-hidden">
                     <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
@@ -362,6 +434,47 @@
                     <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">Security Camera Systems</h3>
                     <p class="text-lightgray group-hover:text-silver-light transition-colors">UniFi Protect and enterprise IP surveillance — site survey, camera placement, installation, and remote access. Your footage stored on-site on hardware you own, not on someone else's cloud with a monthly fee.</p>
                 </div>
+                <div class="lg:col-start-2 bg-gradient-to-b from-dark to-darkgray-light rounded-lg p-8 text-center shadow-card hover:shadow-card-hover transition-all duration-300 hover:scale-105 border border-silver border-opacity-30 hover:border-silver group relative overflow-hidden">
+                    <div class="absolute bottom-0 left-0 w-full h-1 bg-silver transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                    <div class="w-16 h-16 mx-auto bg-black bg-opacity-40 rounded-full flex items-center justify-center mb-6 border border-silver border-opacity-30 group-hover:border-silver transition-colors">
+                        <i class="fas fa-robot text-silver text-2xl group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <h3 class="text-secondary text-xl uppercase tracking-wider font-heading mb-4 group-hover:text-silver transition-colors">IT Automation & AI</h3>
+                    <p class="text-lightgray group-hover:text-silver-light transition-colors">Ansible playbooks for zero-touch configuration, AI-assisted log analysis, and automated workflows that eliminate manual IT tasks. Your infrastructure shouldn't need a human to patch, rotate credentials, or respond to known alerts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-dark py-20 bg-grid relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
+        <div class="container mx-auto px-4">
+            <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
+                <span class="relative z-10">How It Works</span>
+                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="text-center relative">
+                    <div class="w-16 h-16 mx-auto bg-silver text-dark rounded-full flex items-center justify-center mb-6 text-2xl font-bold font-heading">1</div>
+                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-silver to-transparent opacity-30"></div>
+                    <h3 class="text-secondary text-lg uppercase tracking-wider font-heading mb-3">Free Assessment</h3>
+                    <p class="text-lightgray text-sm">We audit your current setup — network, security, cloud, backups. Find the gaps. No obligation, no sales pitch, straight findings.</p>
+                </div>
+                <div class="text-center relative">
+                    <div class="w-16 h-16 mx-auto bg-silver text-dark rounded-full flex items-center justify-center mb-6 text-2xl font-bold font-heading">2</div>
+                    <div class="hidden md:block absolute top-8 left-[60%] w-[80%] h-px bg-gradient-to-r from-silver to-transparent opacity-30"></div>
+                    <h3 class="text-secondary text-lg uppercase tracking-wider font-heading mb-3">Engineering Plan</h3>
+                    <p class="text-lightgray text-sm">Specific recommendations with real costs — not mystery pricing. You know exactly what we're building, why, and what it'll cost before we touch anything.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 mx-auto bg-silver text-dark rounded-full flex items-center justify-center mb-6 text-2xl font-bold font-heading">3</div>
+                    <h3 class="text-secondary text-lg uppercase tracking-wider font-heading mb-3">Deploy & Monitor</h3>
+                    <p class="text-lightgray text-sm">We implement it, automate it, and keep it running. AI-assisted monitoring catches issues before you notice them. You focus on your business.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-silver border border-silver text-dark px-6 py-3 rounded-md text-sm uppercase tracking-wider hover:bg-silver-light transition-all shadow-md hover:shadow-lg inline-block font-semibold">Start with a Free Assessment</a>
             </div>
         </div>
     </section>
@@ -370,11 +483,11 @@
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
-                <span class="relative z-10">Who I Am</span>
+                <span class="relative z-10">Why This Works</span>
                 <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
             </h2>
                 <p class="text-lightgray text-lg mb-6">I'm James Kirkpatrick — a CCNP Enterprise certified Network Architect with 13+ years in enterprise infrastructure, specializing in Palo Alto and Cisco security platforms. I've designed segmentation strategies across global data centers, migrated thousands of users between security platforms, and automated network operations at scale. Now I bring that same expertise to small and mid-size businesses across Southern California who need enterprise-grade IT but can't justify a full-time hire.</p>
-                <p class="text-lightgray text-lg mb-10">Most local IT firms are generalists — they reset passwords and call Cisco TAC when something breaks. I'm the person Cisco TAC talks to. Northern Edge exists because SMBs deserve the same caliber of network engineering that large enterprises get. I also do something no other local MSP does: self-hosted infrastructure, automation with Ansible, and smart office systems with Home Assistant.</p>
+                <p class="text-lightgray text-lg mb-10">Most local IT firms are generalists — they reset passwords and call Cisco TAC when something breaks. I'm the person Cisco TAC talks to. Northern Edge exists because SMBs deserve the same caliber of network engineering that large enterprises get — with Ansible automation eliminating the manual overhead that keeps typical MSPs expensive and slow.</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
                     <div class="text-center p-6 glass-effect rounded-lg shadow-inner-light border border-gray-800 hover:border-silver transition-all duration-300 transform hover:-translate-y-1">
                         <h3 class="text-silver text-2xl font-bold font-heading mb-2">CCNP</h3>
@@ -507,10 +620,95 @@
     </section>
     </main>
 
-    <footer class="bg-dark py-8 border-t border-gray-800 relative">
+    <!-- FAQ Section -->
+    <section class="bg-darkgray py-20 bg-mesh relative" aria-labelledby="faq-heading">
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-lightgray">&copy; 2026 Northern Edge IT Consulting. Enterprise-grade IT for Southern California businesses.</p>
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 id="faq-heading" class="text-center text-3xl md:text-4xl font-bold uppercase tracking-wider font-heading text-secondary mb-16 relative inline-block mx-auto w-full">
+                <span class="relative z-10">Common Questions</span>
+                <span class="absolute bottom-[-15px] left-0 w-full h-px bg-gradient-to-r from-transparent via-silver to-transparent"></span>
+            </h2>
+            <div class="space-y-6">
+                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
+                        What does the free network assessment include?
+                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">A full audit of your network topology, firewall config, endpoint security posture, cloud spend, and backup coverage. You get a written findings report with prioritized recommendations and honest cost estimates — no upsell pressure, no sales pitch.</p>
+                    </div>
+                </details>
+                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
+                        How is this different from a typical managed service provider?
+                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Most MSPs assign a ticket to a tier-1 tech who escalates to tier-2 who escalates to a vendor. You work directly with a CCNP-certified engineer who has designed these systems at enterprise scale. No ticket queue. No account manager buffer. The person you talk to is the person who fixes it.</p>
+                    </div>
+                </details>
+                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
+                        What size businesses do you work with?
+                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Primarily small to mid-size businesses across Southern California — typically 5 to 250 employees — who need enterprise-grade infrastructure but can't justify a full-time IT hire. If you're outgrowing your current setup or just tired of things breaking, we're the right fit.</p>
+                    </div>
+                </details>
+                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
+                        Can you work with our existing equipment?
+                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Yes. The assessment starts with what you have. We recommend replacements only when existing gear is end-of-life, unsupported, or genuinely creating risk. If your Cisco switch is fine, we configure it — we don't sell you a new one.</p>
+                    </div>
+                </details>
+                <details class="bg-dark border border-gray-800 hover:border-silver rounded-lg p-6 transition-colors group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                    <summary class="text-secondary font-medium cursor-pointer list-none flex justify-between items-center" itemprop="name">
+                        Do you offer ongoing support or just project work?
+                        <i class="fas fa-chevron-down text-silver text-sm transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="mt-4 text-lightgray text-sm leading-relaxed" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                        <p itemprop="text">Both. Project-based engagements (network redesign, cloud migration, security hardening) and ongoing managed IT with proactive monitoring and automated remediation. Most clients start with a project and move to managed once they see how the infrastructure runs.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark py-12 border-t border-gray-800 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-silver via-opacity-20 to-transparent"></div>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="text-silver font-bold text-lg font-heading mb-3">NEIT</div>
+                    <p class="text-lightgray text-sm">Enterprise IT consulting without the enterprise contract. Diamond Bar, CA.</p>
+                </div>
+                <div>
+                    <div class="text-silver text-sm uppercase tracking-wider font-semibold mb-3">Services</div>
+                    <ul class="space-y-1 text-sm text-lightgray">
+                        <li><a href="#services" class="hover:text-silver transition-colors">Network Infrastructure</a></li>
+                        <li><a href="#services" class="hover:text-silver transition-colors">Cybersecurity</a></li>
+                        <li><a href="#services" class="hover:text-silver transition-colors">Managed IT & AI Monitoring</a></li>
+                        <li><a href="#services" class="hover:text-silver transition-colors">IT Automation & AI</a></li>
+                        <li><a href="#services" class="hover:text-silver transition-colors">Cloud & Hybrid Infrastructure</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="text-silver text-sm uppercase tracking-wider font-semibold mb-3">Contact</div>
+                    <ul class="space-y-1 text-sm text-lightgray">
+                        <li><a href="tel:+19095296128" class="hover:text-silver transition-colors">+1 (909) 529-6128</a></li>
+                        <li><a href="mailto:info@neit.tech" class="hover:text-silver transition-colors">info@neit.tech</a></li>
+                        <li>Diamond Bar, CA</li>
+                    </ul>
+                    <a href="#contact" class="mt-4 inline-block bg-silver text-dark text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded hover:bg-silver-light transition-colors">Free Assessment</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-lightgray text-sm">&copy; 2026 Northern Edge IT Consulting. Enterprise IT for Southern California businesses.</p>
+            </div>
         </div>
     </footer>
 
