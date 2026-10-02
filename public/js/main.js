@@ -28,8 +28,10 @@ function initContactForm() {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return emailRegex.test(value);
     },
-    message: (value) => value.trim().length > 10
+    message: (value) => value.trim().length >= 10
   };
+
+  const scrollBehavior = () => matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
 
   const showError = (field, show) => {
     if (errorMessages[field]) {
@@ -54,7 +56,8 @@ function initContactForm() {
     let isValid = true;
     Object.keys(formFields).forEach(field => {
       if (formFields[field] && validators[field]) {
-        isValid = isValid && validateField(field);
+        const ok = validateField(field);
+        isValid = isValid && ok;
       }
     });
     return isValid;
@@ -68,14 +71,6 @@ function initContactForm() {
     if (formSuccess) formSuccess.classList.add('hidden');
     if (formError) formError.classList.add('hidden');
 
-    // First, ensure the email is valid
-    if (!validators.email(formFields.email.value)) {
-      showError('email', true);
-      formFields.email.focus();
-      formFields.email.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
-
     // Validate all fields
     if (!validateForm()) {
       const firstInvalidField = Object.keys(formFields).find(
@@ -83,7 +78,7 @@ function initContactForm() {
       );
       if (firstInvalidField && formFields[firstInvalidField]) {
         formFields[firstInvalidField].focus();
-        formFields[firstInvalidField].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        formFields[firstInvalidField].scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
       }
       return;
     }
@@ -105,14 +100,14 @@ function initContactForm() {
       if (response.ok) {
         if (formSuccess) {
           formSuccess.classList.remove('hidden');
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          formSuccess.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
           formSuccess.focus();
           contactForm.reset();
         }
       } else {
         if (formError) {
           formError.classList.remove('hidden');
-          formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          formError.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
           formError.focus();
         }
       }
@@ -122,7 +117,7 @@ function initContactForm() {
 
       if (formError) {
         formError.classList.remove('hidden');
-        formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        formError.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
         formError.focus();
       }
     }
@@ -132,16 +127,11 @@ function initContactForm() {
   Object.keys(formFields).forEach(field => {
     if (formFields[field] && validators[field]) {
       formFields[field].addEventListener('blur', () => validateField(field));
-      
-      if (field === 'email') {
-        formFields[field].addEventListener('input', () => validateField(field));
-      } else {
-        formFields[field].addEventListener('input', () => {
-          if (formFields[field].getAttribute('aria-invalid') === 'true') {
-            validateField(field);
-          }
-        });
-      }
+      formFields[field].addEventListener('input', () => {
+        if (formFields[field].getAttribute('aria-invalid') === 'true') {
+          validateField(field);
+        }
+      });
     }
   });
 }

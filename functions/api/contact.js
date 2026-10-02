@@ -4,6 +4,9 @@ const NEEDS = [
   'Ongoing IT support',
   'Using AI tools safely',
   'Engineering project or contract work',
+  'Subcontract / white-label delivery',
+  'Project for our in-house team',
+  'Request a sanitized project summary',
   'Something else',
 ];
 const MAX_BYTES = 20_000;

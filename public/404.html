@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Northern Edge IT</title>
+  <meta name="description" content="This page doesn't exist.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
+
+  <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base:     '#080808',
+            surface:  '#111111',
+            elevated: '#1a1a1a',
+            border:   '#2a2a2a',
+            muted:    '#8a8a8a',
+            dim:      '#a3a3a3',
+            silver:   '#c0c0c0',
+            bright:   '#e8e8e8',
+            white:    '#ffffff',
+          },
+          fontFamily: {
+            sans:    ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#c0c0c0">
+
+  <style>
+    .btn-primary { display:inline-block; background:#c0c0c0; color:#080808; font-weight:600; font-size:0.8125rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.75rem 1.75rem; border-radius:0.375rem; border:1px solid #c0c0c0; transition:background 0.2s; text-decoration:none; text-align:center; }
+    .btn-primary:hover { background:#e8e8e8; border-color:#e8e8e8; }
+    .section-label { display:inline-block; font-size:0.7rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#888888; border-bottom:1px solid #2a2a2a; padding-bottom:0.25rem; margin-bottom:1.25rem; }
+  </style>
+</head>
+
+<body class="bg-base text-bright font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 btn-primary">Skip to content</a>
+
+  <header class="sticky top-0 z-50 bg-base bg-opacity-90 backdrop-blur border-b border-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14">
+        <a href="/" class="text-silver font-heading font-bold text-lg tracking-widest hover:text-white transition-colors">NEIT</a>
+        <a href="/#contact" class="btn-primary text-xs py-2 px-4">Free IT Review</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="py-24 md:py-32">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <div class="section-label">404</div>
+      <h1 class="text-3xl md:text-4xl font-heading font-bold mb-4">Page not found</h1>
+      <p class="text-dim leading-relaxed mb-8">The page you're looking for doesn't exist or has moved.</p>
+      <a href="/" class="btn-primary">Back to home</a>
+    </div>
+  </main>
+
+  <footer class="border-t border-border py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row gap-3 justify-between text-muted text-sm">
+      <div>&copy; 2026 Northern Edge IT Consulting. All rights reserved.</div>
+      <div class="flex gap-5">
+        <a href="/" class="hover:text-silver transition-colors">Home</a>
+        <a href="/engineering" class="hover:text-silver transition-colors">Engineering</a>
+        <a href="/sample-review" class="hover:text-silver transition-colors">Sample IT review</a>
+        <a href="/privacy" class="hover:text-silver transition-colors">Privacy policy</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

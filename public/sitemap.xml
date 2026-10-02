@@ -2,7 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.neit.tech/</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-10-02</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.neit.tech/engineering</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.neit.tech/sample-review</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://www.neit.tech/privacy</loc>
+    <lastmod>2026-10-02</lastmod>
   </url>
 </urlset>
