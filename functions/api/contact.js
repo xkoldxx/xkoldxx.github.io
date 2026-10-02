@@ -1,12 +1,12 @@
 const NEEDS = [
   'Free IT review for my business',
+  'Check my email security',
   'A new or better website',
   'Ongoing IT support',
   'Using AI tools safely',
   'Engineering project or contract work',
   'Subcontract / white-label delivery',
   'Project for our in-house team',
-  'Request a sanitized project summary',
   'Something else',
 ];
 const MAX_BYTES = 20_000;
@@ -34,11 +34,12 @@ export async function onRequestPost({ request, env }) {
 
   if (field('company_website')) return json(200, { ok: true });
 
-  const lead = { name: field('name'), email: field('email'), need: field('need'), message: field('message') };
+  const lead = { name: field('name'), email: field('email'), need: field('need'), domain: field('domain'), message: field('message') };
   const error =
     (!lead.name || lead.name.length > 100 || /[\r\n]/.test(lead.name)) ? 'Invalid name'
     : (lead.email.length > 254 || !EMAIL_RE.test(lead.email)) ? 'Invalid email'
     : !NEEDS.includes(lead.need) ? 'Invalid need'
+    : (lead.domain.length > 253 || /[\r\n]/.test(lead.domain)) ? 'Invalid domain'
     : lead.message.length > 5000 ? 'Invalid message'
     : null;
   if (error) return json(400, { ok: false, error });
@@ -65,8 +66,8 @@ async function turnstileOk(env, token, ip) {
 }
 
 // ponytail: plain text, no parse_mode, so user input needs no escaping. Telegram caps at 4096 chars; email carries the full text.
-async function sendTelegram(env, { name, email, need, message }) {
-  const text = `New neit.tech lead\nName: ${name}\nEmail: ${email}\nNeed: ${need}\n\n${message}`.slice(0, 4096);
+async function sendTelegram(env, { name, email, need, domain, message }) {
+  const text = `New neit.tech lead\nName: ${name}\nEmail: ${email}\nNeed: ${need}\nDomain: ${domain || '-'}\n\n${message}`.slice(0, 4096);
   const res = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
@@ -83,7 +84,7 @@ async function sendTelegram(env, { name, email, need, message }) {
 
 const USING = ['urn:ietf:params:jmap:core', 'urn:ietf:params:jmap:mail', 'urn:ietf:params:jmap:submission'];
 
-async function sendEmail(env, { name, email, need, message }) {
+async function sendEmail(env, { name, email, need, domain, message }) {
   const headers = { authorization: `Bearer ${env.FASTMAIL_API_TOKEN}`, 'content-type': 'application/json' };
   const sres = await fetch('https://api.fastmail.com/jmap/session', { headers });
   if (!sres.ok) throw new Error(`jmap session ${sres.status}`);
@@ -115,7 +116,7 @@ async function sendEmail(env, { name, email, need, message }) {
       to: [{ email: env.LEAD_TO }],
       replyTo: [{ name, email }],
       subject: `neit.tech lead: ${need} — ${name}`,
-      bodyValues: { body: { value: `Name: ${name}\nEmail: ${email}\nNeed: ${need}\n\n${message}\n` } },
+      bodyValues: { body: { value: `Name: ${name}\nEmail: ${email}\nNeed: ${need}\nDomain: ${domain || '-'}\n\n${message}\n` } },
       textBody: [{ partId: 'body', type: 'text/plain' }],
     } } }, 'e'],
     ['EmailSubmission/set', { accountId, create: { send: { identityId: identity.id, emailId: '#lead' } }, onSuccessDestroyEmail: ['#send'] }, 's'],

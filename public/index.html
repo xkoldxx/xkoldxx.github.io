@@ -68,6 +68,22 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How did you know about our email or website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "From public records anyone can look up: your domain's email settings (DNS) and your website's security certificate. Nothing was scanned, no logins were tried, nothing was accessed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will fixing it break our email?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. I do it in stages: first a monitor-only setting that changes nothing, then I confirm every service that legitimately sends as you, and only then tighten it."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "We're only 3 or 4 people — are we too small?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -79,7 +95,7 @@
       "name": "What happens on the free IT review?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A 15-minute video call. I look at your email and accounts, backups, website, AI tool use, and how your team gets support today. You get a one-page written list of what to fix, most urgent first. No obligation."
+        "text": "A 15-minute video call. I look at your email and accounts, backups, AI tool use, website, and the subscriptions and licenses you're paying for. You get a one-page written list of what to fix, most urgent first. No obligation."
       }
     },
     {
@@ -103,7 +119,7 @@
       "name": "Do you charge by the hour?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Projects are one fixed price agreed up front. Ongoing support is a flat monthly plan with a set amount of my time included, and you approve anything beyond it before it's billed."
+        "text": "Not for projects or the monthly plan. Projects are one fixed price agreed up front. The monthly plan is a flat fee with a set amount of my time included. If you ever need more, I tell you the cost first and you approve it before it's billed."
       }
     },
     {
@@ -127,7 +143,7 @@
       "name": "Is it safe to let you into our computers remotely?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I only connect when you've asked for help or approved planned work, using my own named login with 2-step verification, never a shared password. Your business keeps ownership of its accounts and admin passwords, and you can remove my access at any time."
+        "text": "I only connect when you've asked for help or approved planned work, using my own named login with 2-step login, never a shared password. Your business keeps ownership of its accounts and admin passwords, and you can remove my access at any time."
       }
     },
     {
@@ -203,7 +219,7 @@
 <a class="skip-link btn btn-primary btn-sm" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home">NEIT</a>
+    <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home"><img src="/images/compass-mark.png" width="28" height="28" alt="">NEIT</a>
     <nav aria-label="Main">
       <ul class="nav-links">
         <li><a href="/" aria-current="page">Small business IT</a></li>
@@ -231,32 +247,32 @@
 <main id="main">
 
   <section class="hero" id="home">
-    <div class="container hero-grid">
-      <div class="fade-up">
-        <img class="hero-logo" src="/images/NEIT-logo-620.webp" srcset="/images/NEIT-logo-310.webp 310w, /images/NEIT-logo-620.webp 620w, /images/NEIT-logo-930.webp 930w" sizes="(min-width: 48rem) 266px, 177px" alt="Northern Edge IT Consulting" width="620" height="448" fetchpriority="high">
-        <h1>Your IT person,<br><span class="gradient-text">without hiring&nbsp;one.</span></h1>
-        <p class="lead">For businesses with 3 to 25 people and no IT department. I handle your email and accounts, security and backups, website, laptops, and safe AI use. Remotely, in plain English, by an engineer with 13+ years in enterprise IT.</p>
+    <div class="container hero-grid hero-grid--tight">
+      <div class="span-all fade-up">
+        <span class="label-line">For small businesses</span>
+        <h1 class="hero-title-wide">Your IT person,<br class="br-desktop"> <span class="gradient-text">without hiring one.</span></h1>
+      </div>
+      <div class="fade-up delay-1">
+        <p class="lead">For businesses with 3 to 25 people and no IT department. I look after your email and accounts, security and backups, website, laptops, and AI tools. All remotely, in plain English, with 13+ years on large-company networks and systems behind me.</p>
         <p class="dim">Everything is set up in your name and written down, so you can switch providers any time.</p>
-        <div class="hero-actions">
+        <div class="actions">
           <a class="btn btn-primary" href="/contact">Get my free IT review</a>
         </div>
-        <div class="hero-notes">
-          <p>Free · 15 minutes · Video call · No passwords needed</p>
-          <p>Had a phishing email or a hacked account? Say so in your message and I'll start there.</p>
-        </div>
+        <p class="meta meta-list"><span>15-minute video call</span> <span>No passwords needed</span></p>
       </div>
       <aside class="panel fade-up delay-2" aria-labelledby="covers-title">
         <h2 class="panel-head" id="covers-title">What the free review covers</h2>
         <div class="panel-body">
           <ul class="checklist bright">
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Email and account security: shared passwords, missing 2-step login</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Can someone send email pretending to be you? (SPF and DMARC check)</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Backups: do they exist, and do they actually restore?</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>AI tools: is anyone pasting customer details into a free chatbot?</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Website: speed, mobile, and your Google listing</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Website: HTTPS and certificate, speed, mobile, and your Google listing</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Subscriptions and licenses you're paying for but not using</span></li>
           </ul>
           <p class="list-foot"><strong>The result:</strong> a one-page written list of what to fix first</p>
         </div>
+        <p class="panel-foot panel-alert"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg><span>Had a phishing email or a hacked account? Say so in your message and I'll start there.</span></p>
       </aside>
     </div>
   </section>
@@ -265,15 +281,15 @@
     <div class="container">
       <div class="section-head">
         <span class="label-line">My rules</span>
-        <h2 id="rules-title">How I work. These are rules, not slogans.</h2>
+        <h2 id="rules-title">How I work</h2>
       </div>
       <ol class="rules">
-        <li class="card rule elevated"><span class="rule-num gradient-text" aria-hidden="true">1</span><div><h3>Everything is in your name</h3><p>Accounts, domains, licenses and admin passwords belong to your business, not to me.</p></div></li>
-        <li class="card rule elevated"><span class="rule-num gradient-text" aria-hidden="true">2</span><div><h3>Price before work</h3><p>You get a written scope and price first. Anything new, you approve first.</p></div></li>
-        <li class="card rule elevated"><span class="rule-num gradient-text" aria-hidden="true">3</span><div><h3>I write it down</h3><p>Everything I set up goes in a guide in your own account, so you or any IT provider can pick it up.</p></div></li>
-        <li class="card rule elevated"><span class="rule-num gradient-text" aria-hidden="true">4</span><div><h3>I only connect when you ask</h3><p>I use my own named login with 2-step verification, never a shared password. You can remove my access any time.</p></div></li>
-        <li class="card rule elevated"><span class="rule-num gradient-text" aria-hidden="true">5</span><div><h3>You talk to the person doing the work</h3><p>No help desk queue. It's me.</p></div></li>
-        <li class="card rule elevated"><span class="rule-num gradient-text" aria-hidden="true">6</span><div><h3>Plain English, no upselling</h3><p>If I can't explain why you need something, you don't need it.</p></div></li>
+        <li class="rule"><span class="rule-num gradient-text" aria-hidden="true">1</span><div><h3>Everything is in your name</h3><p>Accounts, domains, licenses and admin passwords belong to your business, not to me.</p></div></li>
+        <li class="rule"><span class="rule-num gradient-text" aria-hidden="true">2</span><div><h3>Price before work</h3><p>You get a written scope and price first. Anything new, you approve first.</p></div></li>
+        <li class="rule"><span class="rule-num gradient-text" aria-hidden="true">3</span><div><h3>I write it down</h3><p>Everything I set up goes in a guide in your own account, so you or any IT provider can pick it up.</p></div></li>
+        <li class="rule"><span class="rule-num gradient-text" aria-hidden="true">4</span><div><h3>I only connect when you ask</h3><p>I connect only when you've asked for help or approved the work. I use my own login with <span class="nowrap">2-step</span> login turned on, never a shared password. You can remove my access any time.</p></div></li>
+        <li class="rule"><span class="rule-num gradient-text" aria-hidden="true">5</span><div><h3>You talk to the person doing the work</h3><p>No help desk queue. It's me.</p></div></li>
+        <li class="rule"><span class="rule-num gradient-text" aria-hidden="true">6</span><div><h3>Plain English, no upselling</h3><p>If I can't explain why you need something, you don't need it.</p></div></li>
       </ol>
     </div>
   </section>
@@ -281,7 +297,7 @@
   <section class="section" id="services" aria-labelledby="services-title">
     <div class="container">
       <div class="section-head">
-        <span class="label-line">For small businesses</span>
+        <span class="label-line">Services</span>
         <h2 id="services-title">What I do for small businesses</h2>
         <p class="lead">One person who knows your setup, explains things in plain English, and fixes it.</p>
       </div>
@@ -292,7 +308,7 @@
         </article>
         <article class="card">
           <div class="card-head"><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m21.5 7-9.5 6.5L2.5 7"/></svg></span><h3>Email and accounts, sorted</h3></div>
-          <p>Microsoft 365 or Google Workspace set up properly. New hires set up before their first day, departing staff's access removed cleanly, and no paying for licenses nobody uses.</p>
+          <p>Microsoft 365 or Google Workspace set up properly. New hires set up properly, departing staff's access removed cleanly, and no paying for licenses nobody uses.</p>
         </article>
         <article class="card">
           <div class="card-head"><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.5s7.5-3.6 7.5-9.5V5.5L12 2.5l-7.5 3V12c0 5.9 7.5 9.5 7.5 9.5z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Protection from the bad day</h3></div>
@@ -315,13 +331,13 @@
   </section>
 
   <section class="section band" aria-labelledby="fit-title">
-    <div class="container narrow">
-      <div class="section-head center">
+    <div class="container">
+      <div class="section-head">
         <span class="label-line">Is this you?</span>
         <h2 id="fit-title">Good fit, not a fit</h2>
       </div>
-      <div class="grid-2">
-        <div class="card elevated">
+      <div class="fit">
+        <div class="card">
           <h3>A good fit if you</h3>
           <ul class="checklist">
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Run a business with 3 to 25 people and no IT person</span></li>
@@ -330,7 +346,7 @@
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Are fine with help over a video call instead of in person</span></li>
           </ul>
         </div>
-        <div class="card elevated">
+        <div class="card card-quiet">
           <h3>Not a fit if you</h3>
           <ul class="xlist">
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Need someone on site to run cabling, mount cameras, or install equipment</span></li>
@@ -343,7 +359,7 @@
 
   <section class="section" id="how" aria-labelledby="how-title">
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head">
         <span class="label-line">How it works</span>
         <h2 id="how-title">Start free. Fix what matters. Keep it running.</h2>
         <p class="lead">Three steps. You can stop after any of them.</p>
@@ -367,7 +383,7 @@
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Done remotely, set up in your business's name</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>A written guide in your own account</span></li>
           </ul>
-          <p class="step-foot"><strong>Common projects:</strong> 2-step login and separate logins for everyone · backups set up and test-restored · Microsoft 365 or Google Workspace cleanup · a new website · business AI plans and a one-page "what's OK to paste" policy</p>
+          <p class="step-foot"><strong>Cost:</strong> one fixed price, agreed up front</p>
         </li>
         <li class="card step">
           <div class="step-top"><span class="step-num" aria-hidden="true">3</span><div><span class="step-label">Keep</span><h3>A flat monthly plan</h3></div></div>
@@ -378,35 +394,51 @@
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>A set amount of my time each month; anything beyond it, you approve before it's billed</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Month-to-month, no minimum</span></li>
           </ul>
-          <p class="step-foot"><strong>Website from me?</strong> A care plan keeps it hosted, backed up and updated.</p>
+          <p class="step-foot"><strong>Website from me?</strong> A website care plan keeps it hosted, backed up and updated.</p>
         </li>
       </ol>
-      <div class="text-center"><a class="btn btn-primary" href="/contact">Get my free IT review</a></div>
+      <div class="projects">
+        <h3 class="step-label">Common projects</h3>
+        <ul class="projects-list">
+          <li>2-step login and separate logins for everyone</li>
+          <li>Backups set up and test-restored</li>
+          <li>Microsoft 365 or Google Workspace cleanup</li>
+          <li>A new website</li>
+          <li>Business AI plans and a one-page "what's OK to paste" policy</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <div class="pointer">
     <div class="container">
-      <p>Run an MSP or an in-house IT team and need a network or security engineer for a project? <a href="/engineering">That's a separate page <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      <p>Run an MSP or an in-house IT team and need a network or security engineer for a project? <a href="/engineering">See engineering for IT teams <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
     </div>
   </div>
 
 
   <section class="section band" id="faq" aria-labelledby="faq-title">
-    <div class="container">
-      <div class="section-head center">
+    <div class="container faq-layout">
+      <div class="section-head sticky">
         <span class="label-line">FAQ</span>
         <h2 id="faq-title">Common questions</h2>
+        <div class="actions"><a class="btn btn-ghost" href="/contact">Free IT review</a></div>
+        <ul class="contact-rows">
+          <li><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m21.5 7-9.5 6.5L2.5 7"/></svg></span><span><span class="sr-only">Email: </span><!--email_off--><a href="mailto:info@neit.tech">info@neit.tech</a><!--/email_off--></span></li>
+          <li><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><span class="sr-only">Phone: </span><a href="tel:+19095296128">(909) 529-6128</a></span></li>
+        </ul>
       </div>
       <div class="faq">
+        <details><summary>How did you know about our email or website?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>From public records anyone can look up: your domain's email settings (DNS) and your website's security certificate. Nothing was scanned, no logins were tried, nothing was accessed.</p></div></details>
+        <details><summary>Will fixing it break our email?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>No. I do it in stages: first a monitor-only setting that changes nothing, then I confirm every service that legitimately sends as you, and only then tighten it.</p></div></details>
         <details><summary>We're only 3 or 4 people — are we too small?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>No. Small teams are who I work with. With a handful of people, one phished password or one failed backup hits harder, not softer.</p></div></details>
-        <details><summary>What happens on the free IT review?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>A 15-minute video call. I look at your email and accounts, backups, website, AI tool use, and how your team gets support today. You get a one-page written list of what to fix, most urgent first. No obligation.</p></div></details>
+        <details><summary>What happens on the free IT review?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>A 15-minute video call. I look at your email and accounts, backups, AI tool use, website, and the subscriptions and licenses you're paying for. You get a one-page written list of what to fix, most urgent first. No obligation.</p></div></details>
         <details><summary>Will you try to sell me something on the review call?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>I'll tell you what I'd fix first and roughly what it involves. The written list is yours either way. Plenty of the fixes are things you can do yourself.</p></div></details>
         <details><summary>Why aren't your prices on the site?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Because I'd be guessing. The price depends on how many people you have and what's already set up. After the free review you get a written price for the project and for the monthly plan before you agree to anything.</p></div></details>
-        <details><summary>Do you charge by the hour?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>No. Projects are one fixed price agreed up front. Ongoing support is a flat monthly plan with a set amount of my time included, and you approve anything beyond it before it's billed.</p></div></details>
+        <details><summary>Do you charge by the hour?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Not for projects or the monthly plan. Projects are one fixed price agreed up front. The monthly plan is a flat fee with a set amount of my time included. If you ever need more, I tell you the cost first and you approve it before it's billed.</p></div></details>
         <details><summary>What's included in the monthly plan?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Help when something breaks, updates and monitoring in the background, new hires set up and departing staff removed, and a set amount of my time each month. Anything beyond that, you approve first.</p></div></details>
         <details><summary>Can you really support my business remotely?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Yes. Almost everything a small business needs (accounts, email, security, backups, websites, laptops, network settings) is managed through secure remote tools. Nothing is accessed without your permission.</p></div></details>
-        <details><summary>Is it safe to let you into our computers remotely?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>I only connect when you've asked for help or approved planned work, using my own named login with 2-step verification, never a shared password. Your business keeps ownership of its accounts and admin passwords, and you can remove my access at any time.</p></div></details>
+        <details><summary>Is it safe to let you into our computers remotely?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>I only connect when you've asked for help or approved planned work, using my own named login with 2-step login, never a shared password. Your business keeps ownership of its accounts and admin passwords, and you can remove my access at any time.</p></div></details>
         <details><summary>What if something needs a person on site?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>I don't do on-site work. Most small business problems don't need a visit. When something physical needs doing, like plugging in a new device, I'll walk you or a staff member through it on a video call. If it truly needs a technician in the room, I'll tell you plainly and give you a written list of exactly what to ask them for.</p></div></details>
         <details><summary>You're one person. What if you're unavailable?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Fair question. If I'm away, you'll hear about it ahead of time whenever possible. If I'm unexpectedly out, the written guide in your own account tells you where everything is and how to get in, so you or any IT provider can act right away without waiting for me. You're never locked in.</p></div></details>
         <details><summary>We already have someone who helps with IT, or a website person. Can you work alongside them?<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq-body"><p>Yes. I can take one piece, like email and security, and leave the rest with them, or hand them a written list to work from.</p></div></details>
@@ -419,6 +451,16 @@
     </div>
   </section>
 
+  <section class="section cta-band" aria-labelledby="cta-title">
+    <div class="container">
+      <span class="label-line">Free IT review</span>
+      <h2 id="cta-title">Get your free IT review</h2>
+      <p class="meta meta-list"><span>15-minute video call</span> <span>No passwords needed</span></p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/contact">Get my free IT review</a>
+      </div>
+    </div>
+  </section>
 
 </main>
 
@@ -426,9 +468,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home">NEIT</a>
-        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick.</p>
+        <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home"><img src="/images/compass-mark.png" width="28" height="28" alt="">NEIT</a>
+        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick, based in Diamond Bar, California.</p>
       </div>
+      <div class="footer-links">
       <nav aria-label="Footer">
         <h2 class="footer-title">Pages</h2>
         <ul class="footer-list">
@@ -442,12 +485,12 @@
         <h2 class="footer-title">Contact</h2>
         <ul class="footer-list">
           <li><a href="tel:+19095296128">(909) 529-6128</a></li>
-          <li><a href="mailto:info@neit.tech">info@neit.tech</a></li>
+          <li><!--email_off--><a href="mailto:info@neit.tech">info@neit.tech</a><!--/email_off--></li>
         </ul>
-        <a class="btn btn-primary btn-sm footer-cta" href="/contact">Free IT review</a>
+      </div>
       </div>
     </div>
-    <p class="footer-bottom">&copy; 2026 Northern Edge IT Consulting. Based in Southern California, working remotely across the US.</p>
+    <div class="footer-bottom"><p>&copy; 2026 Northern Edge IT Consulting.</p><p>Working remotely across the US.</p></div>
   </div>
 </footer>
 </body>

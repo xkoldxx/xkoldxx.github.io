@@ -1,11 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => { a.closest('details').open = false; }));
+  const menu = document.querySelector('.nav-mobile');
+  if (menu) {
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.open = false; }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.open) { menu.open = false; menu.querySelector('summary').focus(); } });
+    document.addEventListener('click', e => { if (menu.open && !menu.contains(e.target)) menu.open = false; });
+    window.addEventListener('scroll', () => { if (menu.open) menu.open = false; }, { passive: true });
+  }
   initContactForm();
+  initToc();
 });
+
+function initToc() {
+  const links = [...document.querySelectorAll('.toc a[href^="#"]')];
+  const targets = links.map(a => document.getElementById(a.hash.slice(1)));
+  if (!links.length || targets.includes(null)) return;
+  const update = () => {
+    let i = 0;
+    targets.forEach((t, n) => { if (t.getBoundingClientRect().top < 120) i = n; });
+    if (innerHeight + scrollY >= document.documentElement.scrollHeight - 2) i = targets.length - 1;
+    links.forEach((a, n) => n === i ? a.setAttribute('aria-current', 'true') : a.removeAttribute('aria-current'));
+  };
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+}
 
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
   if (!contactForm) return;
+
+  const need = document.getElementById('need');
+  const wanted = new URLSearchParams(location.search).get('need');
+  const preset = wanted && need && [...need.options].find(o => o.dataset.key === wanted);
+  if (preset) need.value = preset.value;
   
   const formFields = {
     name: document.getElementById('name'),
@@ -22,6 +48,7 @@ function initContactForm() {
   const formSuccess = document.getElementById('form-success');
   const formError = document.getElementById('form-error');
   const submitButton = contactForm.querySelector('button[type="submit"]');
+  const formErrorText = formError ? formError.innerHTML : '';
 
   // Validation functions using stricter email validation
   const validators = {
@@ -107,6 +134,7 @@ function initContactForm() {
         }
       } else {
         if (formError) {
+          formError.innerHTML = response.status === 403 ? 'Please complete the verification above and try again.' : formErrorText;
           formError.classList.remove('hidden');
           formError.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
           formError.focus();
@@ -117,6 +145,7 @@ function initContactForm() {
       window.turnstile?.reset();
 
       if (formError) {
+        formError.innerHTML = formErrorText;
         formError.classList.remove('hidden');
         formError.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
         formError.focus();
