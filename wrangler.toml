@@ -1,0 +1,8 @@
+name = "neit-website"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-09-01"
+
+[vars]
+LEAD_TO = "info@neit.tech"
+TELEGRAM_CHAT_ID = "-1003475885008"
+TELEGRAM_THREAD_ID = "7094"

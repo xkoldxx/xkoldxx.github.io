@@ -192,7 +192,6 @@
       "addressRegion": "CA",
       "addressCountry": "US"
     },
-    "openingHours": "Mo-Fr 09:00-18:00",
     "areaServed": {"@type": "Country", "name": "United States"},
     "serviceType": ["Remote IT Support","Small Business Websites","Microsoft 365 and Google Workspace Administration","Cybersecurity","Backup and Recovery","Network Engineering","Systems Administration","Cloud Migration","IT Automation","Safe AI Tool Setup for Small Business"]
   }
@@ -762,7 +761,7 @@
           </div>
 
           <div class="bg-surface border border-border rounded-xl p-8">
-            <form id="contactForm" action="https://getform.io/f/bqokloob" method="POST" class="space-y-5" novalidate>
+            <form id="contactForm" action="/api/contact" method="POST" class="space-y-5" novalidate>
               <div>
                 <label for="name" class="block text-silver text-xs uppercase tracking-wider mb-2">Name <span class="text-muted">*</span></label>
                 <input type="text" id="name" name="name" aria-describedby="name-error" required
@@ -795,7 +794,14 @@
                   class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted resize-none"
                   placeholder="Tell me what you're dealing with..."></textarea>
                 <p id="message-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please add a few more words so I know what you need.</p>
+                <p class="text-muted text-xs mt-1">Please don't include patient or customer personal information in this form.</p>
               </div>
+              <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                <label for="company_website">Leave this field empty</label>
+                <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+              </div>
+              <!-- ponytail: 1x00000000000000000000AA is Cloudflare's always-pass TEST site key. Swap in the real Turnstile site key before going live. -->
+              <div class="cf-turnstile" data-sitekey="1x00000000000000000000AA" data-theme="dark"></div>
               <button type="submit" class="btn-primary w-full justify-center">
                 Send Message
               </button>
@@ -847,6 +853,7 @@
     </div>
   </footer>
 
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="./js/main.js" defer></script>
   <script>
     // Mobile nav toggle

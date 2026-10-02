@@ -100,6 +100,7 @@ function initContactForm() {
       });
 
       if (submitButton) submitButton.disabled = false;
+      window.turnstile?.reset();
 
       if (response.ok) {
         if (formSuccess) {
@@ -117,6 +118,7 @@ function initContactForm() {
       }
     } catch (error) {
       if (submitButton) submitButton.disabled = false;
+      window.turnstile?.reset();
 
       if (formError) {
         formError.classList.remove('hidden');
