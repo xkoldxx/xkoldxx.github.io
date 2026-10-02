@@ -17,6 +17,9 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.neit.tech/engineering">
   <meta property="og:image" content="https://www.neit.tech/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Northern Edge IT Consulting logo with the line: One tech partner for your whole business">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Northern Edge IT Consulting">
 
@@ -60,12 +63,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <!-- Favicon -->
-  <link rel="icon" href="/images/inverse-notext.png" type="image/png">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#c0c0c0">
-  <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="NEIT">
-  <link rel="apple-touch-icon" href="/images/inverse-notext.png">
 
   <style>
     * { box-sizing: border-box; }
@@ -172,7 +175,7 @@
     .delay-1 { animation-delay: 0.1s; opacity: 0; }
     .delay-2 { animation-delay: 0.22s; opacity: 0; }
     .delay-3 { animation-delay: 0.34s; opacity: 0; }
-    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} .fade-up,.delay-1,.delay-2,.delay-3{animation:none;opacity:1;transform:none} }
+    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto !important} .fade-up,.delay-1,.delay-2,.delay-3{animation:none;opacity:1;transform:none} }
   </style>
 </head>
 
@@ -372,21 +375,21 @@
               <div>
                 <label for="name" class="block text-silver text-xs uppercase tracking-wider mb-2">Name <span class="text-muted">*</span></label>
                 <input type="text" id="name" name="name" aria-describedby="name-error" required
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted"
+                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors placeholder-muted"
                   placeholder="Your name">
                 <p id="name-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please enter your name.</p>
               </div>
               <div>
                 <label for="email" class="block text-silver text-xs uppercase tracking-wider mb-2">Email <span class="text-muted">*</span></label>
                 <input type="email" id="email" name="email" aria-describedby="email-error" required
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted"
+                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors placeholder-muted"
                   placeholder="you@company.com">
                 <p id="email-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please enter a valid email address.</p>
               </div>
               <div>
                 <label for="need" class="block text-silver text-xs uppercase tracking-wider mb-2">What do you need?</label>
                 <select id="need" name="need"
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors">
+                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors">
                   <option>Subcontract / white-label delivery</option>
                   <option>Project for our in-house team</option>
                   <option>Request a sanitized project summary</option>
@@ -396,7 +399,7 @@
               <div>
                 <label for="message" class="block text-silver text-xs uppercase tracking-wider mb-2">Message <span class="text-muted">*</span></label>
                 <textarea id="message" name="message" aria-describedby="message-error" rows="4" required
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus:border-silver transition-colors placeholder-muted resize-none"
+                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors placeholder-muted resize-none"
                   placeholder="Platform, scope, timing..."></textarea>
                 <p id="message-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please add a few more words so I know what you need.</p>
                 <p class="text-muted text-xs mt-1">Please don't include customer names, credentials, or configs in this form.</p>
