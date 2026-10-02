@@ -36,7 +36,7 @@
 <a class="skip-link btn btn-primary btn-sm" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home">NEIT</a>
+    <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home"><img src="/images/compass-mark.png" width="28" height="28" alt="">NEIT</a>
     <nav aria-label="Main">
       <ul class="nav-links">
         <li><a href="/">Small business IT</a></li>
@@ -63,18 +63,23 @@
 
 <main id="main">
 
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="container split">
-      <div class="prose">
+  <section class="hero" id="about" aria-labelledby="about-title">
+    <div class="container hero-grid">
+      <div class="span-all fade-up">
         <span class="label-line">About</span>
-        <h1 id="about-title"><span class="gradient-text">Who you'd be working with</span></h1>
-        <p>I'm James Kirkpatrick. For 13+ years I've worked on the networks and systems of large enterprises. I designed network segmentation across global data centers, moved thousands of users from one security platform to another, and automated network work at scale.</p>
-        <p>Small businesses get the same phishing emails, account takeovers and failed backups as those companies, usually with nobody looking after it. That's the gap I fill.</p>
-        <p>Northern Edge is just me. I do the work myself, remotely, and I'd rather tell you a fix isn't worth the money than sell it to you.</p>
-        <p class="signature"><strong>James Kirkpatrick</strong><span>Owner, Northern Edge IT Consulting</span></p>
+        <h1 id="about-title">Who you'd be <span class="gradient-text">working with</span></h1>
       </div>
-      <aside class="panel" aria-labelledby="facts-title">
-        <h3 class="panel-head" id="facts-title">The plain facts</h3>
+      <div class="prose fade-up delay-1">
+        <p class="lead">I'm James Kirkpatrick. For 13+ years I've worked on the networks and systems of large enterprises. I designed network segmentation across global data centers, moved thousands of users from one security platform to another, and automated network work at scale.</p>
+        <p>Small businesses get the same phishing emails, account takeovers and failed backups as those companies, usually with nobody watching for them. That's the gap I fill.</p>
+        <p>Northern Edge is just me. I do the work myself, remotely, and I'd rather tell you a fix isn't worth the money than sell it to you.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/contact">Get my free IT review</a>
+          <a class="btn btn-ghost" href="/#how">How it works</a>
+        </div>
+      </div>
+      <aside class="panel fade-up delay-2" aria-labelledby="facts-title">
+        <h2 class="panel-head" id="facts-title">The plain facts</h2>
         <div class="panel-body">
           <dl class="facts">
             <div><dt>Who</dt><dd>One engineer. You talk to me, not a queue.</dd></div>
@@ -84,7 +89,19 @@
             <div><dt>If I'm unavailable</dt><dd>Your written guide says where everything is, so you're never stuck waiting on me.</dd></div>
           </dl>
         </div>
+        <p class="panel-foot"><strong>James Kirkpatrick</strong><span>Owner, Northern Edge IT Consulting</span></p>
       </aside>
+    </div>
+  </section>
+
+  <section class="section cta-band" aria-labelledby="cta-title">
+    <div class="container">
+      <span class="label-line">Free IT review</span>
+      <h2 id="cta-title">Get your free IT review</h2>
+      <p class="meta meta-list"><span>15-minute video call</span> <span>No passwords needed</span></p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/contact">Get my free IT review</a>
+      </div>
     </div>
   </section>
 
@@ -94,9 +111,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home">NEIT</a>
-        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick.</p>
+        <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home"><img src="/images/compass-mark.png" width="28" height="28" alt="">NEIT</a>
+        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick, based in Diamond Bar, California.</p>
       </div>
+      <div class="footer-links">
       <nav aria-label="Footer">
         <h2 class="footer-title">Pages</h2>
         <ul class="footer-list">
@@ -110,12 +128,12 @@
         <h2 class="footer-title">Contact</h2>
         <ul class="footer-list">
           <li><a href="tel:+19095296128">(909) 529-6128</a></li>
-          <li><a href="mailto:info@neit.tech">info@neit.tech</a></li>
+          <li><!--email_off--><a href="mailto:info@neit.tech">info@neit.tech</a><!--/email_off--></li>
         </ul>
-        <a class="btn btn-primary btn-sm footer-cta" href="/contact">Free IT review</a>
+      </div>
       </div>
     </div>
-    <p class="footer-bottom">&copy; 2026 Northern Edge IT Consulting. Based in Southern California, working remotely across the US.</p>
+    <div class="footer-bottom"><p>&copy; 2026 Northern Edge IT Consulting.</p><p>Working remotely across the US.</p></div>
   </div>
 </footer>
 </body>

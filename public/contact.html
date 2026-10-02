@@ -37,7 +37,7 @@
 <a class="skip-link btn btn-primary btn-sm" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home">NEIT</a>
+    <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home"><img src="/images/compass-mark.png" width="28" height="28" alt="">NEIT</a>
     <nav aria-label="Main">
       <ul class="nav-links">
         <li><a href="/">Small business IT</a></li>
@@ -46,7 +46,7 @@
       </ul>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-primary btn-sm header-cta" href="/contact">Free IT review</a>
+      <a class="btn btn-primary btn-sm header-cta" href="/contact" aria-current="page">Free IT review</a>
       <details class="nav-mobile">
         <summary aria-label="Menu"><svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></summary>
         <nav aria-label="Mobile">
@@ -54,7 +54,7 @@
             <li><a href="/">Small business IT</a></li>
             <li><a href="/engineering">Engineering</a></li>
             <li><a href="/about">About</a></li>
-            <li class="nav-mobile-cta"><a class="btn btn-primary" href="/contact">Free IT review</a></li>
+            <li class="nav-mobile-cta"><a class="btn btn-primary" href="/contact" aria-current="page">Free IT review</a></li>
           </ul>
         </nav>
       </details>
@@ -64,39 +64,55 @@
 
 <main id="main">
 
-  <section class="section" id="contact" aria-labelledby="contact-title">
-    <div class="container split contact-split">
-      <div>
+  <section class="hero" id="contact" aria-labelledby="contact-title">
+    <div class="container hero-grid">
+      <div class="span-all fade-up">
         <span class="label-line">Contact</span>
-        <h1 id="contact-title">Get your free IT review</h1>
-        <p class="lead">Tell me roughly how many people you have and what's bugging you. I'll reply by email to set up the 15-minute call. Prefer the phone? Call <a href="tel:+19095296128">(909) 529-6128</a>.</p>
+        <h1 id="contact-title">Get your free <span class="gradient-text">IT review</span></h1>
       </div>
-      <div class="form-card">
+      <div class="contact-side sticky fade-up delay-1">
+        <p class="lead">Tell me roughly how many people you have and what's bugging you. I'll reply by email to set up the 15-minute call. Prefer the phone? Call <a href="tel:+19095296128">(909) 529-6128</a>.</p>
+        <ul class="contact-rows">
+          <li><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span><span class="who">James Kirkpatrick</span><span class="role">Northern Edge IT Consulting (NEIT)</span></span></li>
+          <li><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m21.5 7-9.5 6.5L2.5 7"/></svg></span><span><span class="sr-only">Email: </span><!--email_off--><a href="mailto:info@neit.tech">info@neit.tech</a><!--/email_off--></span></li>
+          <li><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span><span><span class="sr-only">Phone: </span><a href="tel:+19095296128">(909) 529-6128</a></span></li>
+          <li><span class="icon-wrap"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><span class="sr-only">Location: </span>Based in Southern California. Remote work only.</span></li>
+        </ul>
+        <p class="meta meta-list contact-meta"><span>15-minute video call</span> <span>No passwords needed</span></p>
+      </div>
+      <div class="form-card fade-up delay-2">
         <form id="contactForm" class="form" action="/api/contact" method="POST" novalidate>
-          <div class="field">
-            <label class="label" for="name">Name <span class="req" aria-hidden="true">*</span></label>
-            <input class="input" type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
-            <p id="name-error" class="field-error hidden" role="alert">Please enter your name.</p>
-          </div>
-          <div class="field">
-            <label class="label" for="email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input class="input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
-            <p id="email-error" class="field-error hidden" role="alert">Please enter a valid email address.</p>
+          <div class="field-row">
+            <div class="field">
+              <label class="label" for="name">Name <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+              <p id="name-error" class="field-error hidden" role="alert">Please enter your name.</p>
+            </div>
+            <div class="field">
+              <label class="label" for="email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input class="input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error" placeholder="you@company.com">
+              <p id="email-error" class="field-error hidden" role="alert">Please enter a valid email address.</p>
+            </div>
           </div>
           <div class="field">
             <label class="label" for="need">What do you need?</label>
             <select class="input" id="need" name="need">
-              <option value="Free IT review for my business">Free IT review for my business</option>
-              <option value="A new or better website">A new or better website</option>
-              <option value="Ongoing IT support">Ongoing IT support</option>
-              <option value="Using AI tools safely">Using AI tools safely</option>
-              <option value="Engineering project or contract work">Engineering project or contract work</option>
+              <option value="Free IT review for my business" data-key="review">Free IT review for my business</option>
+              <option value="Check my email security" data-key="email">Check my email security</option>
+              <option value="A new or better website" data-key="website">A new or better website</option>
+              <option value="Ongoing IT support" data-key="support">Ongoing IT support</option>
+              <option value="Using AI tools safely" data-key="ai">Using AI tools safely</option>
+              <option value="Engineering project or contract work" data-key="engineering">Engineering or contract work</option>
               <option value="Something else">Something else</option>
             </select>
           </div>
           <div class="field">
+            <label class="label" for="domain">Business website or email domain <span class="opt">(optional)</span></label>
+            <input class="input" type="text" id="domain" name="domain" maxlength="253" autocomplete="url" inputmode="url" spellcheck="false" placeholder="yourbusiness.com">
+          </div>
+          <div class="field">
             <label class="label" for="message">Message <span class="opt">(optional)</span></label>
-            <textarea class="input" id="message" name="message" rows="4" maxlength="5000" aria-describedby="message-error" placeholder="Optional: what's broken, slow, or worrying you"></textarea>
+            <textarea class="input" id="message" name="message" rows="4" maxlength="5000" aria-describedby="message-error" placeholder="How many people you have, and what's broken, slow, or worrying you"></textarea>
             <p id="message-error" class="field-error hidden" role="alert">Please keep your message under 5,000 characters.</p>
           </div>
           <p class="form-note">Please don't include passwords or customers' personal information (like SSNs or account numbers) in this form.</p>
@@ -104,11 +120,11 @@
             <label for="company_website">Leave this field empty</label>
             <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
           </div>
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFLncPViDD_MUJ_O" data-theme="dark"></div>
-          <button type="submit" class="btn btn-primary">Send. I'll reply to set a time</button>
+          <div class="turnstile-row"><div class="cf-turnstile" data-sitekey="0x4AAAAAAFLncPViDD_MUJ_O" data-theme="dark"></div></div>
+          <button type="submit" class="btn btn-primary">Send request</button>
           <p class="form-note text-center">How I handle your information: <a href="/privacy">Privacy policy</a></p>
-          <div id="form-success" class="alert alert-success hidden" role="status" tabindex="-1">Message sent. I read every message myself and will reply by email to set up your review.</div>
-          <div id="form-error" class="alert alert-error hidden" role="alert" tabindex="-1">Something went wrong. Please try again or email <a href="mailto:info@neit.tech">info@neit.tech</a> directly.</div>
+          <div id="form-success" class="alert alert-success hidden" role="status" tabindex="-1">Message sent. I read every message myself and will reply by email.</div>
+          <div id="form-error" class="alert alert-error hidden" role="alert" tabindex="-1">Something went wrong. Please try again or email <!--email_off--><a href="mailto:info@neit.tech">info@neit.tech</a><!--/email_off--> directly.</div>
         </form>
       </div>
     </div>
@@ -120,9 +136,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-about">
-        <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home">NEIT</a>
-        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick.</p>
+        <a class="wordmark" href="/" aria-label="NEIT – Northern Edge IT Consulting, home"><img src="/images/compass-mark.png" width="28" height="28" alt="">NEIT</a>
+        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick, based in Diamond Bar, California.</p>
       </div>
+      <div class="footer-links">
       <nav aria-label="Footer">
         <h2 class="footer-title">Pages</h2>
         <ul class="footer-list">
@@ -136,12 +153,12 @@
         <h2 class="footer-title">Contact</h2>
         <ul class="footer-list">
           <li><a href="tel:+19095296128">(909) 529-6128</a></li>
-          <li><a href="mailto:info@neit.tech">info@neit.tech</a></li>
+          <li><!--email_off--><a href="mailto:info@neit.tech">info@neit.tech</a><!--/email_off--></li>
         </ul>
-        <a class="btn btn-primary btn-sm footer-cta" href="/contact">Free IT review</a>
+      </div>
       </div>
     </div>
-    <p class="footer-bottom">&copy; 2026 Northern Edge IT Consulting. Based in Southern California, working remotely across the US.</p>
+    <div class="footer-bottom"><p>&copy; 2026 Northern Edge IT Consulting.</p><p>Working remotely across the US.</p></div>
   </div>
 </footer>
 </body>
