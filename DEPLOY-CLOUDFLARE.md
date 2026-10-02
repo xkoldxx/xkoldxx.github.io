@@ -20,4 +20,4 @@ Direct Upload projects can't be switched to Git integration; push-to-deploy need
 Fastmail → Settings → Privacy & Security → API tokens (Email + Email submission), then set `FASTMAIL_API_TOKEN` as a production secret and redeploy.
 
 ## Rollback
-Cloudflare DNS: set `www` CNAME back to `xkoldxx.github.io` (DNS only) and remove the custom domains from the Pages project. Re-enable GitHub Pages first. The form only works on Cloudflare.
+Cloudflare DNS: set `www` CNAME back to `xkoldxx.github.io` (DNS only) and remove the custom domains from the Pages project. GitHub Pages was retired 2026-10-01 (deploy.yml, CNAME, .nojekyll removed); to roll back there, restore them from git history and re-enable Pages in repo settings first. The form only works on Cloudflare.
