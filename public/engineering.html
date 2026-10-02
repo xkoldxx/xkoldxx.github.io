@@ -1,463 +1,281 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#faf7f2">
+  <meta name="apple-mobile-web-app-title" content="NEIT">
+  <meta property="og:site_name" content="Northern Edge IT Consulting">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.neit.tech/images/og-engineering.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Northern Edge IT Consulting logo with the line: Remote network and security engineering, delivered under your name.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.neit.tech/images/og-engineering.png">
+  <meta name="twitter:image:alt" content="Northern Edge IT Consulting logo with the line: Remote network and security engineering, delivered under your name.">
   <title>Remote Network &amp; Security Engineering for MSPs | NEIT</title>
   <meta name="description" content="White-label remote network and security engineering for MSPs, VARs and integrators: firewall migrations, segmentation, SD-WAN and Ansible automation.">
   <meta name="author" content="Northern Edge IT Consulting">
   <link rel="canonical" href="https://www.neit.tech/engineering">
-
   <meta property="og:title" content="Remote Network &amp; Security Engineering for MSPs | NEIT">
   <meta property="og:description" content="Subcontract delivery for MSPs, VARs and integrators: firewall migrations, segmentation, SD-WAN rollouts and Ansible automation. Your SOW, your customer.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.neit.tech/engineering">
-  <meta property="og:image" content="https://www.neit.tech/images/og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Northern Edge IT Consulting logo with the line: One tech partner for your whole business">
-  <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="Northern Edge IT Consulting">
-
-  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Remote Network &amp; Security Engineering for MSPs | NEIT">
   <meta name="twitter:description" content="White-label remote network and security engineering for MSPs, VARs and integrators.">
-  <meta name="twitter:image" content="https://www.neit.tech/images/og.png">
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" crossorigin="anonymous">
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com?v=3.3.3"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            base:     '#080808',
-            surface:  '#111111',
-            elevated: '#1a1a1a',
-            border:   '#2a2a2a',
-            muted:    '#8a8a8a',
-            dim:      '#a3a3a3',
-            silver:   '#c0c0c0',
-            bright:   '#e8e8e8',
-            white:    '#ffffff',
-          },
-          fontFamily: {
-            sans:    ['Inter', 'sans-serif'],
-            heading: ['Poppins', 'sans-serif'],
-          },
-        }
-      }
-    }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Northern Edge IT Consulting",
+    "alternateName": "NEIT",
+    "url": "https://www.neit.tech/engineering",
+    "image": "https://www.neit.tech/images/og-engineering.png",
+    "email": "info@neit.tech",
+    "telephone": "+1-909-529-6128",
+    "founder": { "@type": "Person", "name": "James Kirkpatrick" },
+    "areaServed": { "@type": "Country", "name": "United States" },
+    "description": "Remote white-label network and security engineering for MSPs, VARs and integrators: firewall migrations, segmentation, SD-WAN rollouts and Ansible automation."
+  }
   </script>
-
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer">
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" sizes="32x32">
-  <link rel="icon" href="/images/icon-192.png" type="image/png" sizes="192x192">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#c0c0c0">
-  <meta name="apple-mobile-web-app-title" content="NEIT">
-
-  <style>
-    * { box-sizing: border-box; }
-
-    .dot-grid {
-      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-      background-size: 24px 24px;
-    }
-
-    .gradient-text {
-      background: linear-gradient(90deg, #c0c0c0 0%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background: #c0c0c0;
-      color: #080808;
-      font-weight: 600;
-      font-size: 0.8125rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.75rem 1.75rem;
-      border-radius: 0.375rem;
-      border: 1px solid #c0c0c0;
-      transition: background 0.2s, color 0.2s;
-      text-decoration: none;
-      text-align: center;
-    }
-    .btn-primary:hover { background: #e8e8e8; border-color: #e8e8e8; }
-
-    .btn-ghost {
-      display: inline-block;
-      background: transparent;
-      color: #c0c0c0;
-      font-weight: 500;
-      font-size: 0.8125rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.75rem 1.75rem;
-      border-radius: 0.375rem;
-      border: 1px solid rgba(192,192,192,0.35);
-      transition: border-color 0.2s, background 0.2s;
-      text-decoration: none;
-      text-align: center;
-    }
-    .btn-ghost:hover { border-color: #c0c0c0; background: rgba(192,192,192,0.06); }
-
-    .section-label {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888888;
-      border-bottom: 1px solid #2a2a2a;
-      padding-bottom: 0.25rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .card {
-      background: #111111;
-      border: 1px solid #2a2a2a;
-      border-radius: 0.75rem;
-      padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .card:hover { border-color: #3a3a3a; }
-
-    .icon-wrap {
-      width: 2.25rem; height: 2.25rem;
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      border-radius: 0.5rem;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      transition: border-color 0.2s;
-    }
-    .card-eng { background: #080808; border-radius: 0.375rem; }
-    .card-eng h3 { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 600; font-size: 0.9375rem; letter-spacing: -0.01em; }
-    [aria-invalid="true"] { border-color: #f87171 !important; }
-    .card:hover .icon-wrap { border-color: #555555; }
-
-    details summary::-webkit-details-marker { display: none; }
-    details > summary { cursor: pointer; }
-    details[open] .chevron { transform: rotate(180deg); }
-    .chevron { transition: transform 0.2s; }
-
-    .sr-only {
-      position: absolute; width: 1px; height: 1px;
-      padding: 0; margin: -1px; overflow: hidden;
-      clip: rect(0,0,0,0); border: 0;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade-up { animation: fadeUp 0.7s ease forwards; }
-    .delay-1 { animation-delay: 0.1s; opacity: 0; }
-    .delay-2 { animation-delay: 0.22s; opacity: 0; }
-    .delay-3 { animation-delay: 0.34s; opacity: 0; }
-    @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto !important} .fade-up,.delay-1,.delay-2,.delay-3{animation:none;opacity:1;transform:none} }
-  </style>
-</head>
-
-<body class="bg-base text-bright font-sans antialiased">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 btn-primary">Skip to content</a>
-
-  <!-- ═══ NAV ═══ -->
-  <header class="sticky top-0 z-50 bg-base bg-opacity-90 backdrop-blur border-b border-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-14 gap-4">
-        <a href="/" class="text-silver font-heading font-bold text-lg tracking-widest hover:text-white transition-colors">NEIT</a>
-        <nav class="flex items-center gap-5 sm:gap-8" aria-label="Main navigation">
-          <a href="/" class="text-dim text-sm uppercase tracking-wider hover:text-silver transition-colors">Small business IT</a>
-          <a href="#contact" class="btn-primary text-xs py-2 px-4 whitespace-nowrap"><span class="sm:hidden">Contact</span><span class="hidden sm:inline">Talk about a project</span></a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <main id="main">
-
-    <!-- ═══ HERO ═══ -->
-    <section class="dot-grid relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-base via-base to-surface pointer-events-none"></div>
-      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-24">
-        <div class="max-w-3xl fade-up">
-          <div class="section-label">For MSPs, VARs &amp; Integrators</div>
-          <h1 class="text-4xl md:text-5xl font-heading font-bold leading-tight mb-6">
-            Remote network and security engineering, <span class="gradient-text">delivered under your name.</span>
-          </h1>
-          <p class="text-dim text-lg mb-10 leading-relaxed">Subcontract delivery for MSPs, VARs, and integrators: firewall migrations, segmentation, SD-WAN rollouts, and Ansible automation. 13+ years in enterprise infrastructure. Your SOW, your process, your customer.</p>
-          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
-            <a href="#contact" class="btn-primary whitespace-nowrap">Talk about a project</a>
-            <a href="#deliver" class="text-dim text-sm hover:text-silver transition-colors whitespace-nowrap">What I deliver &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ YOUR CUSTOMER ═══ -->
-    <section class="py-14 md:py-20 border-t border-border">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <div class="section-label">How I Work With Partners</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold">Your customer stays your customer.</h2>
-            <p class="text-dim mt-4 max-w-xl leading-relaxed">I work as part of your delivery team, on your terms. The paperwork is settled before I see anything about your customer.</p>
-          </div>
-          <div class="bg-surface border border-border rounded-xl p-6">
-            <ul class="space-y-4 text-sm">
-              <li class="flex gap-3"><i class="fas fa-tag text-silver mt-1 w-4" aria-hidden="true"></i><span class="text-bright">White-label under your brand, email and ticketing when you want that.</span></li>
-              <li class="flex gap-3"><i class="fas fa-file-signature text-silver mt-1 w-4" aria-hidden="true"></i><span class="text-bright">Mutual NDA and mutual non-solicit before any customer detail is shared.</span></li>
-              <li class="flex gap-3"><i class="fas fa-clipboard-check text-silver mt-1 w-4" aria-hidden="true"></i><span class="text-bright">Your SOW and your change process. No production changes without your approval.</span></li>
-              <li class="flex gap-3"><i class="fas fa-laptop-house text-silver mt-1 w-4" aria-hidden="true"></i><span class="text-bright">Remote only, billed through NEIT on a 1099/C2C basis, never W2.</span></li>
-              <li class="flex gap-3"><i class="fas fa-box-open text-silver mt-1 w-4" aria-hidden="true"></i><span class="text-bright">Deliverables are yours on payment.</span></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ WHAT I DELIVER ═══ -->
-    <section id="deliver" class="py-14 md:py-20 bg-surface border-t border-border">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-12">
-          <div class="section-label">Services</div>
-          <h2 class="text-3xl md:text-4xl font-heading font-bold">What I deliver</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="card card-eng">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="icon-wrap"><i class="fas fa-network-wired text-silver text-sm" aria-hidden="true"></i></div>
-              <h3 class="text-bright font-semibold font-heading">Network engineering</h3>
-            </div>
-            <p class="text-dim text-sm leading-relaxed">Cisco and Palo Alto platforms. Routing and switching, SD-WAN, and segmentation design.</p>
-          </div>
-          <div class="card card-eng">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="icon-wrap"><i class="fas fa-shield-alt text-silver text-sm" aria-hidden="true"></i></div>
-              <h3 class="text-bright font-semibold font-heading">Security &amp; firewalls</h3>
-            </div>
-            <p class="text-dim text-sm leading-relaxed">Firewall policy reviews and rebuilds, and security platform migrations.</p>
-          </div>
-          <div class="card card-eng">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="icon-wrap"><i class="fas fa-server text-silver text-sm" aria-hidden="true"></i></div>
-              <h3 class="text-bright font-semibold font-heading">Systems</h3>
-            </div>
-            <p class="text-dim text-sm leading-relaxed">Linux and Windows Server, Active Directory and Entra ID, Microsoft 365.</p>
-          </div>
-          <div class="card card-eng">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="icon-wrap"><i class="fas fa-cloud text-silver text-sm" aria-hidden="true"></i></div>
-              <h3 class="text-bright font-semibold font-heading">Cloud</h3>
-            </div>
-            <p class="text-dim text-sm leading-relaxed">Azure, GCP, and hybrid environments.</p>
-          </div>
-          <div class="card card-eng">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="icon-wrap"><i class="fas fa-cogs text-silver text-sm" aria-hidden="true"></i></div>
-              <h3 class="text-bright font-semibold font-heading">Automation</h3>
-            </div>
-            <p class="text-dim text-sm leading-relaxed">Ansible, scripting, and infrastructure as code.</p>
-          </div>
-          <div class="card card-eng">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="icon-wrap"><i class="fas fa-file-alt text-silver text-sm" aria-hidden="true"></i></div>
-              <h3 class="text-bright font-semibold font-heading">Audits &amp; documentation</h3>
-            </div>
-            <p class="text-dim text-sm leading-relaxed">Written assessments, diagrams, and a prioritized fix list for environments nobody documented.</p>
-          </div>
-        </div>
-
-        <div class="mt-8 bg-base border border-border rounded-xl p-6 md:p-8 max-w-4xl">
-          <div class="flex items-start gap-4">
-            <div class="icon-wrap"><i class="fas fa-undo-alt text-silver text-sm" aria-hidden="true"></i></div>
-            <div>
-              <h3 class="text-bright font-heading font-semibold mb-2">How cutovers run</h3>
-              <p class="text-dim text-sm leading-relaxed">A written cutover plan with pre- and post-checks and a tested rollback, run in your maintenance window under your change process. Documentation handed over when done.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EXPERIENCE ═══ -->
-    <section class="py-14 md:py-20 border-t border-border">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
-            <div class="section-label">Background</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Experience</h2>
-            <p class="text-dim leading-relaxed">I'm James Kirkpatrick. NEIT is my practice, and I do the work myself.</p>
-          </div>
-          <div>
-            <ul class="space-y-3 text-sm">
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">13+ years in enterprise infrastructure</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">Designed segmentation across global data centers</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">Migrated thousands of users between security platforms</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">SD-WAN rollouts</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">Network automation at scale with Ansible</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">Systems administration: Linux and Windows Server, AD and Entra ID, Microsoft 365</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">Azure and GCP</span></li>
-              <li class="flex gap-3"><span class="text-silver" aria-hidden="true">✓</span><span class="text-bright">Works with Cisco and Palo Alto platforms</span></li>
-            </ul>
-            <p class="text-dim text-sm mt-6 pt-6 border-t border-border">A sanitized one-page project summary is available on request, sent privately.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ ENGAGEMENT BASICS ═══ -->
-    <div class="border-y border-border bg-surface">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-        <p class="text-center text-sm text-dim"><span class="text-muted text-xs uppercase tracking-wider mr-2">Engagement basics</span> Remote only · Billed through NEIT, 1099 or C2C · Scoped per SOW · Availability agreed in advance, including maintenance windows</p>
-      </div>
-    </div>
-
-    <!-- ═══ CONTACT ═══ -->
-    <section id="contact" class="py-14 md:py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-
-          <div>
-            <div class="section-label">Contact</div>
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Talk about a project</h2>
-            <p class="text-dim mb-8 leading-relaxed">Tell me the platform, the scope, and the window. Keep customer names out of it until the NDA is in place.</p>
-
-            <div class="space-y-5">
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
-                  <i class="fas fa-user text-silver text-sm" aria-hidden="true"></i>
-                </div>
-                <div>
-                  <div class="text-silver text-sm font-medium">James Kirkpatrick</div>
-                  <div class="text-muted text-xs">Northern Edge IT Consulting (NEIT)</div>
-                </div>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
-                  <i class="fas fa-envelope text-silver text-sm" aria-hidden="true"></i>
-                </div>
-                <a href="mailto:info@neit.tech" class="text-dim hover:text-silver transition-colors text-sm">info@neit.tech</a>
-              </div>
-              <div class="flex items-center gap-4">
-                <div class="w-10 h-10 rounded-lg bg-surface border border-border flex items-center justify-center shrink-0">
-                  <i class="fas fa-map-marker-alt text-silver text-sm" aria-hidden="true"></i>
-                </div>
-                <span class="text-dim text-sm">Based in Southern California. Remote work only.</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-surface border border-border rounded-xl p-8">
-            <form id="contactForm" action="/api/contact" method="POST" class="space-y-5" novalidate>
-              <div>
-                <label for="name" class="block text-silver text-xs uppercase tracking-wider mb-2">Name <span class="text-muted">*</span></label>
-                <input type="text" id="name" name="name" aria-describedby="name-error" required
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors placeholder-muted"
-                  placeholder="Your name">
-                <p id="name-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please enter your name.</p>
-              </div>
-              <div>
-                <label for="email" class="block text-silver text-xs uppercase tracking-wider mb-2">Email <span class="text-muted">*</span></label>
-                <input type="email" id="email" name="email" aria-describedby="email-error" required
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors placeholder-muted"
-                  placeholder="you@company.com">
-                <p id="email-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please enter a valid email address.</p>
-              </div>
-              <div>
-                <label for="need" class="block text-silver text-xs uppercase tracking-wider mb-2">What do you need?</label>
-                <select id="need" name="need"
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors">
-                  <option>Subcontract / white-label delivery</option>
-                  <option>Project for our in-house team</option>
-                  <option>Request a sanitized project summary</option>
-                  <option>Something else</option>
-                </select>
-              </div>
-              <div>
-                <label for="message" class="block text-silver text-xs uppercase tracking-wider mb-2">Message <span class="text-muted">*</span></label>
-                <textarea id="message" name="message" aria-describedby="message-error" rows="4" required
-                  class="w-full bg-elevated border border-[#666] rounded-md p-3 text-bright text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-silver focus:border-silver transition-colors placeholder-muted resize-none"
-                  placeholder="Platform, scope, timing..."></textarea>
-                <p id="message-error" role="alert" class="hidden text-red-400 text-xs mt-1">Please add a few more words so I know what you need.</p>
-                <p class="text-muted text-xs mt-1">Please don't include customer names, credentials, or configs in this form.</p>
-              </div>
-              <div style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
-                <label for="company_website">Leave this field empty</label>
-                <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
-              </div>
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAFLncPViDD_MUJ_O" data-theme="dark"></div>
-              <button type="submit" class="btn-primary w-full justify-center">
-                Send Message
-              </button>
-              <div id="form-success" class="hidden bg-elevated border border-border text-silver p-4 rounded-md text-sm" role="alert" tabindex="-1">
-                Thanks. I read every message myself and will reply by email.
-              </div>
-              <div id="form-error" class="hidden bg-elevated border border-border text-dim p-4 rounded-md text-sm" role="alert" tabindex="-1">
-                Something went wrong. Please try again or email info@neit.tech directly.
-              </div>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="border-t border-border py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div>
-          <div class="text-silver font-heading font-bold text-lg mb-3">NEIT</div>
-          <p class="text-muted text-sm leading-relaxed">Remote IT support for small businesses and engineering for IT teams. Based in Southern California, serving clients across the US.</p>
-        </div>
-        <div>
-          <div class="text-dim text-xs uppercase tracking-wider font-semibold mb-4">Pages</div>
-          <ul class="space-y-2 text-sm text-muted">
-            <li><a href="/" class="hover:text-silver transition-colors">Small Business IT</a></li>
-            <li><a href="/engineering" class="hover:text-silver transition-colors">Engineering for MSPs &amp; IT Teams</a></li>
-            <li><a href="/privacy" class="hover:text-silver transition-colors">Privacy</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="text-dim text-xs uppercase tracking-wider font-semibold mb-4">Contact</div>
-          <ul class="space-y-2 text-sm text-muted">
-            <li><a href="tel:+19095296128" class="hover:text-silver transition-colors">+1 (909) 529-6128</a></li>
-            <li><a href="mailto:info@neit.tech" class="hover:text-silver transition-colors">info@neit.tech</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="border-t border-border pt-6 text-center text-muted text-sm">
-        &copy; 2026 Northern Edge IT Consulting. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <script src="/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Northern Edge IT Consulting, home">
+      <img src="/images/logo-mark.png" width="40" height="40" alt="">
+      <span><span class="brand-name">Northern Edge</span><span class="brand-sub">IT Consulting</span></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="/">Small business IT</a></li>
+        <li><a href="/engineering">Engineering</a></li>
+        <li><a href="/#about">About</a></li>
+        <li><a class="btn btn-primary" href="/#contact">Free IT review</a></li>
+      </ul>
+      <details class="nav-mobile">
+        <summary>
+          <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          Menu
+        </summary>
+        <ul>
+          <li><a href="/">Small business IT</a></li>
+          <li><a href="/engineering">Engineering</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a class="btn btn-primary" href="/#contact">Free IT review</a></li>
+        </ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">For MSPs, VARs &amp; integrators</span>
+        <h1>Remote network and security engineering, delivered under your name.</h1>
+        <p class="lead">Subcontract delivery for MSPs, VARs, and integrators: firewall migrations, segmentation, SD-WAN rollouts, and Ansible automation. 13+ years in enterprise infrastructure. Your SOW, your process, your customer.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="#contact">Talk about a project</a>
+          <a class="btn btn-secondary btn-lg" href="#deliver">What I deliver</a>
+        </div>
+      </div>
+      <aside class="panel" aria-labelledby="basics-title">
+        <h2 id="basics-title">Engagement basics</h2>
+        <ul class="checklist">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Remote only</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Billed through NEIT, 1099 or C2C</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Scoped per SOW</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Availability agreed in advance, including maintenance windows</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-band" aria-labelledby="partners-title">
+    <div class="container grid-2">
+      <div class="section-head">
+        <span class="eyebrow">How I work with partners</span>
+        <h2 id="partners-title">Your customer stays your customer.</h2>
+        <p class="lead">I work as part of your delivery team, on your terms. The paperwork is settled before I see anything about your customer.</p>
+      </div>
+      <div class="card">
+        <ul class="checklist mb-0">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>White-label under your brand, email and ticketing when you want that.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Mutual NDA and mutual non-solicit before any customer detail is shared.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Your SOW and your change process. No production changes without your approval.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Remote only, billed through NEIT on a 1099/C2C basis, never W2.</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Deliverables are yours on payment.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deliver" aria-labelledby="deliver-title">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Services</span>
+        <h2 id="deliver-title">What I deliver</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="5" rx="1"/><rect x="2" y="17" width="6" height="5" rx="1"/><rect x="16" y="17" width="6" height="5" rx="1"/><path d="M12 7v7M5 17v-3h14v3"/></svg></span>
+          <h3 class="card-title-mono">Network engineering</h3>
+          <p>Cisco and Palo Alto platforms. Routing and switching, SD-WAN, and segmentation design.</p>
+        </article>
+        <article class="card">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <h3 class="card-title-mono">Security &amp; firewalls</h3>
+          <p>Firewall policy reviews and rebuilds, and security platform migrations.</p>
+        </article>
+        <article class="card">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg></span>
+          <h3 class="card-title-mono">Systems</h3>
+          <p>Windows and Linux servers, user accounts, and Microsoft 365 administration.</p>
+        </article>
+        <article class="card">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.5 19H7a5 5 0 1 1 1-9.9A6 6 0 0 1 19.5 11a4 4 0 0 1-2 8z"/></svg></span>
+          <h3 class="card-title-mono">Cloud</h3>
+          <p>Azure and Google Cloud.</p>
+        </article>
+        <article class="card">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3M12 15h6"/></svg></span>
+          <h3 class="card-title-mono">Automation</h3>
+          <p>Network automation with Ansible.</p>
+        </article>
+        <article class="card">
+          <span class="icon-badge"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+          <h3 class="card-title-mono">Audits &amp; documentation</h3>
+          <p>Written assessments, diagrams, and a prioritized fix list for environments nobody documented.</p>
+        </article>
+      </div>
+      <div class="panel mt-6">
+        <h3 class="card-title-mono">How cutovers run</h3>
+        <p class="mb-0">A written cutover plan with pre- and post-checks and a tested rollback, run in your maintenance window under your change process. Documentation handed over when done.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-band" aria-labelledby="experience-title">
+    <div class="container grid-2">
+      <div class="section-head">
+        <span class="eyebrow">Background</span>
+        <h2 id="experience-title">Experience</h2>
+        <p class="lead">I'm James Kirkpatrick. NEIT is my practice, and I do the work myself.</p>
+      </div>
+      <div class="card">
+        <ul class="checklist">
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>13+ years in enterprise infrastructure</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Designed segmentation across global data centers</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Migrated thousands of users between security platforms</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>SD-WAN rollouts</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Network automation at scale with Ansible</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Systems administration: Windows and Linux servers, user accounts, and Microsoft 365 administration</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Azure and Google Cloud</span></li>
+          <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Cisco and Palo Alto platforms</span></li>
+        </ul>
+        <p class="small muted mb-0">A sanitized one-page project summary is available on request, sent privately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="container grid-2">
+      <div>
+        <div class="section-head">
+          <span class="eyebrow">Contact</span>
+          <h2 id="contact-title">Talk about a project</h2>
+          <p class="lead">Tell me the platform, the scope, and the window. Keep customer names out of it until the NDA is in place.</p>
+        </div>
+        <dl class="facts">
+          <div><dt>James Kirkpatrick</dt><dd>Northern Edge IT Consulting (NEIT)</dd></div>
+          <div><dt>Email</dt><dd><a href="mailto:info@neit.tech">info@neit.tech</a></dd></div>
+          <div><dt>Phone</dt><dd><a href="tel:+19095296128">(909) 529-6128</a></dd></div>
+          <div><dt>Location</dt><dd>Based in Southern California. Remote work only.</dd></div>
+        </dl>
+      </div>
+      <div class="card">
+        <form id="contactForm" class="form" action="/api/contact" method="POST" novalidate>
+          <div class="field">
+            <label class="label" for="name">Name <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
+            <p id="name-error" class="field-error hidden" role="alert">Please enter your name.</p>
+          </div>
+          <div class="field">
+            <label class="label" for="email">Email <span class="req" aria-hidden="true">*</span></label>
+            <input class="input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error" placeholder="you@company.com">
+            <p id="email-error" class="field-error hidden" role="alert">Please enter a valid email address.</p>
+          </div>
+          <div class="field">
+            <label class="label" for="need">What do you need?</label>
+            <select class="input" id="need" name="need">
+              <option value="Subcontract / white-label delivery">Subcontract / white-label delivery</option>
+              <option value="Project for our in-house team">Project for our in-house team</option>
+              <option value="Request a sanitized project summary">Request a sanitized project summary</option>
+              <option value="Something else">Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="label" for="message">Message <span class="opt">(optional)</span></label>
+            <textarea class="input" id="message" name="message" rows="4" maxlength="5000" aria-describedby="message-error" placeholder="Platform, scope, timing..."></textarea>
+            <p id="message-error" class="field-error hidden" role="alert">Please keep your message under 5,000 characters.</p>
+          </div>
+          <p class="form-note">Please don't include customer names, credentials, or configs in this form.</p>
+          <div class="hp" aria-hidden="true">
+            <label for="company_website">Leave this field empty</label>
+            <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFLncPViDD_MUJ_O" data-theme="light"></div>
+          <button type="submit" class="btn btn-primary btn-lg">Send message</button>
+          <p class="form-note">How I handle your information: <a href="/privacy">Privacy policy</a></p>
+          <div id="form-success" class="alert alert-success hidden" role="status" tabindex="-1">Thanks. I read every message myself and will reply by email.</div>
+          <div id="form-error" class="alert alert-error hidden" role="alert" tabindex="-1">Something went wrong. Please try again or email info@neit.tech directly.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="/" aria-label="Northern Edge IT Consulting, home">
+          <img src="/images/logo-mark.png" width="40" height="40" alt="">
+          <span><span class="brand-name">Northern Edge</span><span class="brand-sub">IT Consulting</span></span>
+        </a>
+        <p>Remote IT for small businesses, and network and security engineering for IT teams. One engineer, James Kirkpatrick.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h2 class="footer-title">Pages</h2>
+        <ul class="footer-list">
+          <li><a href="/">Small business IT</a></li>
+          <li><a href="/engineering">Engineering</a></li>
+          <li><a href="/privacy">Privacy</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="footer-title">Contact</h2>
+        <ul class="footer-list footer-contact">
+          <li><a href="tel:+19095296128"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>(909) 529-6128</a></li>
+          <li><a href="mailto:info@neit.tech"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>info@neit.tech</a></li>
+        </ul>
+        <a class="btn btn-primary footer-cta" href="/#contact">Free IT review</a>
+      </div>
+    </div>
+    <p class="footer-bottom">&copy; 2026 Northern Edge IT Consulting. Based in Southern California, working remotely across the US.</p>
+  </div>
+</footer>
 </body>
 </html>

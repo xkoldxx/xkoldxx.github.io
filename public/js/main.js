@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', initContactForm);
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav-mobile a').forEach(a => a.addEventListener('click', () => { a.closest('details').open = false; }));
+  initContactForm();
+});
 
 function initContactForm() {
   const contactForm = document.getElementById('contactForm');
@@ -28,7 +31,7 @@ function initContactForm() {
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
       return emailRegex.test(value);
     },
-    message: (value) => value.trim().length >= 10
+    message: (value) => value.trim().length <= 5000
   };
 
   const scrollBehavior = () => matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
@@ -38,10 +41,8 @@ function initContactForm() {
       errorMessages[field].classList.toggle('hidden', !show);
       if (show) {
         formFields[field].setAttribute('aria-invalid', 'true');
-        formFields[field].classList.add('border-red-500');
       } else {
         formFields[field].removeAttribute('aria-invalid');
-        formFields[field].classList.remove('border-red-500');
       }
     }
   };

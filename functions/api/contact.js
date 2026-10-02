@@ -39,7 +39,7 @@ export async function onRequestPost({ request, env }) {
     (!lead.name || lead.name.length > 100 || /[\r\n]/.test(lead.name)) ? 'Invalid name'
     : (lead.email.length > 254 || !EMAIL_RE.test(lead.email)) ? 'Invalid email'
     : !NEEDS.includes(lead.need) ? 'Invalid need'
-    : (lead.message.length < 10 || lead.message.length > 5000) ? 'Invalid message'
+    : lead.message.length > 5000 ? 'Invalid message'
     : null;
   if (error) return json(400, { ok: false, error });
 
