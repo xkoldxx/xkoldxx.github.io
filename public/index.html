@@ -197,7 +197,6 @@
   ]
 }
   </script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script src="/js/main.js" defer></script>
 </head>
 <body>
@@ -209,19 +208,19 @@
       <ul class="nav-links">
         <li><a href="/" aria-current="page">Small business IT</a></li>
         <li><a href="/engineering">Engineering</a></li>
-        <li><a href="/#about">About</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
     </nav>
     <div class="header-actions">
-      <a class="btn btn-primary btn-sm header-cta" href="/#contact">Free IT review</a>
+      <a class="btn btn-primary btn-sm header-cta" href="/contact">Free IT review</a>
       <details class="nav-mobile">
         <summary aria-label="Menu"><svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="icon icon-close" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg></summary>
         <nav aria-label="Mobile">
           <ul>
             <li><a href="/" aria-current="page">Small business IT</a></li>
             <li><a href="/engineering">Engineering</a></li>
-            <li><a href="/#about">About</a></li>
-            <li class="nav-mobile-cta"><a class="btn btn-primary" href="/#contact">Free IT review</a></li>
+            <li><a href="/about">About</a></li>
+            <li class="nav-mobile-cta"><a class="btn btn-primary" href="/contact">Free IT review</a></li>
           </ul>
         </nav>
       </details>
@@ -239,7 +238,7 @@
         <p class="lead">For businesses with 3 to 25 people and no IT department. I handle your email and accounts, security and backups, website, laptops, and safe AI use. Remotely, in plain English, by an engineer with 13+ years in enterprise IT.</p>
         <p class="dim">Everything is set up in your name and written down, so you can switch providers any time.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Get my free IT review</a>
+          <a class="btn btn-primary" href="/contact">Get my free IT review</a>
         </div>
         <div class="hero-notes">
           <p>Free · 15 minutes · Video call · No passwords needed</p>
@@ -382,7 +381,7 @@
           <p class="step-foot"><strong>Website from me?</strong> A care plan keeps it hosted, backed up and updated.</p>
         </li>
       </ol>
-      <div class="text-center"><a class="btn btn-primary" href="#contact">Get my free IT review</a></div>
+      <div class="text-center"><a class="btn btn-primary" href="/contact">Get my free IT review</a></div>
     </div>
   </section>
 
@@ -392,30 +391,6 @@
     </div>
   </div>
 
-  <section class="section" id="about" aria-labelledby="about-title">
-    <div class="container split">
-      <div class="prose">
-        <span class="label-line">About</span>
-        <h2 id="about-title"><span class="gradient-text">Who you'd be working with</span></h2>
-        <p>I'm James Kirkpatrick. For 13+ years I've worked on the networks and systems of large enterprises. I designed network segmentation across global data centers, moved thousands of users from one security platform to another, and automated network work at scale.</p>
-        <p>Small businesses get the same phishing emails, account takeovers and failed backups as those companies, usually with nobody looking after it. That's the gap I fill.</p>
-        <p>Northern Edge is just me. I do the work myself, remotely, and I'd rather tell you a fix isn't worth the money than sell it to you.</p>
-        <p class="signature"><strong>James Kirkpatrick</strong><span>Owner, Northern Edge IT Consulting</span></p>
-      </div>
-      <aside class="panel" aria-labelledby="facts-title">
-        <h3 class="panel-head" id="facts-title">The plain facts</h3>
-        <div class="panel-body">
-          <dl class="facts">
-            <div><dt>Who</dt><dd>One engineer. You talk to me, not a queue.</dd></div>
-            <div><dt>Where</dt><dd>Based in Southern California. Remote only, by video call and screen share, for businesses across the US.</dd></div>
-            <div><dt>Background</dt><dd>13+ years in enterprise infrastructure: networks, security, servers, Microsoft and Google cloud platforms, automation.</dd></div>
-            <div><dt>What I don't do</dt><dd>On-site visits, cabling or camera installs, or a round-the-clock help desk.</dd></div>
-            <div><dt>If I'm unavailable</dt><dd>Your written guide says where everything is, so you're never stuck waiting on me.</dd></div>
-          </dl>
-        </div>
-      </aside>
-    </div>
-  </section>
 
   <section class="section band" id="faq" aria-labelledby="faq-title">
     <div class="container">
@@ -444,55 +419,6 @@
     </div>
   </section>
 
-  <section class="section" id="contact" aria-labelledby="contact-title">
-    <div class="container split contact-split">
-      <div>
-        <span class="label-line">Contact</span>
-        <h2 id="contact-title">Get your free IT review</h2>
-        <p class="lead">Tell me roughly how many people you have and what's bugging you. I'll reply by email to set up the 15-minute call. Prefer the phone? Call <a href="tel:+19095296128">(909) 529-6128</a>.</p>
-      </div>
-      <div class="form-card">
-        <form id="contactForm" class="form" action="/api/contact" method="POST" novalidate>
-          <div class="field">
-            <label class="label" for="name">Name <span class="req" aria-hidden="true">*</span></label>
-            <input class="input" type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-error">
-            <p id="name-error" class="field-error hidden" role="alert">Please enter your name.</p>
-          </div>
-          <div class="field">
-            <label class="label" for="email">Email <span class="req" aria-hidden="true">*</span></label>
-            <input class="input" type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-error">
-            <p id="email-error" class="field-error hidden" role="alert">Please enter a valid email address.</p>
-          </div>
-          <div class="field">
-            <label class="label" for="need">What do you need?</label>
-            <select class="input" id="need" name="need">
-              <option value="Free IT review for my business">Free IT review for my business</option>
-              <option value="A new or better website">A new or better website</option>
-              <option value="Ongoing IT support">Ongoing IT support</option>
-              <option value="Using AI tools safely">Using AI tools safely</option>
-              <option value="Engineering project or contract work">Engineering project or contract work</option>
-              <option value="Something else">Something else</option>
-            </select>
-          </div>
-          <div class="field">
-            <label class="label" for="message">Message <span class="opt">(optional)</span></label>
-            <textarea class="input" id="message" name="message" rows="4" maxlength="5000" aria-describedby="message-error" placeholder="Optional: what's broken, slow, or worrying you"></textarea>
-            <p id="message-error" class="field-error hidden" role="alert">Please keep your message under 5,000 characters.</p>
-          </div>
-          <p class="form-note">Please don't include passwords or customers' personal information (like SSNs or account numbers) in this form.</p>
-          <div class="hp" aria-hidden="true">
-            <label for="company_website">Leave this field empty</label>
-            <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
-          </div>
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAAFLncPViDD_MUJ_O" data-theme="dark"></div>
-          <button type="submit" class="btn btn-primary">Send. I'll reply to set a time</button>
-          <p class="form-note text-center">How I handle your information: <a href="/privacy">Privacy policy</a></p>
-          <div id="form-success" class="alert alert-success hidden" role="status" tabindex="-1">Message sent. I read every message myself and will reply by email to set up your review.</div>
-          <div id="form-error" class="alert alert-error hidden" role="alert" tabindex="-1">Something went wrong. Please try again or email <a href="mailto:info@neit.tech">info@neit.tech</a> directly.</div>
-        </form>
-      </div>
-    </div>
-  </section>
 
 </main>
 
@@ -508,6 +434,7 @@
         <ul class="footer-list">
           <li><a href="/">Small business IT</a></li>
           <li><a href="/engineering">Engineering</a></li>
+          <li><a href="/about">About</a></li>
           <li><a href="/privacy">Privacy</a></li>
         </ul>
       </nav>
@@ -517,7 +444,7 @@
           <li><a href="tel:+19095296128">(909) 529-6128</a></li>
           <li><a href="mailto:info@neit.tech">info@neit.tech</a></li>
         </ul>
-        <a class="btn btn-primary btn-sm footer-cta" href="/#contact">Free IT review</a>
+        <a class="btn btn-primary btn-sm footer-cta" href="/contact">Free IT review</a>
       </div>
     </div>
     <p class="footer-bottom">&copy; 2026 Northern Edge IT Consulting. Based in Southern California, working remotely across the US.</p>

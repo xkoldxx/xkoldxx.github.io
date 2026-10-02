@@ -84,8 +84,8 @@ a:hover { color: var(--white); }
   .split { grid-template-columns: 1fr 1fr; gap: var(--s8); }
 }
 .narrow { max-width: 56rem; margin-inline: auto; }
-.contact-split { max-width: 64rem; }
 @media (min-width: 64rem) { .contact-split { gap: var(--s7); } }
+a[href^="tel:"] { white-space: nowrap; }
 
 /* Type helpers */
 .label-line {
