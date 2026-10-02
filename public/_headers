@@ -7,3 +7,6 @@
 
 /images/*
   Cache-Control: public, max-age=2592000
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -4,8 +4,8 @@
   "description": "Remote IT for small businesses with no IT department: email and accounts, security and backups, websites, laptops and safe AI use.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#faf7f2",
-  "theme_color": "#faf7f2",
+  "background_color": "#080808",
+  "theme_color": "#080808",
   "orientation": "portrait-primary",
   "icons": [
     {
